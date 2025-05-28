@@ -1,0 +1,16 @@
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - LOGS_CAPTURED - Started capturing logs in process (pid: 84826).
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - STEP_START - Started execution of step "process_data".
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - process_data - Number of addresses: 6, Number of agents: 5, Number of agencies: 3, Number of listings: 0
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - STEP_OUTPUT - Yielded output "raw_addresses" of type "Any". (Type check passed).
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - ASSET_MATERIALIZATION - Materialized value raw_addresses.
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - HANDLED_OUTPUT - Handled output "raw_addresses" using IO manager "io_manager"
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - STEP_OUTPUT - Yielded output "raw_agents" of type "Any". (Type check passed).
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - ASSET_MATERIALIZATION - Materialized value raw_agents.
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - HANDLED_OUTPUT - Handled output "raw_agents" using IO manager "io_manager"
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - STEP_OUTPUT - Yielded output "raw_agencies" of type "Any". (Type check passed).
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - ASSET_MATERIALIZATION - Materialized value raw_agencies.
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - HANDLED_OUTPUT - Handled output "raw_agencies" using IO manager "io_manager"
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - STEP_OUTPUT - Yielded output "raw_rental_listings" of type "Any". (Type check passed).
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - ASSET_MATERIALIZATION - Materialized value raw_rental_listings.
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - HANDLED_OUTPUT - Handled output "raw_rental_listings" using IO manager "io_manager"
+[32m2025-05-28 22:57:50 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6cacdf06-1d12-40ab-84c4-58b170ea6f6b - 84826 - process_data - STEP_SUCCESS - Finished execution of step "process_data" in 218ms.

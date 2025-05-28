@@ -1,0 +1,39 @@
+Running with dbt=1.9.4
+Registered adapter: duckdb=1.9.3
+Found 9 models, 2 data tests, 8 sources, 544 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 3 START sql table model main_public.dim_address ........................... [RUN]
+1 of 3 ERROR creating sql table model main_public.dim_address .................. [[31mERROR[0m in 0.03s]
+2 of 3 START sql table model main_public.dim_agency ............................ [RUN]
+2 of 3 ERROR creating sql table model main_public.dim_agency ................... [[31mERROR[0m in 0.01s]
+3 of 3 START sql table model main_public.dim_agent ............................. [RUN]
+3 of 3 ERROR creating sql table model main_public.dim_agent .................... [[31mERROR[0m in 0.01s]
+
+Finished running 3 table models in 0 hours 0 minutes and 0.12 seconds (0.12s).
+
+[31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+
+  Runtime Error in model dim_address (models/dim/dim_address.sql)
+  Catalog Error: Table with name stg_addresses does not exist!
+  Did you mean "realestate.stg_addresses"?
+  
+  LINE 12:     SELECT * FROM "realestate"."main_public"."stg_addresses"
+                             ^
+
+  Runtime Error in model dim_agency (models/dim/dim_agency.sql)
+  Catalog Error: Table with name stg_agencies does not exist!
+  Did you mean "realestate.stg_agencies"?
+  
+  LINE 12:     SELECT * FROM "realestate"."main_public"."stg_agencies"
+                             ^
+
+  Runtime Error in model dim_agent (models/dim/dim_agent.sql)
+  Catalog Error: Table with name stg_agents does not exist!
+  Did you mean "realestate.stg_agents"?
+  
+  LINE 12:     SELECT * FROM "realestate"."main_public"."stg_agents" WHERE email != ''
+                             ^
+
+Done. PASS=0 WARN=0 ERROR=3 SKIP=0 TOTAL=3

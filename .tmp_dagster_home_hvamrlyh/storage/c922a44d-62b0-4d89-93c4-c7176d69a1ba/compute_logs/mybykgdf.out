@@ -1,0 +1,25 @@
+Running with dbt=1.9.4
+Registered adapter: duckdb=1.9.3
+Found 9 models, 2 data tests, 8 sources, 544 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 3 START sql table model main_public.dim_address ........................... [RUN]
+1 of 3 OK created sql table model main_public.dim_address ...................... [[32mOK[0m in 0.04s]
+2 of 3 START sql table model main_public.dim_agency ............................ [RUN]
+2 of 3 OK created sql table model main_public.dim_agency ....................... [[32mOK[0m in 0.02s]
+3 of 3 START sql table model main_public.dim_agent ............................. [RUN]
+3 of 3 ERROR creating sql table model main_public.dim_agent .................... [[31mERROR[0m in 0.01s]
+
+Finished running 3 table models in 0 hours 0 minutes and 0.14 seconds (0.14s).
+
+[31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+
+  Runtime Error in model dim_agent (models/dim/dim_agent.sql)
+  Binder Error: Referenced column "email" not found in FROM clause!
+  Candidate bindings: "agent_id", "agent_title", "agent_mobile"
+  
+  LINE 12: ...   SELECT * FROM "realestate"."main_public"."stg_agents" WHERE email != ''
+                                                                             ^
+
+Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3

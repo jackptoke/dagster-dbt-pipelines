@@ -1,0 +1,24 @@
+Running with dbt=1.9.4
+Registered adapter: duckdb=1.9.3
+[[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.analytics.fct
+Found 5 models, 2 data tests, 8 sources, 544 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 1 START sql table model main.dim_date ..................................... [RUN]
+1 of 1 ERROR creating sql table model main.dim_date ............................ [[31mERROR[0m in 0.03s]
+
+Finished running 1 table model in 0 hours 0 minutes and 0.11 seconds (0.11s).
+
+[31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+
+  Runtime Error in model dim_date (models/dim/dim_date.sql)
+  Binder Error: Referenced column "listing_id" not found in FROM clause!
+  Candidate bindings: "list_sold_date"
+  
+  LINE 15:     listing_id,
+               ^
+
+Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1

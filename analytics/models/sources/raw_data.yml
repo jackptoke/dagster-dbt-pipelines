@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: new_raw
+    schema: public
+    tables:
+      - name: raw_suburbs
+      - name: raw_addresses
+      - name: raw_agents
+      - name: raw_agencies
+      - name: raw_listings
+  - name: cleansed_data
+    schema: public
+    tables:
+      - name: staging_listings
+      - name: staging_listing_agents
+      - name: staging_listing_features
+      - name: staging_rental_listings

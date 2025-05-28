@@ -1,0 +1,11 @@
+Running with dbt=1.9.4
+Registered adapter: duckdb=1.9.3
+Found 12 models, 2 data tests, 9 sources, 544 macros
+
+Concurrency: 1 threads (target='dev')
+
+
+Finished running  in 0 hours 0 minutes and 0.03 seconds (0.03s).
+Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/Users/jacktoke/Codes/DataEngineer/LeWagon/project_du_dbt_starter/analytics/../data/staging/realestate.duckdb": Conflicting lock is held in /opt/homebrew/Cellar/duckdb/1.2.2/bin/duckdb (PID 15390) by user jacktoke. See also https://duckdb.org/docs/connect/concurrency

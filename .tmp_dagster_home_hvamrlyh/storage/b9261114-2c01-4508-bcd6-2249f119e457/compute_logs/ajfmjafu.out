@@ -1,0 +1,30 @@
+Running with dbt=1.9.4
+Registered adapter: duckdb=1.9.3
+Found 9 models, 2 data tests, 8 sources, 544 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 9 START sql view model main.stg_addresses ................................. [RUN]
+1 of 9 OK created sql view model main.stg_addresses ............................ [[32mOK[0m in 0.04s]
+2 of 9 START sql view model main.stg_agencies .................................. [RUN]
+2 of 9 OK created sql view model main.stg_agencies ............................. [[32mOK[0m in 0.02s]
+3 of 9 START sql view model main.stg_agents .................................... [RUN]
+3 of 9 OK created sql view model main.stg_agents ............................... [[32mOK[0m in 0.01s]
+4 of 9 START sql view model main.stg_suburbs ................................... [RUN]
+4 of 9 OK created sql view model main.stg_suburbs .............................. [[32mOK[0m in 0.02s]
+5 of 9 START sql table model main.dim_address .................................. [RUN]
+5 of 9 OK created sql table model main.dim_address ............................. [[32mOK[0m in 0.03s]
+6 of 9 START sql table model main.dim_agency ................................... [RUN]
+6 of 9 OK created sql table model main.dim_agency .............................. [[32mOK[0m in 0.01s]
+7 of 9 START sql table model main.dim_agent .................................... [RUN]
+7 of 9 OK created sql table model main.dim_agent ............................... [[32mOK[0m in 0.04s]
+8 of 9 START test not_null_stg_suburbs_suburb_id ............................... [RUN]
+8 of 9 PASS not_null_stg_suburbs_suburb_id ..................................... [[32mPASS[0m in 0.02s]
+9 of 9 START test unique_stg_suburbs_suburb_id ................................. [RUN]
+9 of 9 PASS unique_stg_suburbs_suburb_id ....................................... [[32mPASS[0m in 0.01s]
+
+Finished running 3 table models, 2 data tests, 4 view models in 0 hours 0 minutes and 0.27 seconds (0.27s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=9 WARN=0 ERROR=0 SKIP=0 TOTAL=9

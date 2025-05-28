@@ -1,0 +1,18 @@
+Running with dbt=1.9.4
+Registered adapter: duckdb=1.9.3
+Found 9 models, 2 data tests, 8 sources, 544 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 3 START sql view model main.stg_addresses ................................. [RUN]
+1 of 3 OK created sql view model main.stg_addresses ............................ [[32mOK[0m in 0.04s]
+2 of 3 START sql view model main.stg_agencies .................................. [RUN]
+2 of 3 OK created sql view model main.stg_agencies ............................. [[32mOK[0m in 0.02s]
+3 of 3 START sql view model main.stg_agents .................................... [RUN]
+3 of 3 OK created sql view model main.stg_agents ............................... [[32mOK[0m in 0.02s]
+
+Finished running 3 view models in 0 hours 0 minutes and 0.14 seconds (0.14s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3

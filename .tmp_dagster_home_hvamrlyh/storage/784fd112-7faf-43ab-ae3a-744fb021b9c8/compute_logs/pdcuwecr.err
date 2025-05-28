@@ -1,0 +1,26 @@
+[32m2025-05-28 23:03:54 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 784fd112-7faf-43ab-ae3a-744fb021b9c8 - 87232 - LOGS_CAPTURED - Started capturing logs in process (pid: 87232).
+[32m2025-05-28 23:03:54 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 784fd112-7faf-43ab-ae3a-744fb021b9c8 - 87232 - cleansed_rental_listings_data - STEP_START - Started execution of step "cleansed_rental_listings_data".
+[32m2025-05-28 23:03:54 +1000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 784fd112-7faf-43ab-ae3a-744fb021b9c8 - 87232 - cleansed_rental_listings_data - STEP_FAILURE - Execution of step "cleansed_rental_listings_data" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "cleansed_rental_listings_data"::
+
+ValueError: invalid literal for int() with base 10: '265 p.w.'
+
+Stack Trace:
+  File "/Users/jacktoke/Codes/DataEngineer/LeWagon/project_du_dbt_starter/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/Users/jacktoke/Codes/DataEngineer/LeWagon/project_du_dbt_starter/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 392, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/jacktoke/Codes/DataEngineer/LeWagon/project_du_dbt_starter/dagster_university/assets/listings.py", line 388, in cleansed_rental_listings_data
+    with conn.begin():
+         ^^^^^^^^^^^^
+  File "/Users/jacktoke/Codes/DataEngineer/LeWagon/project_du_dbt_starter/dagster_university/assets/listings.py", line 422, in cleansed_rental_listings_data
+    raise e
+  File "/Users/jacktoke/Codes/DataEngineer/LeWagon/project_du_dbt_starter/dagster_university/assets/listings.py", line 390, in cleansed_rental_listings_data
+    with conn.cursor() as cursor:
+         ^^^^^^^^^^^^^
+  File "/Users/jacktoke/Codes/DataEngineer/LeWagon/project_du_dbt_starter/dagster_university/assets/listings.py", line 399, in cleansed_rental_listings_data
+    "price": int(str(row["price"]).replace("$", "").replace(",", "").strip()) if str(row["price"]).strip().startswith("$") else 0,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m

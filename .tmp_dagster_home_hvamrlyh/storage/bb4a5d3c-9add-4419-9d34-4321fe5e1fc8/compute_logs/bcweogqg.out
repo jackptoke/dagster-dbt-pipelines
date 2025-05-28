@@ -1,0 +1,23 @@
+Running with dbt=1.9.4
+Registered adapter: duckdb=1.9.3
+Found 9 models, 2 data tests, 8 sources, 544 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 3 START sql view model main.stg_suburbs ................................... [RUN]
+1 of 3 ERROR creating sql view model main.stg_suburbs .......................... [[31mERROR[0m in 0.03s]
+2 of 3 SKIP test not_null_stg_suburbs_suburb_id ................................ [[33mSKIP[0m]
+3 of 3 SKIP test unique_stg_suburbs_suburb_id .................................. [[33mSKIP[0m]
+
+Finished running 2 data tests, 1 view model in 0 hours 0 minutes and 0.10 seconds (0.10s).
+
+[31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+
+  Runtime Error in model stg_suburbs (models/staging/stg_suburbs.sql)
+  Catalog Error: Table with name raw_suburbs does not exist!
+  Did you mean "raw_listings"?
+  
+  LINE 6:     SELECT * FROM "realestate"."public"."raw_suburbs"
+                            ^
+
+Done. PASS=0 WARN=0 ERROR=1 SKIP=2 TOTAL=3
