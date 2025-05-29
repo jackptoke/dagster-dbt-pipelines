@@ -1,8 +1,8 @@
 ## Dagster University: Dagster + dbt
 
-This is the **starter** version of the [Dagster](https://dagster.io/) project made to accompany Dagster University's [Dagster + dbt course](https://courses.dagster.io/courses/dagster-dbt).
+This project pulls data from an API, using features of Dagster and DBT it transform the data into various tables complying with **STAR SCHEMA** standard. It uses DuckDB as the **data warehouse**.  (We could easily swap to Snowflake, BigQuery or AWS Redshift.)  
 
-> **Looking for the finished project for the Dagster + dbt course?** Use the [`module/dagster-and-dbt` branch](https://github.com/dagster-io/project-dagster-university/tree/module/dagster-and-dbt).
+> This project is built on top of the **starter** version of the [Dagster](https://dagster.io/) project made to accompany Dagster University's [Dagster + dbt course](https://courses.dagster.io/courses/dagster-dbt).
 
 ## Getting started
 
