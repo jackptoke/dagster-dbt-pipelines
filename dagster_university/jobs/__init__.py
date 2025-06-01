@@ -1,6 +1,29 @@
-# import dagster as dg
-#
-# from ..partitions import monthly_partition, weekly_partition
+import dagster as dg
+
+from ..assets.listings import downloaded_listing_data, process_downloaded_listing_data, cleansed_listings_data, \
+    cleansed_rental_listings_data
+from ..partitions import suburb_channel_partitions
+
+
+download_listing_data_job = dg.define_asset_job(
+    name="download_listing_data_job",
+    selection=[downloaded_listing_data],
+)
+
+process_downloaded_listing_data_job = dg.define_asset_job(
+    name="process_download_listing_data_job",
+    selection=[process_downloaded_listing_data]
+)
+
+raw_listing_data_job = dg.define_asset_job(
+    name="raw_listing_data_job",
+    selection=[cleansed_listings_data]
+)
+
+raw_rental_listing_data_job = dg.define_asset_job(
+    name="raw_rental_listing_data_job",
+    selection=[cleansed_rental_listings_data]
+)
 
 # trips_by_week = dg.AssetSelection.assets("trips_by_week")
 # adhoc_request = dg.AssetSelection.assets("adhoc_request")

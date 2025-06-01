@@ -1,0 +1,3499 @@
+[
+    {
+        "prettyUrl": "property-studio-vic-ararat-440159752",
+        "standard": false,
+        "midtier": false,
+        "lister": {
+            "phoneNumber": "0482 080 315",
+            "email": "pm@stonehorizon.com.au"
+        },
+        "featured": false,
+        "signature": true,
+        "channel": "rent",
+        "description": "Looking for privacy, comfort, and convenience?<br/><br/>This boutique property at 14 Queens Avenue offers 5 fully self-contained studio rooms, each with its own ensuite, kitchenette, and sofa\u2014ideal for professionals or anyone wanting low-maintenance, independent living in a quiet, well-connected location.<br/><br/>\ud83d\udecf Fully Furnished Studio Rooms \u2013 from $260/week<br/>Each private studio includes:<br/><br/>Double bed with mattress<br/><br/>Private ensuite bathroom<br/><br/>Kitchenette with sink, cooktop, microwave & bar fridge<br/><br/>Desk & chair for work or study<br/><br/>Sofa for comfortable lounging<br/><br/>Built-in wardrobe<br/><br/>Panel heater & ceiling fan for year-round comfort<br/><br/>\ud83d\udca1 All-Inclusive Living:<br/>\u2714 Electricity, water, gas & high-speed internet included<br/>\u2714 Fortnightly professional cleaning of shared/common areas<br/>\u2714 Private kitchenette & ensuite in every room \u2013 no shared facilities<br/>\u2714 Fully furnished with modern, functional d\u00e9cor<br/>\u2714 On-site laundry with washing machine<br/>\u2714 Outdoor area for relaxing or drying clothes<br/>\u2714 Secure, professionally managed property<br/><br/>\ud83d\udccd Prime Ararat Location \u2013 14 Queens Avenue:<br/>Transport: Close to Ararat Station & local bus routes<br/><br/>Shops & Dining: Supermarkets, cafes, and essential services nearby<br/><br/>Recreation: Parks and walking trails within easy reach<br/><br/>Community: Peaceful residential street with everything close by<br/><br/>\u2139 Additional Details:<br/>Rent: From $250/week<br/><br/>+ $50/week for a second occupant<br/><br/>Sorry, no pets allowed<br/><br/>Just bring your clothes\u2014everything else is taken care of<br/><br/>\ud83d\udcde Ready to move in?<br/>Request more details: 0482 080315<br/><br/>Book an inspection here: <br/><br/>https://meetings.hubspot.com/benn-precious/open-for-inspection-14-queens-avenue-ararat",
+        "advertising": {
+            "region": "western_region",
+            "priceRange": "250pw_350pw"
+        },
+        "showAgencyLogo": true,
+        "title": "Modern Studio Rooms at 14 Queens Avenue, Ararat \u2013 from $250/week Private Kitchenettes & Ensuites | Fully Furnished | All Bills Included",
+        "listers": [
+            {
+                "phoneNumber": "0482 080 315",
+                "email": "pm@stonehorizon.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 0,
+                "bathrooms": 1,
+                "parkingSpaces": 0
+            }
+        },
+        "price": {
+            "display": "$250 per week"
+        },
+        "propertyType": "studio",
+        "productDepth": "signature",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/16fe70ece357e6885f164b04d73b70f6d795e35112971705cc5626eb18a839fd/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/a38019bdcf194cabf86aa50ab7e14b7621856aef87ac624abc4cfe2d7987b9c1/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/21e0716e5d2fcca8570e1aac142de306bac0b98900d9b35f83df7eed3b6c6451/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/af74d722cb55f2f9dd7cfab08e61bf81b2aaf01f0aeddf1003a474635bd91ed2/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/43a3c6cf0fd846fe266fc0e8dbfe275d23ed255ef8ee4ade0007d30e5e51a86c/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "14 Queens Avenue",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.28670036,
+                "longitude": 142.92821511
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "address": {
+                "streetAddress": "Suite 010, 44 Lakeview Drive",
+                "postcode": "3179",
+                "suburb": "Scoresby",
+                "state": "VIC"
+            },
+            "phoneNumber": "0482 080 315",
+            "branded": true,
+            "brandingColors": {
+                "text": "#000000",
+                "primary": "#ffffff"
+            },
+            "name": "Stone Horizon",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg",
+                    "default": "/160x30/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg",
+                    "large": "/170x32/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg"
+                }
+            },
+            "agencyId": "LHTZDA",
+            "email": "pm@stonehorizon.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "fe214682-042f-486f-87d3-6a36b7fd9c6e",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Split-system Air Conditioning",
+                    "Split-system Heating"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Furnished"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "440159752",
+        "bond": {
+            "display": "$1,040",
+            "value": 1040
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/8a53101a855f7747fb8c3876c113a0132f124a530fc93a8c7cd45468e3109e5f/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "22 May 2025",
+            "dateDisplay": "Available now"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bathrooms": {
+                "label": "Bathrooms: 1",
+                "type": "bathrooms",
+                "value": 1
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-studio-vic-ararat-441124200",
+        "standard": false,
+        "midtier": false,
+        "lister": {
+            "mobilePhoneNumber": "0482 080 315",
+            "phoneNumber": "0482 080 315",
+            "powerProfile": false,
+            "name": "Stone Horizon",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/5a58ec71587afd19f34a78c36c6899ab155e021b110764fb288c37b762e3b116/main.jpg"
+            },
+            "id": "3077027",
+            "email": "pm@stonehorizon.com.au"
+        },
+        "featured": false,
+        "signature": true,
+        "channel": "rent",
+        "description": "Freshly presented and fully furnished, this professionally managed home offers modern, low maintenance living with affordable room options to suit your lifestyle and budget. Whether you're after a quiet place to study, work, or simply relax, this home makes moving in easy and stress-free.<br/> <br/>Room Options Available:<br/><br/>\u2022 Furnished Rooms with Shared Facilities \u2013 from $200 to $225/week<br/>Enjoy a comfortable, fully furnished private room with a double bed, bar fridge, desk and chair, ceiling fan, and generous wardrobe space. Larger rooms are available at $225/week, while smaller rooms are priced at $200/week.<br/> <br/>All-Inclusive Living:<br/>\u2714 Electricity, water, gas & high-speed internet included<br/>\u2714 Weekly professional cleaning of all shared areas<br/>\u2714 Fully furnished rooms with stylish, functional d\u00e9cor<br/>\u2714 Panel heater & ceiling fan in every room for year-round comfort<br/>\u2714 Shared bathrooms (3 bathrooms shared among 8 rooms)<br/>\u2714 Outdoor area for relaxing and hanging laundry<br/>\u2714 Large communal kitchen with oven, gas cooktop, microwave, toaster, kettle & sink<br/>\u2714 All cooking utensils and dinnerware provided<br/>\u2714 On-site laundry with washing machine<br/>\u2714 Individual lockers & linen cupboard for extra storage<br/> <br/>Convenient Ararat Location:<br/>\u2022 Transport: Easy access to local buses and Ararat Station for connections across the region<br/>\u2022 Shops & Dining: Close to supermarkets, cafes, restaurants, and essential services<br/>\u2022 Recreation: Nearby parks, walking trails, and green spaces to enjoy the outdoors<br/>\u2022 Community: Located in a peaceful residential area with everything you need within reach<br/> <br/><br/>Additional Details:<br/>\u2022 Rooms: $200\u2013$225/week<br/>\u2022 Second occupant: +$50/week<br/>\u2022 Sorry, no pets allowed<br/>\u2022 Just bring your clothes\u2014everything else is taken care of<br/> <br/>\ud83d\udcde Ready to move in?<br/>Request more details: 0482 080315<br/><br/>Book an inspection here: https://meetings.hubspot.com/erica-salas/open-for-inspection-5-vanstan-street-ararat<br/>",
+        "showAgencyLogo": true,
+        "title": "Modern, Furnished Rooms in Prime Ararat Location \u2013 from $200/week",
+        "listers": [
+            {
+                "mobilePhoneNumber": "0482 080 315",
+                "phoneNumber": "0482 080 315",
+                "powerProfile": false,
+                "name": "Stone Horizon",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/5a58ec71587afd19f34a78c36c6899ab155e021b110764fb288c37b762e3b116/main.jpg"
+                },
+                "id": "3077027",
+                "email": "pm@stonehorizon.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 0,
+                "bathrooms": 3,
+                "parkingSpaces": 0
+            }
+        },
+        "price": {
+            "display": "$200 per week"
+        },
+        "propertyType": "studio",
+        "productDepth": "signature",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/009464b15d6e24f66c54cfed2435a1c3b94d7a6cbf5816e17db602f3ffcdce3e/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/6a5bfb9cc6e8149e96f1e32eb656a8888c1a5e1a749a27160cbe94c72f663270/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/5fec5fc518e1c684f75d6d48f0186a9f41c41a489137de9e8083615b39664d37/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/3139e6f9859cb2498620069e4c2417c456d1d685b1890bb4c14d780ef71013db/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/4d691bd84b1eacf88dcb8603cc74a789aa1b0ef2dc56043000e67a8b458f6491/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/fb8d9588f0a299b7f556968a9ea9cc01c68e5505feddc45aa56ca0c851f1b277/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/adedac5b232358f58ea25efe59aa80d94e609d4b241abe5ae53ee55ddb2fe3aa/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "5 Vanstan Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.28593379,
+                "longitude": 142.91761626
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "address": {
+                "streetAddress": "Suite 010, 44 Lakeview Drive",
+                "postcode": "3179",
+                "suburb": "Scoresby",
+                "state": "VIC"
+            },
+            "phoneNumber": "0482 080 315",
+            "branded": true,
+            "brandingColors": {
+                "text": "#000000",
+                "primary": "#ffffff"
+            },
+            "name": "Stone Horizon",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg",
+                    "default": "/160x30/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg",
+                    "large": "/170x32/6dae11247e67a26120df8e572efd1537b62b22ca568d5c39d7a6f12bc55e177c/logo.jpg"
+                }
+            },
+            "agencyId": "LHTZDA",
+            "email": "pm@stonehorizon.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "311eaf01-c695-4abf-aac2-1ad46bd89124",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Deck",
+                    "Outdoor Entertaining Area",
+                    "Secure Parking"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Broadband Internet Available",
+                    "Built-in Wardrobes"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Furnished"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "441124200",
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/e80049eace8d398368a859a154de93594d51716420e76064832dbdef45f3a7d9/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "22 May 2025",
+            "dateDisplay": "Available now"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bathrooms": {
+                "label": "Bathrooms: 3",
+                "type": "bathrooms",
+                "value": 3
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-441812480",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "0428273369",
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "phoneNumber": "0428273369",
+            "powerProfile": false,
+            "jobTitle": "Senior Property Manager",
+            "name": "Jessica Ward",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+            },
+            "id": "3302296",
+            "email": "jessica.ward@eldersrealestate.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "Discover contemporary living at its finest with this exceptional new-build home, ideally suited for those in search of quality and comfort. This abode boasts three plush, carpeted bedrooms, including a master suite complete with a sleek ensuite and a spacious walk-in wardrobe, ensuring a private retreat for relaxation.<br/>Entertain in style within the modern kitchen, which features sophisticated stone benchtops, a dishwasher, and gas cooking facilities, all designed to inspire culinary creativity. The open-plan living area is complemented by easy-clean hybrid flooring, seamlessly leading out to a delightful rear undercover patio \u2013 perfect for alfresco dining or quiet contemplation.<br/>With ducted heating throughout the property, you're assured a cosy ambiance year-round. Practicality is enhanced with a secure garage, featuring motorised roller door access, and the promise of bespoke fencing and landscaping to complete the external charm of your new home.",
+        "showAgencyLogo": true,
+        "title": "THREE BEDROOM TWO BATHROOMS",
+        "listers": [
+            {
+                "mobilePhoneNumber": "0428273369",
+                "website": "http://www.ararat.eldersrealestate.com.au",
+                "phoneNumber": "0428273369",
+                "powerProfile": false,
+                "jobTitle": "Senior Property Manager",
+                "name": "Jessica Ward",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+                },
+                "id": "3302296",
+                "email": "jessica.ward@eldersrealestate.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 3,
+                "bathrooms": 2,
+                "parkingSpaces": 1
+            }
+        },
+        "price": {
+            "display": "$510 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f27abaa99b2df8186b2e0ca9d7c07e3772d6e7d219530c999a145f45f1f22aed/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/92b7b595712b87f667c5872282476b58ae30956f2f1f0d46ec54f7dc558d2be0/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/e37b7816137783a4d72d202e77a9d4ca33ed5fece037f860a0f611b3a39687f5/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/82aa1b91763d3008e4a869b396d03ee2367a3444943f84ab59249a93cc43baae/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/bbc62ad0541f8dfc6205f10b75e7c72d96d745767058273c8f99cd6bc28d7141/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/dba7c9159c42673fd46ba54dbab3bc603129ee3cc1cdda33996e2151dc94473d/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "A/30 McLellan Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.28124449,
+                "longitude": 142.93955451
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "address": {
+                "streetAddress": "167 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "0353524338",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#df0020"
+            },
+            "name": "Elders Real Estate Ararat - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "default": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "large": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                }
+            },
+            "agencyId": "RFFGPQ",
+            "email": "michael.fratin@eldersrealestate.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "64P4374",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Fully Fenced",
+                    "Garage: 1",
+                    "Remote Garage"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Built-in Wardrobes",
+                    "Dishwasher",
+                    "Ducted Heating",
+                    "Ensuite: 1",
+                    "Gas Heating",
+                    "Living Areas: 1",
+                    "Toilets: 1"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Pets Allowed"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "441812480",
+        "bond": {
+            "display": "$2,210",
+            "value": 2210
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/49ee5661fcb6718136c26d48def21633260ce56590cebd85c14982c1c106bf5b/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "16 Jun 2025",
+            "dateDisplay": "16 Jun 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 3",
+                "type": "bedrooms",
+                "value": 3
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 2",
+                "type": "bathrooms",
+                "value": 2
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 1",
+                "type": "parkingSpaces",
+                "value": 1
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "status": {
+            "label": "New",
+            "type": "new_listing"
+        },
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-441812640",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "0428273369",
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "phoneNumber": "0428273369",
+            "powerProfile": false,
+            "jobTitle": "Senior Property Manager",
+            "name": "Jessica Ward",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+            },
+            "id": "3302296",
+            "email": "jessica.ward@eldersrealestate.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "Discover contemporary living at its finest with this exceptional new-build home, ideally suited for those in search of quality and comfort. This abode boasts three plush, carpeted bedrooms, including a master suite complete with a sleek ensuite and a spacious walk-in wardrobe, ensuring a private retreat for relaxation.<br/>Entertain in style within the modern kitchen, which features sophisticated stone benchtops, a dishwasher, and gas cooking facilities, all designed to inspire culinary creativity. The open-plan living area is complemented by easy-clean hybrid flooring, seamlessly leading out to a delightful rear undercover patio \u2013 perfect for alfresco dining or quiet contemplation.<br/>With ducted heating throughout the property, you're assured a cosy ambiance year-round. Practicality is enhanced with a secure garage, featuring motorised roller door access, and the promise of bespoke fencing and landscaping to complete the external charm of your new home.",
+        "showAgencyLogo": true,
+        "title": "THREE BEDROOM TWO BATHROOMS",
+        "listers": [
+            {
+                "mobilePhoneNumber": "0428273369",
+                "website": "http://www.ararat.eldersrealestate.com.au",
+                "phoneNumber": "0428273369",
+                "powerProfile": false,
+                "jobTitle": "Senior Property Manager",
+                "name": "Jessica Ward",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+                },
+                "id": "3302296",
+                "email": "jessica.ward@eldersrealestate.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 3,
+                "bathrooms": 2,
+                "parkingSpaces": 1
+            }
+        },
+        "price": {
+            "display": "$510 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/b34d4b3de742fc59908e56b59330c548a8daaf188b5be7b2fec8e2ee6595693e/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/ee1e0d96262245396fd008f869058c4a9cff38258494291d8d442d96257e35f4/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f391a5ee3ee0ce13b93e1bab0140a43894c538215294edd8f0e0348166d47a76/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/cb83848bf05ea5372cec54e0c37ead3be62a9705384a14ca20b85187099a9358/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/792f7bdc9e3cdb23396a55b95dcff0438b8e227b0c9817aec252110b57775971/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/1c71ec4ca40e8ea1338f3b7f8ead99b8d7d3323b2010b09f06c60a1036b58cf7/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "19 Kofoed Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.28136611,
+                "longitude": 142.93961723
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "address": {
+                "streetAddress": "167 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "0353524338",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#df0020"
+            },
+            "name": "Elders Real Estate Ararat - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "default": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "large": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                }
+            },
+            "agencyId": "RFFGPQ",
+            "email": "michael.fratin@eldersrealestate.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "64P4373",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Fully Fenced",
+                    "Garage: 1",
+                    "Remote Garage"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Built-in Wardrobes",
+                    "Dishwasher",
+                    "Ducted Heating",
+                    "Ensuite: 1",
+                    "Gas Heating",
+                    "Living Areas: 1",
+                    "Toilets: 1"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Pets Allowed"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "441812640",
+        "bond": {
+            "display": "$2,210",
+            "value": 2210
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/c1161dd93d94b627f2677ab11b7976b3ee11383b92df71defa0f723691a61502/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "16 Jun 2025",
+            "dateDisplay": "16 Jun 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 3",
+                "type": "bedrooms",
+                "value": 3
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 2",
+                "type": "bathrooms",
+                "value": 2
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 1",
+                "type": "parkingSpaces",
+                "value": 1
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "status": {
+            "label": "New",
+            "type": "new_listing"
+        },
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-441814996",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "0428273369",
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "phoneNumber": "0428273369",
+            "powerProfile": false,
+            "jobTitle": "Senior Property Manager",
+            "name": "Jessica Ward",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+            },
+            "id": "3302296",
+            "email": "jessica.ward@eldersrealestate.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "Discover your perfect family retreat with this beautifully renovated four-bedroom home, nestled on the tranquil outskirts of Ararat. Offering a blend of modern convenience and cosy comfort, this house has been updated to cater to contemporary family living.<br/>Step inside to find inviting carpeted bedrooms, ensuring a snug and peaceful night's sleep for all. The 1.5 bathrooms are designed to handle the morning rush, with the main bathroom boasting a luxurious spa bath, perfect for unwinding after a long day.<br/>The heart of the home features electric cooking facilities in a sleek kitchen, alongside a split system for effortless temperature control year-round. On cooler evenings, gather around the warmth of the wood heater in the living area for quality family time.<br/>Outside, the property is serviced by town water, an electric hot water system, and a septic tank, ensuring all your amenities are well-managed. With ample parking spaces, this home is ready to welcome you with open arms. Embrace the serenity of country living with all the modern touches you desire.",
+        "showAgencyLogo": true,
+        "title": "FOUR BEDROOM HOME",
+        "listers": [
+            {
+                "mobilePhoneNumber": "0428273369",
+                "website": "http://www.ararat.eldersrealestate.com.au",
+                "phoneNumber": "0428273369",
+                "powerProfile": false,
+                "jobTitle": "Senior Property Manager",
+                "name": "Jessica Ward",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+                },
+                "id": "3302296",
+                "email": "jessica.ward@eldersrealestate.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 4,
+                "bathrooms": 1,
+                "parkingSpaces": 1
+            }
+        },
+        "price": {
+            "display": "$430 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/793a5cdb5b4caac54cc982877d58e888f4bfa64de7140e2e7aa1bc26aaac30b5/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/1cad0e5bb9590ffd0dd29f127523d496b8360fc7efc3d3341dfd118567818c66/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/ccd99c6628182c2a5ae2af463824f74f3bac27c4d5526a80dcf82b363143a3be/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/587cb086cc145afa3439ddf85aae8000155bb987e2e2bb32f002ad48d2441be9/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/59ff28b4b46573ca3672091edb2c5e13380bf8c0ddd8793b66e44b5118f0bf62/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/a50d4f673ee4348874ba4c690a07cad10fe156ac9157c3e6b34da8be3570f00e/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/4cc5b41bd421e6db613a4a200bd6283def6a00c27a1d84c8ce4e31996dc8edde/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "84 Bellinghams Hill Road",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.3015481,
+                "longitude": 142.91408474
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "address": {
+                "streetAddress": "167 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "0353524338",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#df0020"
+            },
+            "name": "Elders Real Estate Ararat - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "default": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "large": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                }
+            },
+            "agencyId": "RFFGPQ",
+            "email": "michael.fratin@eldersrealestate.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "64P4375",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Carport: 1"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Air Conditioning",
+                    "Built-in Wardrobes",
+                    "Indoor Spa",
+                    "Living Areas: 1",
+                    "Toilets: 1"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Pets Allowed"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "441814996",
+        "bond": {
+            "display": "$1,863",
+            "value": 1863
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/8f7f7316129d1fdab109fed987158126111952d00dc5dd01f9f8713755bdf69d/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "12 Jun 2025",
+            "dateDisplay": "12 Jun 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [
+            {
+                "dateDisplay": "Inspection Mon 2 Jun",
+                "startTimeDisplay": "2:40 PM",
+                "endTimeDisplay": "2:50 PM",
+                "startTime": "2025-06-02T14:40:00",
+                "endTime": "2025-06-02T14:50:00",
+                "auction": false
+            }
+        ],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 4",
+                "type": "bedrooms",
+                "value": 4
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 1",
+                "type": "bathrooms",
+                "value": 1
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 1",
+                "type": "parkingSpaces",
+                "value": 1
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "status": {
+            "label": "New",
+            "type": "new_listing"
+        },
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-434051299",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "03 5352 2303",
+            "phoneNumber": "03 5352 2303",
+            "powerProfile": false,
+            "jobTitle": "Residential Property Manager",
+            "name": "Mel Jones",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/16fb06e9c77d8bfcb2dded7f908ff82116c124aca3df5715378cf08745edc364/main.jpg"
+            },
+            "id": "2335162",
+            "email": "mel_jones@raywhite.com"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "This well-presented two-story, three-bedroom home is ideally located in the sought-after west end of Ararat, directly opposite a local primary school, perfect for families. <br/><br/>Offering plenty of space and comfort, the home features two separate living areas: a spacious downstairs lounge with a split system for year-round climate control, and an additional upstairs living area with a ceiling fan.<br/><br/>The modern kitchen is equipped with electric cooking, a dishwasher, and ample cupboard and bench space, making it functional and family-friendly. One bedroom is situated on the ground floor and includes built-in robes, as well as access to a separate bathroom featuring a shower over bath and a separate toilet. The large laundry offers additional storage and practicality.<br/><br/>Upstairs, you'll find two more generously sized bedrooms, both with built-in robes and window-wall air conditioners to ensure comfort during the warmer months. A second living space, powder room and separate shower room.<br/><br/>Outside, the fully enclosed backyard provides a safe space for children to play and includes two garden sheds for extra storage and undercover parking. <br/><br/>This home offers both comfort and convenience in a prime location!<br/><br/>Available late July.<br/><br/>\u2022 We kindly request that you register for any open home inspections. This ensures you receive timely updates and helps us manage queues effectively.<br/><br/>\u2022 We recommend pre-applying for any available rental property. You can apply by heading to https://www.realestate.com.au/rent/<br/><br/>\u2022 It is the responsibility of the renter to check/research the availability of internet/NBN access at any property.<br/><br/>",
+        "showAgencyLogo": true,
+        "title": "Three Bedroom Home in the West End",
+        "listers": [
+            {
+                "mobilePhoneNumber": "03 5352 2303",
+                "phoneNumber": "03 5352 2303",
+                "powerProfile": false,
+                "jobTitle": "Residential Property Manager",
+                "name": "Mel Jones",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/16fb06e9c77d8bfcb2dded7f908ff82116c124aca3df5715378cf08745edc364/main.jpg"
+                },
+                "id": "2335162",
+                "email": "mel_jones@raywhite.com"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 3,
+                "bathrooms": 2,
+                "parkingSpaces": 2
+            }
+        },
+        "price": {
+            "display": "$430 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/677a730c7f0e6ecf6b3a4f85caa1d97742353dac7ea34fe2c6ce3eeb254765cd/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/32b3644e0ac63edba9c2cc5db9866accec3bfd5dabc793cb6ce37fab344c4198/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/0fd11999d92a913f0dd7f064bb04d5ce7f5f2da96b76bdc22eb8878e6429c8d9/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/10010ed40c150de1c322d9adfeea13926991057c446b388f143fc9407c3a3b63/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/2546c75e942ff1aeb16bacb6f01a88cdfef641cbfc56f37a145062ecff56646a/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/6bdb3bf1f451d867836f39f0706abdf92c8933d72a8b18d7681045de51c8e0c5/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/d2b1d680b96fa93a15bd7a3c5de70ef609c420d33445ccde37b180b732f840c4/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/843c48a85942e878d7733b3bb0818447c025b373baee80b4268bb160e326a8c4/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/3b091d30587fe5a5ece95657cdda51ce00094ac6b29a04462ce311c2e28c4bd1/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f22993b5cd548bd037098c942919c2b93d3ca34c65e88751c1a7af5e9141ee5e/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/a8c88c16f2c0b84de9895ca04ada628d696ca46cf94b3f1905ef3fad6bd52c13/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/c9ab1ab0554250725faad003d8cd5e8d9faf579a6b36b52959bcf3692302050d/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/cf3550967ea200504c03b9c434511f2cb260aa48e9632a41fc1d4876688e249b/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/8031921952f8f0eb0066af68bc3120c07d4b40a3106e4bab6dec3a97353669ae/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/c9d32e9838e444567a16934a35472f59f50b90d40aa8b2221491e62cbada030a/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/109544e73e4bbb608a62cc90da220750644a1f1af526bb40981c18ce09d357e1/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/2ba8aa997dd875876cae9d610a3bcd6b87b699dabc0ae7f642d2206c35ba1921/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/a82abbcff05f1d4216e8e09b105e63e74c1a1d471d5981c44cdddd7b1d944809/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/64c8ba68f59c2d11def901e8a78f98692dad5bdbd72755907d411d0e62052f7c/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/b7b7b35cf1438851f980053fd9db877982f12f241206087688bedb8e4638aae6/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f0a84d22500231c3750c33bbb68b7196db3de393de560918983a0864f5de516c/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "6 Kneebone Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.27750774,
+                "longitude": 142.9201825
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "address": {
+                "streetAddress": "179 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "03 5352 2303",
+            "branded": true,
+            "brandingColors": {
+                "text": "#000000",
+                "primary": "#ffe512"
+            },
+            "name": "Ray White Ararat - Ararat",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg",
+                    "default": "/160x30/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg",
+                    "large": "/170x32/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                }
+            },
+            "agencyId": "XTJWPW",
+            "email": "mandy.baird@raywhite.com"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "R1719385",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Carport: 2"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Air Conditioning",
+                    "Built-in Wardrobes"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            }
+        ],
+        "listingId": "434051299",
+        "bond": {
+            "display": "$1,868",
+            "value": 1868
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/4fbcdb3059aacc177a1b9a8405e367011dbb357aedfc91bf5f086e49888a1d92/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "25 Jul 2025",
+            "dateDisplay": "25 Jul 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [
+            {
+                "dateDisplay": "Inspection Wed 18 Jun",
+                "startTimeDisplay": "12:00 PM",
+                "endTimeDisplay": "12:15 PM",
+                "startTime": "2025-06-18T12:00:00",
+                "endTime": "2025-06-18T12:15:00",
+                "auction": false
+            },
+            {
+                "dateDisplay": "Inspection Wed 2 Jul",
+                "startTimeDisplay": "12:00 PM",
+                "endTimeDisplay": "12:15 PM",
+                "startTime": "2025-07-02T12:00:00",
+                "endTime": "2025-07-02T12:15:00",
+                "auction": false
+            }
+        ],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 3",
+                "type": "bedrooms",
+                "value": 3
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 2",
+                "type": "bathrooms",
+                "value": 2
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 2",
+                "type": "parkingSpaces",
+                "value": 2
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "status": {
+            "label": "New",
+            "type": "new_listing"
+        },
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-436930772",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "03 5352 2303",
+            "phoneNumber": "03 5352 2303",
+            "powerProfile": false,
+            "jobTitle": "Property Manager",
+            "name": "Cassie Schulz",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/16ca49e9f2894a083a635671222ac038bce952062e607958f0ad57286534bd3d/main.jpg"
+            },
+            "id": "3226904",
+            "email": "cassie.schulz@raywhite.com"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "Nestled in a peaceful and sought-after neighbourhood, this rental property offers a blend of comfort and convenience. With its spacious design, modern amenities, and prime location, 10 Blackie Avenue is the ideal family home.<br/>Property Features:<br/>\u2022 Four Bedrooms: Enjoy the privacy and comfort of four spacious bedrooms. Each room has BIRs plus the master bedroom boasts a walk-in robe and ensuite bathroom for your convenience.<br/>\u2022 Kitchen: The fully equipped kitchen features an electric cooktop, large pantry and a double sink. A gas heater is also fitted in the meals area.<br/>\u2022 Lounge room: is large and open. Stay cozy during the cooler months with a gas heater, while a split system provides cooling during warmer weather.<br/>\u2022 Main Bathroom: The second bathroom includes a bath and separate toilet.<br/>\u2022 Outdoor Entertaining Area: Take advantage of the beautiful backyard and entertain family and friends in style - perfect for hosting gatherings and enjoying the outdoors.<br/>\u2022 Beautifully Landscaped Gardens: The property boasts lovely established gardens. A monthly gardener is included in the rent, ensuring that the gardens always look their best.<br/>\u2022 Double Garage and Storage Shed<br/><br/>Available 30th June. The weekly rent also covers a monthly gardener. <br/><br/>\u2022 We kindly request that you register for any open home inspections. This ensures you receive timely updates and helps us manage queues effectively.<br/><br/>\u2022 We recommend pre-applying for any available rental property. You can apply by heading to https://www.realestate.com.au/rent/<br/><br/>\u2022 It is the responsibility of the renter to check/research the availability of internet/NBN access at any property.<br/>",
+        "showAgencyLogo": true,
+        "title": "A Stunning, 4-bedroom Family Home",
+        "listers": [
+            {
+                "mobilePhoneNumber": "03 5352 2303",
+                "phoneNumber": "03 5352 2303",
+                "powerProfile": false,
+                "jobTitle": "Property Manager",
+                "name": "Cassie Schulz",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/16ca49e9f2894a083a635671222ac038bce952062e607958f0ad57286534bd3d/main.jpg"
+                },
+                "id": "3226904",
+                "email": "cassie.schulz@raywhite.com"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 4,
+                "bathrooms": 2,
+                "parkingSpaces": 2
+            }
+        },
+        "price": {
+            "display": "$520 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/cd0b51f13fa4b5aba4296270d18aba33ef25adb0135b52f99855002c6da1cacd/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/660ff2959b827b7527d04aea103fbe7095d11ba1d2c46860fef9a10629e66f41/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/dc73d685a7264de14ee72355f4c08a292bb1e8ec81810fa1c467e9a64d0e642c/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/2330dba06b7e8562001ace2d59fbae0da5f2e469b729d6e122189e3ed4cd149d/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/04fad27beb5ddb57d669a0e916f5933f823225d0fda2aeaec7bc7b3d586e525b/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/b663a6c7ef99c4ae09f6f336e7a6c60914a4a3814f139529bb59134574a422a3/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/2c119e7097d1d3cf70c896477820635b2363f653060b276605947b3bbd255e9e/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/0bb0fd2abbbf50d5107c48f81bab8b9227218a7a33d3ac0c51707e8329e2157f/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/40d83efd07ee541b17f27f70412ea8694ec3b49297920d4542c0b4060c3080ee/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/7e313656053db7a54fbe6fd6ebd219fe0bc4d25998c0669ca22b14870e941fce/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/c056fe71e9b4b9b4869024e2fbd1bdad6ca97a58f9890da9efe04189edc6f8c9/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/7a9c6808622e116fdf6f84176d3932452e9f1e7a6d15a6afb2b92e7847ca847e/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/084a435b79b182e7156d271b6dd6957deb5b7469fa5628c07c0dfb7dc9f5dbb8/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/7458f255322e61f9e7d50f4dc5f5e723569dbc5b336b9ca0863a5c686e259b47/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f0d2f5094cd9904bac01d42afedda9a41890f1d5a3dea9ceb0e42419410705b1/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "10 Blackie Avenue",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.2893131,
+                "longitude": 142.91659425
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "address": {
+                "streetAddress": "179 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "03 5352 2303",
+            "branded": true,
+            "brandingColors": {
+                "text": "#000000",
+                "primary": "#ffe512"
+            },
+            "name": "Ray White Ararat - Ararat",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg",
+                    "default": "/160x30/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg",
+                    "large": "/170x32/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                }
+            },
+            "agencyId": "XTJWPW",
+            "email": "mandy.baird@raywhite.com"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "R3099234",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Garage: 2"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            }
+        ],
+        "listingId": "436930772",
+        "bond": {
+            "display": "$2,253",
+            "value": 2253
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/3734736eea34a3dae0e6d3c541b2aec545b921d61bbb000f7485774d5d77fac9/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "30 Jun 2025",
+            "dateDisplay": "30 Jun 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 4",
+                "type": "bedrooms",
+                "value": 4
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 2",
+                "type": "bathrooms",
+                "value": 2
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 2",
+                "type": "parkingSpaces",
+                "value": 2
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "status": {
+            "label": "New",
+            "type": "new_listing"
+        },
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-441799064",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "03 5352 2303",
+            "phoneNumber": "03 5352 2303",
+            "powerProfile": false,
+            "jobTitle": "Residential Property Manager",
+            "name": "Mel Jones",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/16fb06e9c77d8bfcb2dded7f908ff82116c124aca3df5715378cf08745edc364/main.jpg"
+            },
+            "id": "2335162",
+            "email": "mel_jones@raywhite.com"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "This beautifully presented 4 bedroom, 2 bathroom home is perfect for families seeking space, comfort, and convenience in one of Ararat's most desirable locations.<br/><br/>Designed with versatility in mind, the front living room offers the ideal space for a formal lounge, dining area, or even a home office-whatever suits your lifestyle.<br/><br/>At the heart of the home is a generous open-plan kitchen, meals, and family area, perfect for everyday living and entertaining. Large windows and sliding doors flood the space with natural light, creating a warm and welcoming atmosphere all year round.<br/><br/>The master bedroom is privately positioned at the rear of the home and features a walk-in robe and ensuite, providing a peaceful retreat from the rest of the household.<br/> <br/>Gas ducted heating, and evaporative cooling, ensuring comfort and style in every season. Double car lock up garage. <br/><br/>Enjoy the convenience of being close to local amenities, including the hospital, parks, childcare centres, sports facilities, and just a short walk to Ararat's town centre and public transport.<br/><br/>Available mid June.<br/><br/>\u2022 We kindly request that you register for any open home inspections. This ensures you receive timely updates and helps us manage queues effectively.<br/><br/>\u2022 We recommend pre-applying for any available rental property. You can apply by heading to https://www.realestate.com.au/rent/<br/><br/>\u2022 It is the responsibility of the renter to check/research the availability of internet/NBN access at any property.",
+        "showAgencyLogo": true,
+        "title": "Spacious, four bedroom family home in prime Ararat location",
+        "listers": [
+            {
+                "mobilePhoneNumber": "03 5352 2303",
+                "phoneNumber": "03 5352 2303",
+                "powerProfile": false,
+                "jobTitle": "Residential Property Manager",
+                "name": "Mel Jones",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/16fb06e9c77d8bfcb2dded7f908ff82116c124aca3df5715378cf08745edc364/main.jpg"
+                },
+                "id": "2335162",
+                "email": "mel_jones@raywhite.com"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 4,
+                "bathrooms": 2,
+                "parkingSpaces": 2
+            }
+        },
+        "price": {
+            "display": "$600 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/3592233aa1d86146d38fff0f84ee9ebe5b7d10742a41524d67ca476bb74d8fbf/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "53 McNeill Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.27634855,
+                "longitude": 142.93387706
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "address": {
+                "streetAddress": "179 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "03 5352 2303",
+            "branded": true,
+            "brandingColors": {
+                "text": "#000000",
+                "primary": "#ffe512"
+            },
+            "name": "Ray White Ararat - Ararat",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg",
+                    "default": "/160x30/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg",
+                    "large": "/170x32/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                }
+            },
+            "agencyId": "XTJWPW",
+            "email": "mandy.baird@raywhite.com"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "R3910346",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Garage: 2"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            }
+        ],
+        "listingId": "441799064",
+        "bond": {
+            "display": "$2,607",
+            "value": 2607
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/633a8e682d4604c9e9dfcbd34d466febc9c91ac994e5301e5b7811faaf75ec32/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "13 Jun 2025",
+            "dateDisplay": "13 Jun 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 4",
+                "type": "bedrooms",
+                "value": 4
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 2",
+                "type": "bathrooms",
+                "value": 2
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 2",
+                "type": "parkingSpaces",
+                "value": 2
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "status": {
+            "label": "New",
+            "type": "new_listing"
+        },
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-441780240",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "0428273369",
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "phoneNumber": "0428273369",
+            "powerProfile": false,
+            "jobTitle": "Senior Property Manager",
+            "name": "Jessica Ward",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+            },
+            "id": "3302296",
+            "email": "jessica.ward@eldersrealestate.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "Features of this home include a covered deck, rear lane access, fernery, carport, established gardens and garden shed. Inside has a front living area with gas heating, leadlight, bay window, and a front sunroom. There are 3 bedrooms with one having a B.I.R and the bathroom has a shower over bath. The kitchen has gas cooking and opens to 2nd living / dining with gas heating and a ceiling fan.",
+        "showAgencyLogo": true,
+        "title": "Central Californian Bungalow home",
+        "listers": [
+            {
+                "mobilePhoneNumber": "0428273369",
+                "website": "http://www.ararat.eldersrealestate.com.au",
+                "phoneNumber": "0428273369",
+                "powerProfile": false,
+                "jobTitle": "Senior Property Manager",
+                "name": "Jessica Ward",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+                },
+                "id": "3302296",
+                "email": "jessica.ward@eldersrealestate.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 3,
+                "bathrooms": 1,
+                "parkingSpaces": 2
+            }
+        },
+        "price": {
+            "display": "$390 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/497db582fd11df7a3393cacd3198e6c145e861e74aee62f1157dc05b5a9d06ae/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/74d626404d08b10904c7794791f372071a099942328b72dcd5ba6fb79255bef5/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/03e5c934a9880522abd4b1cd89758cf5ad0054fde91f0157c6c0cd88e58d37fc/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/53832fffa57ec48eb11c8c8ddc2c54cac727e3023995a13b7314fc999506f031/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/03198571538cea13327e6ffca31e2a5dbcd16cd747a49412224b35f22a7bfff2/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/4aefff4a04055435e970c9ed1ad558a3a6e257a4bd8be84cbfb6c0d960086770/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f3fbf7a7bb4e581fce79254026b320052cadc249dd636e6f4e03d37c9be90b23/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/fa95c7b41ae7d6bd2db23da1a43b7b9b2df51f1f20138ea88fbdec63f2317ffb/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/4e369ee4c49e900b3960e2b1b346592fd4d476e278b1adc7edd5c8a83b32343c/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/52b86123451df830dae8a1a23b6a2f6842dbbe05a52b3217d59be10e00c866bd/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "44 Vincent Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.2870904,
+                "longitude": 142.9298348
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "address": {
+                "streetAddress": "167 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "0353524338",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#df0020"
+            },
+            "name": "Elders Real Estate Ararat - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "default": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "large": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                }
+            },
+            "agencyId": "RFFGPQ",
+            "email": "michael.fratin@eldersrealestate.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "64P4356",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Carport: 1",
+                    "Fully Fenced",
+                    "Open Spaces: 1"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Air Conditioning",
+                    "Built-in Wardrobes",
+                    "Dishwasher",
+                    "Living Areas: 1"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Pets Allowed"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "441780240",
+        "bond": {
+            "display": "$1,690",
+            "value": 1690
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/6d00543cb51a996e861d10418a2b2df287afc5c182a25ed7af63f879e722fc3e/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "26 May 2025",
+            "dateDisplay": "Available now"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [
+            {
+                "dateDisplay": "Inspection Mon 2 Jun",
+                "startTimeDisplay": "2:20 PM",
+                "endTimeDisplay": "2:30 PM",
+                "startTime": "2025-06-02T14:20:00",
+                "endTime": "2025-06-02T14:30:00",
+                "auction": false
+            }
+        ],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 3",
+                "type": "bedrooms",
+                "value": 3
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 1",
+                "type": "bathrooms",
+                "value": 1
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 2",
+                "type": "parkingSpaces",
+                "value": 2
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-436672832",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "03 5352 2303",
+            "phoneNumber": "03 5352 2303",
+            "powerProfile": false,
+            "jobTitle": "Property Manager",
+            "name": "Cassie Schulz",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/16ca49e9f2894a083a635671222ac038bce952062e607958f0ad57286534bd3d/main.jpg"
+            },
+            "id": "3226904",
+            "email": "cassie.schulz@raywhite.com"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "This charming 4 bedroom, 2 bathroom house boasts everything you need for comfortable and stylish living. <br/><br/>Close to the main school precinct and the main shopping area, locations don't get much better than this! As you enter the house, you'll be greeted by a large kitchen/living area that is perfect for entertaining guests or relaxing with the family, complete with NBN internet. The modern kitchen is sure to impress, with its sleek design, modern fittings, and stunning views of the nearby church. It comes equipped with a dishwasher, electric cooking, and plenty of storage space, making it the perfect place to cook up a storm.<br/><br/>The master bedroom is a true oasis, featuring an ensuite bathroom with a large bath as well as a walk-in wardrobe that is sure to delight. The other three bedrooms are equally impressive, with original stone fireplaces that have been lovingly restored and renovated to maintain their charm and character.<br/><br/>The house is fitted with a split system in the lounge room and two front bedrooms, ensuring that you're comfortable all year round. All bedrooms are spacious, and boast built in robes. The main bathroom is easy access and modern. The laundry is also impressively spacious, making it easy to take care of your washing and drying needs.<br/><br/>Outdoors, you'll find an undercover area that's perfect for barbecues or simply enjoying the fresh air. The low maintenance backyard is fully enclosed. There is also a shed available for use in the backyard and the front yard has established garden beds.<br/><br/>Overall, this rental house is the perfect place to call home, with its stunning features, modern amenities, and hard to beat location. It is the perfect combination of modern fittings which have been done in a way which still respects the stunning original feature of the property.<br/><br/>Available 4th July.<br/><br/>Don't miss out - schedule a viewing today!<br/><br/>\u2022 We kindly request that you register for any open home inspections. This ensures you receive timely updates and helps us manage queues effectively.<br/><br/>\u2022 We recommend pre-applying for any available rental property. You can apply by heading to https://www.realestate.com.au/rent/<br/><br/>\u2022 It is the responsibility of the renter to check/research the availability of internet/NBN access at any property.",
+        "showAgencyLogo": true,
+        "title": "Charming, 4 bedroom home",
+        "listers": [
+            {
+                "mobilePhoneNumber": "03 5352 2303",
+                "phoneNumber": "03 5352 2303",
+                "powerProfile": false,
+                "jobTitle": "Property Manager",
+                "name": "Cassie Schulz",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/16ca49e9f2894a083a635671222ac038bce952062e607958f0ad57286534bd3d/main.jpg"
+                },
+                "id": "3226904",
+                "email": "cassie.schulz@raywhite.com"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 4,
+                "bathrooms": 2,
+                "parkingSpaces": 2
+            }
+        },
+        "price": {
+            "display": "$550 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/0499b4da9ab2aae1cdee04d950d7229f41b973e7236ef6c7f0f1bb6b7c4a7597/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/733ad1a38eea9fb6b0f70c231658c818bad34ca391fcc57ad19c23eeac08f645/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/164724515d49d34f7bf6f11282fb9299fafa01febbac4a103dfe50b055c68b76/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/8f1a8823da595a636214100a6b3a9e11d7e82a6f9ff18f4fbac7c9bf4b357dec/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/d68f77c07f54d8ffa7302ddeb9781563d3f0c57ac06c8cee820ebd9af640aba9/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/d86eab8e2d07c5c6f1efdcc41e56a097deece8347b6cd11199fd8827ddf47d4c/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/fe441c40f94948ead74db70df54ebcdcb9577c408746630d2805eeb5ff71532b/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/7f453dff0b895d760189abaea74d8c7d882ed41e41c2c255d7a886ef54df3f15/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/aa521e62c4da1d239f4c0da42f9ca73afe0d69ca92657f85be544b4eb627af95/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/baab9a4918ad9442f48be6178d494c0d297967537bee23f4511f3925cc756c38/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/eb8fdb9c226b7b177377e0b3c1e2c209188ee3dddf2cf02c2683127c6fbf7ed9/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/bfcffc16219bc5cf0f66ef197f94fe8c7709269b2d6dfb530924db4c95d882dc/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/341d6e708fef4b618fb9f7e1734b5899cedcafb7e6e4254563b102da5a6e1ff7/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f9872a7d24aafc6224d5bcd47f24f45b695fcd668c96fa518c3f5c6d0cd99267/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/d2a6e14f6b6bebca7c127608ecee883fb41e59976dcd8028037de2fa84d1a83a/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/63fe6e67591e209307ad1f858affca4919a4cac5a16ce1f2c8ae7a11fadbf168/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/b3baef09477060feb0e22bc4f8eb1d8d3d1031c1000edc3a1ba559946fd6536b/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/cdba4523a82aecd7f2b1b93445e60836ade5dc5237e3792c58564fecfd6500a4/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "287 Barkly Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.2842838,
+                "longitude": 142.93860371
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "address": {
+                "streetAddress": "179 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "03 5352 2303",
+            "branded": true,
+            "brandingColors": {
+                "text": "#000000",
+                "primary": "#ffe512"
+            },
+            "name": "Ray White Ararat - Ararat",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg",
+                    "default": "/160x30/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg",
+                    "large": "/170x32/c0e028c3e3ac06faf9f2eb90614e0e8f4bdf8f5e025da657cb8f85839cf494d8/logo.jpg"
+                }
+            },
+            "agencyId": "XTJWPW",
+            "email": "mandy.baird@raywhite.com"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "R3063153",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Open Spaces: 2"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            }
+        ],
+        "listingId": "436672832",
+        "bond": {
+            "display": "$2,383",
+            "value": 2383
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/9a14564a943716471ccddfb4616a6295e5fc01ae97bd009898eec6f0db85ca6e/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "04 Jul 2025",
+            "dateDisplay": "04 Jul 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [
+            {
+                "dateDisplay": "Inspection Mon 2 Jun",
+                "startTimeDisplay": "4:00 PM",
+                "endTimeDisplay": "4:15 PM",
+                "startTime": "2025-06-02T16:00:00",
+                "endTime": "2025-06-02T16:15:00",
+                "auction": false
+            }
+        ],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 4",
+                "type": "bedrooms",
+                "value": 4
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 2",
+                "type": "bathrooms",
+                "value": 2
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 2",
+                "type": "parkingSpaces",
+                "value": 2
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-441761280",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "0428273369",
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "phoneNumber": "0428273369",
+            "powerProfile": false,
+            "jobTitle": "Senior Property Manager",
+            "name": "Jessica Ward",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+            },
+            "id": "3302296",
+            "email": "jessica.ward@eldersrealestate.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "This brand new residence is designed for contemporary living. This exquisite 3-bedroom, 2-bathroom house is the epitome of style and convenience, tailored to meet the demands of today's busy lifestyle.<br/>Step inside to find a sleek kitchen equipped for the culinary enthusiast, complete with electric cooking facilities, an oven, and dishwasher. The open-plan living area is kept comfortable year-round with efficient split system cooling and heating, while easy-clean hybrid flooring adds a touch of elegance and practicality.<br/>The master suite is a true retreat, boasting a walk-in wardrobe and an ensuite with all the essentials for privacy and ease. The double garage features a motorised roller door for secure parking, and the additional two bedrooms come with built-in wardrobes, cosy carpeting, and block out blinds for undisturbed sleep.<br/>Bask in the comfort of a main bathroom designed to pamper, featuring a separate bath and shower, alongside an additional toilet for convenience.",
+        "showAgencyLogo": true,
+        "title": "BRAND NEW 3 BED 2 BATH",
+        "listers": [
+            {
+                "mobilePhoneNumber": "0428273369",
+                "website": "http://www.ararat.eldersrealestate.com.au",
+                "phoneNumber": "0428273369",
+                "powerProfile": false,
+                "jobTitle": "Senior Property Manager",
+                "name": "Jessica Ward",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/064debd0cfeed1d6e570bc6073b8307565235a997b685394f4f635aa2a62d970/main.jpg"
+                },
+                "id": "3302296",
+                "email": "jessica.ward@eldersrealestate.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 3,
+                "bathrooms": 2,
+                "parkingSpaces": 2
+            }
+        },
+        "price": {
+            "display": "$530 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/efd7d87d0da6a98f44b85b6127968a7bbb5930351237b8ba5ff8d065ebe09b9f/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f2a7ed2ffd01ff2c876ea1b11d25f9bd1a6e6d518537ee86cab911a5eae58d66/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/915a49fdf129e8d45702d7ed55e12f405c39f1f4916a09d1b95292ef7d97da7e/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/8db8369ff89ecef60adf555232c9442a183844e3c6669cc55352051c59199c33/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/bf0648c97276aed5da35f70427f125833cab31c861fc20be6e658f05d2ffc329/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/490a13fb81218ee90988f44fc2c528334034a21c34a7430f5dc418a48da290de/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "A/148 High Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.28399141,
+                "longitude": 142.9432822
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "address": {
+                "streetAddress": "167 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "0353524338",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#df0020"
+            },
+            "name": "Elders Real Estate Ararat - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "default": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "large": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                }
+            },
+            "agencyId": "RFFGPQ",
+            "email": "michael.fratin@eldersrealestate.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "64P4357",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Courtyard",
+                    "Fully Fenced",
+                    "Garage: 2",
+                    "Remote Garage"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Air Conditioning",
+                    "Built-in Wardrobes",
+                    "Dishwasher",
+                    "Ensuite: 1",
+                    "Living Areas: 1",
+                    "Reverse-cycle Air Conditioning"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Pets Allowed"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "441761280",
+        "bond": {
+            "display": "$2,296",
+            "value": 2296
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/7d1a561e558583cd5fb6ecb665ea6a1ade3006f4c58032e3216a6cebd9c144a4/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "30 May 2025",
+            "dateDisplay": "30 May 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [
+            {
+                "dateDisplay": "Inspection Mon 2 Jun",
+                "startTimeDisplay": "2:00 PM",
+                "endTimeDisplay": "2:10 PM",
+                "startTime": "2025-06-02T14:00:00",
+                "endTime": "2025-06-02T14:10:00",
+                "auction": false
+            }
+        ],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 3",
+                "type": "bedrooms",
+                "value": 3
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 2",
+                "type": "bathrooms",
+                "value": 2
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 2",
+                "type": "parkingSpaces",
+                "value": 2
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-441633716",
+        "standard": false,
+        "midtier": true,
+        "lister": {
+            "mobilePhoneNumber": "0428324454",
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "phoneNumber": "0428324454",
+            "powerProfile": false,
+            "jobTitle": "Property Manager",
+            "name": "Jodie Argall",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/68310889c370f7e8840b28e0b2142a84ecbf676215bc7bc33a49a0c7adfb99ad/main.jpg"
+            },
+            "id": "2351886",
+            "email": "jodie.argall@eldersrealestate.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "Positioned on a generous corner allotment with both side and rear access, this well-presented 3-bedroom weatherboard home offers comfort, space, and practicality.<br/><br/>The home features a large double carport and a spacious lounge room equipped with a split system, ensuring year-round comfort. All three bedrooms are generously sized, providing plenty of room for the whole family.<br/><br/>The kitchen is well-appointed with ample storage and opens via a glass door to a substantial back deck - perfect for outdoor entertaining.<br/><br/>The central bathroom includes a shower over bath, and there is a separate toilet for added convenience.<br/><br/>",
+        "showAgencyLogo": true,
+        "title": "Spacious 3-Bedroom Weatherboard Home on a Large Corner Block",
+        "listers": [
+            {
+                "mobilePhoneNumber": "0428324454",
+                "website": "http://www.ararat.eldersrealestate.com.au",
+                "phoneNumber": "0428324454",
+                "powerProfile": false,
+                "jobTitle": "Property Manager",
+                "name": "Jodie Argall",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/68310889c370f7e8840b28e0b2142a84ecbf676215bc7bc33a49a0c7adfb99ad/main.jpg"
+                },
+                "id": "2351886",
+                "email": "jodie.argall@eldersrealestate.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 3,
+                "bathrooms": 1,
+                "parkingSpaces": 0
+            }
+        },
+        "price": {
+            "display": "$360 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "midtier",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/3519f489037059285a6ae800ba68759db26de36c592ab95587984b259479aaa6/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/79e80df7e61dcb4f8d889afc28f50107aebb9aa982ff2c4d9768d2ff43ccb760/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/62666814c16c0b37436eecb6959556d4425ab27a772e9b485f2842809b047744/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f4deee8aeeb350d916ce9e644e91edc9cbe41216b873fc917cc309d3523b7ff4/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f263fc8818ff9ddc0e637a999263419ab97bd7fb71d076b595867219a877df40/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/2c006e180dc41c8a0ac94330b46715c6ab12603c6295d3253b73a3bfacd05724/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/0df7636ada2a642763fa484220807c7720931c2f009ee1512e5582274243894c/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/5b6b37bb1aa239ffdf16f022324d571726c0f81a9025a957593e14fe6dbb1611/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/78c5f6465e8d0a5d4410ddb47402d4dade5deb6099114c15c61da2b33298e8a5/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "27 Dean Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.2755029,
+                "longitude": 142.93699968
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "address": {
+                "streetAddress": "167 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "0353524338",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#df0020"
+            },
+            "name": "Elders Real Estate Ararat - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "default": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "large": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                }
+            },
+            "agencyId": "RFFGPQ",
+            "email": "michael.fratin@eldersrealestate.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "64P4325",
+        "listingId": "441633716",
+        "bond": {
+            "display": "$1,564",
+            "value": 1564
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/e8d39e7fdc500104bbe4ee1fff1c43adf341d97e358560f4a25b16bff7b669bc/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "12 May 2025",
+            "dateDisplay": "Available now"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 3",
+                "type": "bedrooms",
+                "value": 3
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 1",
+                "type": "bathrooms",
+                "value": 1
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-willaura-441589752",
+        "standard": true,
+        "midtier": false,
+        "lister": {
+            "mobilePhoneNumber": "0428324454",
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "phoneNumber": "0428324454",
+            "powerProfile": false,
+            "jobTitle": "Property Manager",
+            "name": "Jodie Argall",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/68310889c370f7e8840b28e0b2142a84ecbf676215bc7bc33a49a0c7adfb99ad/main.jpg"
+            },
+            "id": "2351886",
+            "email": "jodie.argall@eldersrealestate.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "Experience the idyllic serenity of country living with this fully renovated, fully furnished residence nestled in the heart of Willaura, Victoria. Located a mere 25-minute drive from the bustling centre of Ararat, this delightful property offers a perfect blend of tranquillity and convenience, ideal for families or companies seeking a rural escape or a comfortable base of operations.<br/><br/>This stunning four-bedroom house, each room complete with its own robe and split system for ultimate comfort, promises ample space for both relaxation and work. The expansive, well-appointed kitchen boasts generous storage options and features electric cooking facilities to cater to all your culinary desires.<br/><br/>The home is serviced by 1.5 bathrooms, including a full bathroom with a shower, vanity, and toilet, alongside a separate laundry room that provides an additional shower and toilet. This ensures convenience and privacy for all household members.<br/><br/>Connectivity is taken care of with a reliable NBN connection, allowing for seamless remote working or entertainment streaming. Outside, the property features four garden sheds, offering abundant storage for tools and equipment. The vast yard, complete with rear access, ensures endless possibilities for recreation and gardening, made even more effortless with the services of a gardener included.<br/><br/>Parking is never an issue with two dedicated spaces available. This house, ready to be called home, is waiting for a family or company to appreciate its charm, convenience, and the calm of rural life.<br/><br/>Become part of the Willaura community and embrace a relaxed lifestyle at 11 Ayrey Street, where every detail has been thoughtfully considered for your comfort and enjoyment.",
+        "showAgencyLogo": true,
+        "title": "**A Charming Countryside Retreat at 11 Ayrey Street, Willaura**",
+        "listers": [
+            {
+                "mobilePhoneNumber": "0428324454",
+                "website": "http://www.ararat.eldersrealestate.com.au",
+                "phoneNumber": "0428324454",
+                "powerProfile": false,
+                "jobTitle": "Property Manager",
+                "name": "Jodie Argall",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/68310889c370f7e8840b28e0b2142a84ecbf676215bc7bc33a49a0c7adfb99ad/main.jpg"
+                },
+                "id": "2351886",
+                "email": "jodie.argall@eldersrealestate.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 4,
+                "bathrooms": 1,
+                "parkingSpaces": 2
+            }
+        },
+        "price": {
+            "display": "$410 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "standard",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/92617c8d3ea0422772008e69e4df993ec30fdb5d055ed954a02e0188a177777a/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/1efcde2b6f2646fe93b3ea43838b15fa6d1856717b1e5ca06b2d700e27ef2f8d/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/4de8a8b4bed14eea4cc1b3c24ff6e83c9e74c249f7adae89a7930aef63f9d602/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/b44d6f527a3209fca1f6a1800b4dbc6bae69cf0865171e04d1dde30183f0afe8/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/d7bdbcec55b07eaa080a9b02bd1a872881d0c978afdffae4c06ac17a73ba62c1/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/66197709a02430300981996a057ef3fa113d4581cdecd7cd53da789c2e5327d8/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/67fa8faf9c9fc19145fc888b90dc581cc53173f10125f73b4e51e12e639c1dcc/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/a5d96abd89979b90b6c62880f6e39a639228bf87f14544b2482843d0a55c2b6d/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/339b115395b7be790227c1dc2c821da75eb4df47b08b5b3a44aef35f35f5776e/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "11 Ayrey Street",
+            "locality": "Willaura",
+            "postcode": "3379",
+            "suburb": "Willaura",
+            "postCode": "3379",
+            "location": {
+                "latitude": -37.54645323,
+                "longitude": 142.73960405
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://www.ararat.eldersrealestate.com.au",
+            "address": {
+                "streetAddress": "167 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "0353524338",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#df0020"
+            },
+            "name": "Elders Real Estate Ararat - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "default": "/160x30/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg",
+                    "large": "/170x32/d943bdb8f733cd5273b8366d9f5a156f6e95818207df221dc90bf99069c9a3e9/logo.jpg"
+                }
+            },
+            "agencyId": "RFFGPQ",
+            "email": "michael.fratin@eldersrealestate.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "64P4313",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Open Spaces: 2"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Air Conditioning",
+                    "Broadband Internet Available",
+                    "Built-in Wardrobes",
+                    "Living Areas: 1",
+                    "Split-system Air Conditioning",
+                    "Toilets: 2"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Furnished"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "441589752",
+        "bond": {
+            "display": "$1,781",
+            "value": 1781
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/ada3f2affc419c0bff3ebca6c5ad1eaf55c3d2eb4ddd6ebc86d76fdea9c8fcde/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "09 Jun 2025",
+            "dateDisplay": "09 Jun 2025"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 4",
+                "type": "bedrooms",
+                "value": 4
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 1",
+                "type": "bathrooms",
+                "value": 1
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 2",
+                "type": "parkingSpaces",
+                "value": 2
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-house-vic-ararat-441503140",
+        "standard": true,
+        "midtier": false,
+        "lister": {
+            "mobilePhoneNumber": "03 5352 1400",
+            "website": "http://https://nutrien.harcourts.net/au/office/ararat",
+            "phoneNumber": "03 5352 1400",
+            "powerProfile": false,
+            "jobTitle": "Senior Property Manager",
+            "name": "Michelle Miocic",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/291d9e27d5736a15a584a364c4f8afbb42db0ae893d093997be86c5096d416eb/main.jpg"
+            },
+            "id": "1352925",
+            "email": "michelle.miocic@nh.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "**** IMPORTANT INFORMATION FOR PROSPECTIVE RENTERS ****<br/>Quiet , rural country living with modern convenience in this inviting 4-bedroom brick farmhouse, located just 21 km from Ararat. <br/>On offer a mix of space, comfort, and functionality. The modern open-plan kitchen and living area is designed for easy living and entertaining.<br/> The kitchen has ample cupboards, gas cooking, and a dishwasher, adjoining living space features wood heating, complemented by air conditioning for year-round comfort. A second living room with large windows looking out over the land<br/> All four well-sized bedrooms with built-in robes for ample storage. <br/>The bathroom is well-appointed with both a bath and shower, and there are two separate toilets for added convenience. The second toilet is equipped with a shower recess <br/>This property combines a rural lifestyle with essential modern amenities, offering a serene retreat just a short drive from the Ararat.<br/>\u2022 PROPERTY IS NOT SUITABLE FOR PETS , NO ENCLOSED FENCING . LIVESTOCK IN ADJOINING PADDOCKS <br/>\u2022 NOTE LAND SURROUNDING IS NOT AVAILABLE<br/><br/>",
+        "showAgencyLogo": true,
+        "title": "4 Bedroom brick home - South / East of Ararat",
+        "listers": [
+            {
+                "mobilePhoneNumber": "03 5352 1400",
+                "website": "http://https://nutrien.harcourts.net/au/office/ararat",
+                "phoneNumber": "03 5352 1400",
+                "powerProfile": false,
+                "jobTitle": "Senior Property Manager",
+                "name": "Michelle Miocic",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/291d9e27d5736a15a584a364c4f8afbb42db0ae893d093997be86c5096d416eb/main.jpg"
+                },
+                "id": "1352925",
+                "email": "michelle.miocic@nh.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 4,
+                "bathrooms": 2,
+                "parkingSpaces": 1
+            }
+        },
+        "price": {
+            "display": "$430 per week"
+        },
+        "propertyType": "house",
+        "productDepth": "standard",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/590ace1e1a10c742a487bafd69317aabd5c8fa8ff13c861c9db8d790adb3f3d0/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/6747cf38fdc178879f8d36c341dbf312c8c620172ff9292c0cb9cec42aa27759/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/741946e3c2d352027df8d192aa6204b2e08f20df301f3d32c12b63472ee4df36/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/ebd6ff080972f16b82efcb353e909508ab1a0cda45bb750a430d6725020a0c0d/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/3cf9fa1bbd0ae8ea84ab6f64ea55ef79022c0c5a37c05ba03da9f2b0e25e370d/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/294f711ec250b4f2d5a90811a523584235192579154d01d74a6c62d6c8693c8c/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/54e4131a80b7c1f7176f780d4d066acd5aaf3c4f0831cbe9f8348d12a9042ae1/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/cecb45d80c725dd4520df5f075fac60288254894379754714fb755af241f6d45/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/7da02403b64ea391ceda75515641fc5882a601e32c7c59c9ef232a7cba3f07bf/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/92d77c2ee9bef2f1705c59d3384f7207fcbadee91e8771dd9c014ee212fd6809/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "Address available on request",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": false
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://https://nutrien.harcourts.net/au/office/ararat",
+            "address": {
+                "streetAddress": "90 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "03 5352 1400",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#000000"
+            },
+            "name": "Nutrien Harcourts - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "hero image",
+                        "uri": "/1536x800/30a626266e5af4f9c5139f8a3db958a39c993b4141c7842361b6e7eb9ab9c2f2/main.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg",
+                    "hero image": "/1536x800/30a626266e5af4f9c5139f8a3db958a39c993b4141c7842361b6e7eb9ab9c2f2/main.jpg",
+                    "default": "/160x30/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg",
+                    "large": "/170x32/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg"
+                }
+            },
+            "agencyId": "XWZLEO",
+            "email": "brad.jensen@nh.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "R3860723",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Garage: 1"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Toilets: 2"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            }
+        ],
+        "listingId": "441503140",
+        "bond": {
+            "display": "$1,863",
+            "value": 1863
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/593441cc278dd77269ad66c5367c24f38867750a03b2c7dca13c05d6999eb3aa/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "01 May 2025",
+            "dateDisplay": "Available now"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 4",
+                "type": "bedrooms",
+                "value": 4
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 2",
+                "type": "bathrooms",
+                "value": 2
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 1",
+                "type": "parkingSpaces",
+                "value": 1
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    },
+    {
+        "prettyUrl": "property-unit-vic-ararat-434096447",
+        "standard": true,
+        "midtier": false,
+        "lister": {
+            "mobilePhoneNumber": "03 5352 1400",
+            "website": "http://https://nutrien.harcourts.net/au/office/ararat",
+            "phoneNumber": "03 5352 1400",
+            "powerProfile": false,
+            "jobTitle": "Senior Property Manager",
+            "name": "Michelle Miocic",
+            "mainPhoto": {
+                "server": "https://i3.au.reastatic.net",
+                "name": "main photo",
+                "uri": "/291d9e27d5736a15a584a364c4f8afbb42db0ae893d093997be86c5096d416eb/main.jpg"
+            },
+            "id": "1352925",
+            "email": "michelle.miocic@nh.com.au"
+        },
+        "featured": false,
+        "signature": false,
+        "channel": "rent",
+        "description": "\u2022 Please submit an online application before viewing this property. <br/><br/>Fully furnished or Unfurnished is this tidy two bed, one bath unit. The unit boasts open plan living with a split system equipped to ensure comfort is maintained all year round. The kitchen offers ample cupboard storage with an electric oven and gas cooktop. Both bedrooms are of generous size and fitted with BIR's. The bathroom has a shower over bath setup to maximise space along with a separate toilet area. Externally you have the convenience of a remote-control garage, fully secured backyard and a once-a-month gardening service.<br/><br/>Virtual Tour link<br/>https://virtual-tour.ipropertyexpress.com/vt/tour/b6693e0c-89d6-4f3b-a72c-344c281c0466<br/>",
+        "showAgencyLogo": true,
+        "title": "Fully Furnished or Unfurnished 2 Bedroom Unit",
+        "listers": [
+            {
+                "mobilePhoneNumber": "03 5352 1400",
+                "website": "http://https://nutrien.harcourts.net/au/office/ararat",
+                "phoneNumber": "03 5352 1400",
+                "powerProfile": false,
+                "jobTitle": "Senior Property Manager",
+                "name": "Michelle Miocic",
+                "mainPhoto": {
+                    "server": "https://i3.au.reastatic.net",
+                    "name": "main photo",
+                    "uri": "/291d9e27d5736a15a584a364c4f8afbb42db0ae893d093997be86c5096d416eb/main.jpg"
+                },
+                "id": "1352925",
+                "email": "michelle.miocic@nh.com.au"
+            }
+        ],
+        "features": {
+            "general": {
+                "bedrooms": 2,
+                "bathrooms": 1,
+                "parkingSpaces": 1
+            }
+        },
+        "price": {
+            "display": "$330 per week"
+        },
+        "propertyType": "unit",
+        "productDepth": "standard",
+        "calculator": {
+            "brandingColors": {
+                "text": "#e4002b",
+                "primary": "#ffffff"
+            },
+            "subtitle": "Calculate repayments for this property",
+            "title": "Buy or Rent Calculator"
+        },
+        "images": [
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/b3c6fe2f25514910cbb7f792c056defe799c1b628f984fc33546236d15bed2cf/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/e7a2a6c9c3cb59368dcfbc5f61a176cc40f9eabc0f56355bb586fea40621bc18/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/29129515b24d39a4ed5a96c880622d4ddd5e755a9158fe093f2cb7dc2cc35dc6/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/1c94fa08a4e22d7ae0317022bf48bc1270210fb5f0dc68b2a64c0490004b7d15/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/a61ee0acfc1912ffb8ce05b9d1a50d6d4dc600b10c855cdaab1bf2c43fa817ec/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/4ae4413aaf165a530432d4d1da4b9adda7cbe2b7e30b4f98bdd80d3018059886/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/e46ad913ef6addd1c054468b65a566905f9b253bb24e8b15950fa5e19ddd2099/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/4291b46804cff9571fd5c7c34f1a86bcd6374540a1d62947c9a355b88a2c8ef0/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/42389fedd222d132af7f6d2d786a279e05d984d859c3d0c024f54e130ba78de7/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/b224bf9c0c3a82f0b27b20a97958a40eb37db8c26b30f91e22900491c7c7318b/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/c2c85d523e869e7f8703af5adebd577655b13d6fd5beeea6941511143c474d1f/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/86a92955eb6aff885ea5d712b84b555a6a9916a7f15a404daf304a202e141143/image.jpg"
+            },
+            {
+                "server": "https://i3.au.reastatic.net",
+                "name": "photo",
+                "uri": "/f30690d46977a1bbfa7093d2e3d08043d39c69f71a4c04429e8e9275b91b0764/image.jpg"
+            }
+        ],
+        "address": {
+            "streetAddress": "12/41 Grano Street",
+            "locality": "Ararat",
+            "postcode": "3377",
+            "suburb": "Ararat",
+            "postCode": "3377",
+            "location": {
+                "latitude": -37.27949395,
+                "longitude": 142.94633903
+            },
+            "subdivisionCode": "Vic",
+            "state": "Vic",
+            "showAddress": true
+        },
+        "classicProject": false,
+        "agency": {
+            "website": "http://https://nutrien.harcourts.net/au/office/ararat",
+            "address": {
+                "streetAddress": "90 Barkly Street",
+                "postcode": "3377",
+                "suburb": "Ararat",
+                "state": "VIC"
+            },
+            "phoneNumber": "03 5352 1400",
+            "branded": true,
+            "brandingColors": {
+                "text": "#ffffff",
+                "primary": "#000000"
+            },
+            "name": "Nutrien Harcourts - ARARAT",
+            "logo": {
+                "images": [
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "large",
+                        "uri": "/170x32/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "default",
+                        "uri": "/160x30/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "small",
+                        "uri": "/114x21/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg"
+                    },
+                    {
+                        "server": "https://i3.au.reastatic.net",
+                        "name": "hero image",
+                        "uri": "/1536x800/30a626266e5af4f9c5139f8a3db958a39c993b4141c7842361b6e7eb9ab9c2f2/main.jpg"
+                    }
+                ],
+                "links": {
+                    "small": "/114x21/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg",
+                    "hero image": "/1536x800/30a626266e5af4f9c5139f8a3db958a39c993b4141c7842361b6e7eb9ab9c2f2/main.jpg",
+                    "default": "/160x30/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg",
+                    "large": "/170x32/bd6f5a88ca10778104a7b403e6220c27c320c17bed31d9e2e1ef54572c8ef8a6/logo.jpg"
+                }
+            },
+            "agencyId": "XWZLEO",
+            "email": "brad.jensen@nh.com.au"
+        },
+        "isSoldChannel": false,
+        "isBuyChannel": false,
+        "signatureProject": false,
+        "agencyListingId": "R2664157",
+        "propertyFeatures": [
+            {
+                "features": [
+                    "Garage: 1"
+                ],
+                "section": "outdoor",
+                "label": "Outdoor Features"
+            },
+            {
+                "features": [
+                    "Toilets: 1"
+                ],
+                "section": "indoor",
+                "label": "Indoor Features"
+            },
+            {
+                "features": [
+                    "Furnished"
+                ],
+                "section": "allowances",
+                "label": "Allowances"
+            }
+        ],
+        "listingId": "434096447",
+        "bond": {
+            "display": "$1,433",
+            "value": 1433
+        },
+        "mainImage": {
+            "server": "https://i3.au.reastatic.net",
+            "name": "main photo",
+            "uri": "/eb6866f16479b2ecc0fd1348d26331f4a051d4aebf2d7107ede6189575619c73/image.jpg"
+        },
+        "dateAvailable": {
+            "date": "21 Mar 2025",
+            "dateDisplay": "Available now"
+        },
+        "modifiedDate": {
+            "value": ""
+        },
+        "inspectionsAndAuctions": [],
+        "generalFeatures": {
+            "bedrooms": {
+                "label": "Bedrooms: 2",
+                "type": "bedrooms",
+                "value": 2
+            },
+            "bathrooms": {
+                "label": "Bathrooms: 1",
+                "type": "bathrooms",
+                "value": 1
+            },
+            "parkingSpaces": {
+                "label": "Parking Spaces: 1",
+                "type": "parkingSpaces",
+                "value": 1
+            }
+        },
+        "isRentChannel": true,
+        "applyOnline": false,
+        "suburb": "ararat"
+    }
+]

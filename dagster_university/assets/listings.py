@@ -8,7 +8,7 @@ import aiohttp
 import dagster as dg
 import pandas as pd
 import tenacity
-from dagster import asset, AssetOut, Config, multi_asset, Output
+from dagster import asset, AssetOut, multi_asset, Output
 from dagster_duckdb import DuckDBResource
 
 from dagster_university.assets import constants
@@ -19,7 +19,7 @@ from dagster_university.models.agency import Agency
 from dagster_university.models.agent import Agent
 from dagster_university.models.listing import Listing
 from dagster_university.models.rental_listing import RentalListing
-from dagster_university.partitions import suburbs_partitions_def, channels_partitions_def
+from dagster_university.partitions import suburb_channel_partitions
 
 
 @tenacity.retry(stop=tenacity.stop_after_attempt(5),
@@ -31,19 +31,12 @@ async def fetch(session, url, params, headers) -> dict | aiohttp.ClientResponse:
         return await response.json()
 
 
-class ListingOpConfig(Config):
-    suburb: str
-    channel: str
-
-
-suburb_channel_partitions = dg.MultiPartitionsDefinition(
-    partitions_defs={"suburb": suburbs_partitions_def, "channel": channels_partitions_def})
-
-
 @asset(partitions_def=suburb_channel_partitions,
        metadata={"partition_expr": {"channel": "channel", "suburb": "suburb"}},
-       group_name="downloaded")
-async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:
+       group_name="downloaded",
+       # automation_condition=dg.AutomationCondition.on_cron("0 0 * * 1")
+       )
+async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:  #, config: ListingOpConfig
     """
     The raw json files from the RapidApi containing listings data
     Returns:
@@ -111,10 +104,15 @@ async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:
                 # state = listings_data["resolvedLocalities"][0]["state"]
 
             pages_count += 1
-
-    constants.ensure_directory_exists(constants.DOWNLOADED_REALESTATE_DATA)
-    with open(constants.DOWNLOADED_REALESTATE_DATA, "w+") as f:
+    filename = constants.DOWNLOADED_REALESTATE_DATA.format(suburb=suburb, channel=listing_channel)
+    constants.ensure_directory_exists(filename)
+    with open(filename, "w+") as f:
         json.dump(data, f, indent=4)
+
+
+class ProcessFileConfig(dg.Config):
+    filename: str
+    filepath: str
 
 
 @multi_asset(deps=["downloaded_listing_data"],
@@ -122,12 +120,15 @@ async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:
                  "raw_addresses": AssetOut(metadata={"schema": "public", "table": "raw_addresses"}),
                  "raw_agents": AssetOut(metadata={"schema": "public", "table": "raw_agents"}),
                  "raw_agencies": AssetOut(metadata={"schema": "public", "table": "raw_agents"}),
-                 "raw_listings": AssetOut(metadata={"schema": "public", "table": "raw_listings"}, is_required=False),
+                 "raw_listings": AssetOut(metadata={"schema": "public", "table": "raw_listings"},
+                                          is_required=False),
                  "raw_rental_listings": AssetOut(metadata={"schema": "public", "table": "raw_rental_listings"},
                                                  is_required=False),
              },
-             group_name="new_raw")
-def process_data(context: dg.AssetExecutionContext):
+             group_name="new_raw",
+
+             )
+def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: ProcessFileConfig):
     """
     It processes downloaded listings data and extract addresses, agents, agencies, listings data
     """
@@ -138,11 +139,15 @@ def process_data(context: dg.AssetExecutionContext):
     listings: list[Listing] = []
     rental_listings: list[RentalListing] = []
 
-    partition_keys: dg.MultiPartitionKey = context.partition_key.keys_by_dimension
-    listing_channel = partition_keys["channel"]
+    # partition_keys: dg.MultiPartitionKey = context.partition_key.keys_by_dimension
+    # listing_channel = partition_keys["channel"]
+    listing_channel = ""
+    filename_parts = config.filename.split("_")
+    if len(filename_parts) > 2:
+        listing_channel = filename_parts[1]
 
-    data = []
-    with open(constants.DOWNLOADED_REALESTATE_DATA, "r") as f:
+    context.log.info(f"Attempting to process downloaded file: {config.filename} path: {config.filepath}")
+    with open(config.filepath, "r") as f:
         data = json.load(f)
 
     # for page in data:
@@ -162,7 +167,8 @@ def process_data(context: dg.AssetExecutionContext):
             email = str(lister["email"]).strip().lower() if lister.keys().__contains__("email") else ""
             agent = find_agent(agents, email)
             if agent is None:
-                agency_id = str(listing_data["agency"]["email"]).strip().lower() if "agency" in listing_data.keys() else None
+                agency_id = str(
+                    listing_data["agency"]["email"]).strip().lower() if "agency" in listing_data.keys() else None
                 agent = Agent(
                     agent_id=lister["id"] if lister.keys().__contains__("id") else "",
                     full_name=lister["name"] if lister.keys().__contains__("name") else "",
@@ -292,7 +298,8 @@ def process_data(context: dg.AssetExecutionContext):
     listings_objs = [obj.__dict__ for obj in listings]
     rental_listings_objs = [obj.__dict__ for obj in rental_listings]
 
-    context.log.info(f"Number of addresses: {len(addresses_objs)}, Number of agents: {len(agents_objs)}, Number of agencies: {len(agencies_objs)}, Number of listings: {len(listings_objs)}")
+    context.log.info(
+        f"Number of addresses: {len(addresses_objs)}, Number of agents: {len(agents_objs)}, Number of agencies: {len(agencies_objs)}, Number of listings: {len(listings_objs)}")
 
     yield Output(pd.DataFrame(addresses_objs), output_name="raw_addresses")
     yield Output(pd.DataFrame(agents_objs), output_name="raw_agents")
@@ -301,7 +308,7 @@ def process_data(context: dg.AssetExecutionContext):
     if listing_channel == "rent":
         yield Output(pd.DataFrame(rental_listings_objs), output_name="raw_rental_listings")
         # raw_rental_listings
-    else:# otherwise, raw_listings
+    else:  # otherwise, raw_listings
         yield Output(pd.DataFrame(listings_objs), output_name="raw_listings")
 
 
@@ -309,14 +316,19 @@ def process_data(context: dg.AssetExecutionContext):
     group_name="cleansed_data",
     deps=["raw_listings"],
     outs={
-        "staging_listings": AssetOut(metadata={"schema": "public", "table": "staging_listings"}),
-        "staging_listing_agents": AssetOut(metadata={"schema": "public", "table": "staging_listing_agents"}),
-        "staging_listing_features": AssetOut(metadata={"schema": "public", "table": "staging_listing_features"}),
+        "staging_listings": AssetOut(
+            metadata={"schema": "public", "table": "staging_listings"}),
+        "staging_listing_agents": AssetOut(
+            metadata={"schema": "public", "table": "staging_listing_agents"}),
+        "staging_listing_features": AssetOut(
+            metadata={"schema": "public", "table": "staging_listing_features"}
+        ),
     },
     description="Normalised listings data",
     compute_kind="Python",
 )
 def cleansed_listings_data(database: DuckDBResource):
+    import re
     query = f"SELECT * FROM {constants.RAW_LISTINGS_TABLE} WHERE price LIKE '$%'"
 
     listings = []
@@ -330,13 +342,16 @@ def cleansed_listings_data(database: DuckDBResource):
 
                     for row in raw_listings_pl.rows(named=True):
                         ad_lower_price, ad_upper_price = get_ad_price(row["advertised_price"])
+                        price_values = re.findall(r'\$\d{1,3}(?:,\d{3})*', row["price"])
+                        prices = [int(str(price).replace("$", "").replace(",", "")) for price in price_values]
+                        price = (sum(prices) / len(prices)) if prices else 0
                         listing = {
                             "listing_id": row["listing_id"],
                             "listing_title": row["title"],
                             "property_type": row["property_type"],
                             "listing_type": row["listing_type"],
                             "construction_status": row["construction_status"],
-                            "price": int(str(row["price"]).replace("$", "").replace(",", "").strip()) if str(row["price"]).strip().startswith("$") else 0,
+                            "price": price,
                             "ad_lower_price": ad_lower_price,
                             "ad_upper_price": ad_upper_price,
                             "num_bedrooms": row["bedrooms"],
@@ -350,10 +365,12 @@ def cleansed_listings_data(database: DuckDBResource):
                             "address_id": row["address_id"],
                         }
                         listings.append(listing)
-                        features = [{"listing_id": row["listing_id"], "feature": feature} for feature in row["features"]]
+                        features = [{"listing_id": row["listing_id"], "feature": feature} for feature in
+                                    row["features"]]
                         property_features.extend(features)
                         for value in row["agent_id"]:
-                            agents = [{"listing_id": row["listing_id"], "agent_id": agent_id} for agent_id in value.split(",")]
+                            agents = [{"listing_id": row["listing_id"], "agent_id": agent_id} for agent_id in
+                                      value.split(",")]
                             listing_agents.extend(agents)
 
             except Exception as e:
@@ -369,11 +386,18 @@ def cleansed_listings_data(database: DuckDBResource):
     group_name="cleansed_data",
     deps=["raw_rental_listings"],
     outs={
-        "staging_rental_listings": AssetOut(metadata={"schema": "public", "table": "staging_rental_listings"}),
-        "staging_rental_listing_agents": AssetOut(metadata={"schema": "public",
-                                                            "table": "staging_rental_listing_agents"}),
-        "staging_rental_listing_features": AssetOut(metadata={"schema": "public",
-                                                              "table": "staging_rental_listing_features"}),
+        "staging_rental_listings": AssetOut(
+            metadata={"schema": "public", "table": "staging_rental_listings"},
+            auto_materialize_policy=dg.AutoMaterializePolicy.eager()
+        ),
+        "staging_rental_listing_agents": AssetOut(
+            metadata={"schema": "public", "table": "staging_rental_listing_agents"},
+            auto_materialize_policy=dg.AutoMaterializePolicy.eager()
+        ),
+        "staging_rental_listing_features": AssetOut(
+            metadata={"schema": "public", "table": "staging_rental_listing_features"},
+            auto_materialize_policy=dg.AutoMaterializePolicy.eager()
+        ),
     },
     description="Normalised rental listings data",
     compute_kind="Python",
@@ -415,10 +439,12 @@ def cleansed_rental_listings_data(database: DuckDBResource):
                             "address_id": row["address_id"],
                         }
                         rental_listings.append(listing)
-                        features = [{"listing_id": row["listing_id"], "feature": feature} for feature in row["features"]]
+                        features = [{"listing_id": row["listing_id"], "feature": feature} for feature in
+                                    row["features"]]
                         property_features.extend(features)
                         for value in row["agent_id"]:
-                            agents = [{"listing_id": row["listing_id"], "agent_id": agent_id} for agent_id in value.split(",")]
+                            agents = [{"listing_id": row["listing_id"], "agent_id": agent_id} for agent_id in
+                                      value.split(",")]
                             listing_agents.extend(agents)
 
             except Exception as e:
@@ -428,4 +454,3 @@ def cleansed_rental_listings_data(database: DuckDBResource):
     yield Output(pd.DataFrame(rental_listings), output_name="staging_rental_listings")
     yield Output(pd.DataFrame(listing_agents), output_name="staging_rental_listing_agents")
     yield Output(pd.DataFrame(property_features), output_name="staging_rental_listing_features")
-

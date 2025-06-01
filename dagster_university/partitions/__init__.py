@@ -1,5 +1,5 @@
 import dagster as dg
-from dagster import StaticPartitionsDefinition
+from dagster import StaticPartitionsDefinition, DynamicPartitionsDefinition
 from ..assets import constants
 
 start_date = constants.START_DATE
@@ -13,23 +13,28 @@ daily_partition = dg.DailyPartitionsDefinition(start_date=start_date, end_date=e
 
 SUBURBS = [
     "Ararat",
-    "Beaufort",
-    "Hoppers Crossing",
-    "Horsham",
-    "Werribee",
-    "Tarneit",
-    "Laverton North",
-    "Williams Landing",
-    "Wyndham Vale",
-    "Point Cook",
-    "Werribee South",
-    "Cocoroc",
-    "Quandong",
-    "Mambourin",
-    "Bacchus Marsh"
+    # "Beaufort",
+    # "Hoppers Crossing",
+    # "Horsham",
+    # "Werribee",
+    # "Tarneit",
+    # "Laverton North",
+    # "Williams Landing",
+    # "Wyndham Vale",
+    # "Point Cook",
+    # "Werribee South",
+    # "Cocoroc",
+    # "Quandong",
+    # "Mambourin",
+    # "Bacchus Marsh"
 ]
 
 suburbs_partitions_def = StaticPartitionsDefinition(SUBURBS)
 
 CHANNELS = ["buy", "sold", "rent"]
 channels_partitions_def = StaticPartitionsDefinition(CHANNELS)
+
+# suburbs_channels_partitions_def = DynamicPartitionsDefinition(name="suburb_channel_partition")
+
+suburb_channel_partitions = dg.MultiPartitionsDefinition(
+    partitions_defs={"suburb": suburbs_partitions_def, "channel": channels_partitions_def})

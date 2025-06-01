@@ -184,3 +184,6 @@ data/staging/*
 *.user.yml
 
 */package-lock.yml
+
+dagster_university.egg-info
+.tmp_dagster_home_*
