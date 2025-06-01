@@ -73,7 +73,7 @@ AUSTRALIA_SUBURBS_FILE_PATH = get_path_for_env("data/raw/australia_suburbs.csv")
 REALESTATE_LISTING_RAW_FILE_PATH = get_path_for_env(os.path.join("data", "raw", "{channel}", "{state}", "{suburb}", "{date_str}-{suburb}.json"))
 REALESTATE_LISTING_STAGING_FILE_PATH = get_path_for_env("data/staging/{channel}/{state}/{suburb}/{date-str}-{suburb}.json")
 
-DOWNLOADED_REALESTATE_DATA = get_path_for_env(os.path.join("data", "raw", "downloaded.json"))
+DOWNLOADED_REALESTATE_DATA = get_path_for_env(os.path.join("data", "downloaded", "{suburb}_{channel}_data.json"))
 
 RAPID_API_URL=f"https://realty-in-au.p.rapidapi.com/properties/list"
 

@@ -1,8 +1,0 @@
-[32m2025-05-28 22:52:52 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 133b07d3-ca91-4581-a6f4-7f2644bcc393 - 82882 - LOGS_CAPTURED - Started capturing logs in process (pid: 82882).
-[32m2025-05-28 22:52:52 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 133b07d3-ca91-4581-a6f4-7f2644bcc393 - 82882 - downloaded_listing_data - STEP_START - Started execution of step "downloaded_listing_data".
-[32m2025-05-28 22:52:52 +1000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 133b07d3-ca91-4581-a6f4-7f2644bcc393 - downloaded_listing_data - Partition keys: {'channel': 'rent', 'suburb': 'Beaufort'}
-[32m2025-05-28 22:52:55 +1000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 133b07d3-ca91-4581-a6f4-7f2644bcc393 - downloaded_listing_data - Page: 1/1
-[32m2025-05-28 22:52:55 +1000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 133b07d3-ca91-4581-a6f4-7f2644bcc393 - downloaded_listing_data - Number of records: 3
-[32m2025-05-28 22:52:55 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 133b07d3-ca91-4581-a6f4-7f2644bcc393 - 82882 - downloaded_listing_data - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
-[32m2025-05-28 22:52:55 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 133b07d3-ca91-4581-a6f4-7f2644bcc393 - 82882 - downloaded_listing_data - ASSET_MATERIALIZATION - Materialized value downloaded_listing_data.
-[32m2025-05-28 22:52:55 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 133b07d3-ca91-4581-a6f4-7f2644bcc393 - 82882 - downloaded_listing_data - STEP_SUCCESS - Finished execution of step "downloaded_listing_data" in 2.85s.

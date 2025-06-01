@@ -1,5 +1,0 @@
-[32m2025-05-28 14:06:07 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 99e669a8-f71d-4fc2-aa97-818e0b6ebdb8 - 5301 - LOGS_CAPTURED - Started capturing logs in process (pid: 5301).
-[32m2025-05-28 14:06:07 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 99e669a8-f71d-4fc2-aa97-818e0b6ebdb8 - 5301 - raw_suburbs - STEP_START - Started execution of step "raw_suburbs".
-[32m2025-05-28 14:06:07 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 99e669a8-f71d-4fc2-aa97-818e0b6ebdb8 - 5301 - raw_suburbs - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
-[32m2025-05-28 14:06:07 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 99e669a8-f71d-4fc2-aa97-818e0b6ebdb8 - 5301 - raw_suburbs - ASSET_MATERIALIZATION - Materialized value raw_suburbs.
-[32m2025-05-28 14:06:07 +1000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 99e669a8-f71d-4fc2-aa97-818e0b6ebdb8 - 5301 - raw_suburbs - STEP_SUCCESS - Finished execution of step "raw_suburbs" in 122ms.
