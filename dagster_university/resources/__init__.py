@@ -7,6 +7,7 @@ from dagster_dbt import DbtCliResource
 from dagster_duckdb import DuckDBResource
 from dagster_duckdb_pandas import DuckDBPandasIOManager
 
+from dagster_university.io.re_io_manager import ReIOManager
 from dagster_university.project import dbt_project
 
 database_resource = DuckDBResource(

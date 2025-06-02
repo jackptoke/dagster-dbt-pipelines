@@ -13,5 +13,7 @@ SELECT
     street_address,
     suburb,
     state,
-    postcode
+    postcode,
+    latitude,
+    longitude
 FROM all_addresses

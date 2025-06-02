@@ -2,18 +2,18 @@ import asyncio
 import json
 import math
 import os
-from datetime import datetime
 
 import aiohttp
 import dagster as dg
 import pandas as pd
 import tenacity
-from dagster import asset, AssetOut, multi_asset, Output
+from dagster import asset, AssetOut, multi_asset, Output, RetryPolicy, Backoff
 from dagster_duckdb import DuckDBResource
 
 from dagster_university.assets import constants
 from dagster_university.assets.listings_support import find_address, find_agent, find_agency, get_ad_price, \
     get_surface_area
+from dagster_university.io.re_io_manager import ReIOPayload
 from dagster_university.models.address import Address
 from dagster_university.models.agency import Agency
 from dagster_university.models.agent import Agent
@@ -34,9 +34,10 @@ async def fetch(session, url, params, headers) -> dict | aiohttp.ClientResponse:
 @asset(partitions_def=suburb_channel_partitions,
        metadata={"partition_expr": {"channel": "channel", "suburb": "suburb"}},
        group_name="downloaded",
-       # automation_condition=dg.AutomationCondition.on_cron("0 0 * * 1")
+       io_manager_key="re_io_manager",
+       retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
        )
-async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:  #, config: ListingOpConfig
+async def downloaded_listing_data(context: dg.AssetExecutionContext) -> ReIOPayload:  #, config: ListingOpConfig
     """
     The raw json files from the RapidApi containing listings data
     Returns:
@@ -46,9 +47,6 @@ async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:  #
     context.log.info(f"Partition keys: {partition_keys}")
     suburb = partition_keys["suburb"]
     listing_channel = partition_keys["channel"]
-
-    data_fetched_date = datetime.now().strftime("%d-%m-%Y")
-    filename = f"{data_fetched_date}_{suburb}_{listing_channel}.json"
 
     surrounding_suburbs = "false"
     exclude_under_contract = "false"
@@ -105,9 +103,10 @@ async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:  #
 
             pages_count += 1
     filename = constants.DOWNLOADED_REALESTATE_DATA.format(suburb=suburb, channel=listing_channel)
-    constants.ensure_directory_exists(filename)
-    with open(filename, "w+") as f:
-        json.dump(data, f, indent=4)
+    return ReIOPayload(data=data, filepath=filename)
+    # constants.ensure_directory_exists(filename)
+    # with open(filename, "w+") as f:
+    #     json.dump(data, f, indent=4)
 
 
 class ProcessFileConfig(dg.Config):
@@ -126,7 +125,7 @@ class ProcessFileConfig(dg.Config):
                                                  is_required=False),
              },
              group_name="new_raw",
-
+             retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
              )
 def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: ProcessFileConfig):
     """
@@ -153,6 +152,8 @@ def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: P
     # for page in data:
     #     for tier in page["tieredResults"]:
     for listing_data in data:
+        if list(listing_data.keys()).__contains__("isProject"):
+            continue
         # extract features
         features_list = []
         if listing_data.keys().__contains__("propertyFeatures"):
@@ -160,29 +161,30 @@ def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: P
                 for feature in feature_type["features"]:
                     features_list.append(feature)
         listing_agent_ids = []
-        for lister in listing_data["listers"]:
-            if len(list(lister.keys())) == 0:
-                print(f"Missing listers: {listing_data["listingId"]}")
-                continue
-            email = str(lister["email"]).strip().lower() if lister.keys().__contains__("email") else ""
-            agent = find_agent(agents, email)
-            if agent is None:
-                agency_id = str(
-                    listing_data["agency"]["email"]).strip().lower() if "agency" in listing_data.keys() else None
-                agent = Agent(
-                    agent_id=lister["id"] if lister.keys().__contains__("id") else "",
-                    full_name=lister["name"] if lister.keys().__contains__("name") else "",
-                    job_title=lister["jobTitle"] if lister.keys().__contains__("jobTitle") else "",
-                    email=email if lister.keys().__contains__("email") else "",
-                    website=lister["website"] if lister.keys().__contains__("website") else "",
-                    phone_number=lister["phoneNumber"] if lister.keys().__contains__(
-                        "phoneNumber") else "",
-                    mobile_number=lister["mobilePhoneNumber"] if lister.keys().__contains__(
-                        "mobilePhoneNumber") else "",
-                    agency_id=agency_id
-                )
-                agents.append(agent)
-            listing_agent_ids.append(agent.email)
+        if listing_data.keys().__contains__("listers"):
+            for lister in listing_data["listers"]:
+                if len(list(lister.keys())) == 0:
+                    print(f"Missing listers: {listing_data["listingId"]}")
+                    continue
+                email = str(lister["email"]).strip().lower() if lister.keys().__contains__("email") else ""
+                agent = find_agent(agents, email)
+                if agent is None:
+                    agency_id = str(
+                        listing_data["agency"]["email"]).strip().lower() if "agency" in listing_data.keys() else None
+                    agent = Agent(
+                        agent_id=lister["id"] if lister.keys().__contains__("id") else "",
+                        full_name=lister["name"] if lister.keys().__contains__("name") else "",
+                        job_title=lister["jobTitle"] if lister.keys().__contains__("jobTitle") else "",
+                        email=email if lister.keys().__contains__("email") else "",
+                        website=lister["website"] if lister.keys().__contains__("website") else "",
+                        phone_number=lister["phoneNumber"] if lister.keys().__contains__(
+                            "phoneNumber") else "",
+                        mobile_number=lister["mobilePhoneNumber"] if lister.keys().__contains__(
+                            "mobilePhoneNumber") else "",
+                        agency_id=agency_id
+                    )
+                    agents.append(agent)
+                listing_agent_ids.append(agent.email)
 
         agency_address_id = f"{str(listing_data['agency']['address']['streetAddress']).strip()}-{str(listing_data['agency']['address']['suburb']).strip()}-{str(listing_data['agency']['address']['state']).strip()}-{str(listing_data['agency']['address']['postcode']).strip()}".replace(
             " ", "-").lower() if list(listing_data.keys()).__contains__("agency") else ""
@@ -269,10 +271,10 @@ def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: P
             listing = Listing(
                 listing_id=listing_data["listingId"],
                 title=listing_data["title"],
-                property_type=listing_data["propertyType"],
+                property_type=listing_data["propertyType"] if list(listing_data.keys()).__contains__("propertyType") else "",
                 listing_type=listing_data["channel"],
-                construction_status=listing_data["constructionStatus"],
-                price=listing_data["price"]["display"],
+                construction_status=listing_data["constructionStatus"] if list(listing_data.keys()).__contains__("constructionStatus") else "",
+                price=listing_data["price"]["display"] if list(listing_data.keys()).__contains__("price") else "",
                 advertised_price=advertised_price,
                 bedrooms=listing_data["features"]["general"]["bedrooms"],
                 bathrooms=listing_data["features"]["general"]["bathrooms"],
@@ -326,6 +328,7 @@ def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: P
     },
     description="Normalised listings data",
     compute_kind="Python",
+    retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
 )
 def cleansed_listings_data(database: DuckDBResource):
     import re
@@ -401,6 +404,7 @@ def cleansed_listings_data(database: DuckDBResource):
     },
     description="Normalised rental listings data",
     compute_kind="Python",
+    retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
 )
 def cleansed_rental_listings_data(database: DuckDBResource):
     import re

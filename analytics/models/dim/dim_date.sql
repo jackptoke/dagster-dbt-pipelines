@@ -6,9 +6,9 @@
     )
  }}
 WITH all_dates AS (
-    SELECT DISTINCT list_sold_date AS new_date FROM {{ source('cleansed_data', 'staging_listings') }}
+    SELECT DISTINCT list_sold_date AS new_date FROM {{ source('cleansed_data', 'staging_listings') }} WHERE list_sold_date is not null AND list_sold_date != ''
     UNION
-    SELECT DISTINCT date_available AS new_date FROM {{ source('cleansed_data', 'staging_rental_listings') }}
+    SELECT DISTINCT date_available AS new_date FROM {{ source('cleansed_data', 'staging_rental_listings') }} WHERE date_available is not null AND date_available != ''
 )
 select
     epoch_ms(new_date::DATE) AS date_id,
