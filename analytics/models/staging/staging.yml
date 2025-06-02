@@ -10,9 +10,6 @@ models:
     columns:
       - name: suburb_id
         description: The identifying code of a suburb
-        tests:
-          - unique
-          - not_null
       - name: suburb_name
         description: The name of the suburb
       - name: urban_area

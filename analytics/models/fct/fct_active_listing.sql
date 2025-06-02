@@ -19,6 +19,5 @@ SELECT
     ad_lower_price,
     ad_upper_price,
     land_size,
-    epoch_ms(list_sold_date::DATE) AS date_id,
     md5(address_id) AS address_id
 FROM sold_listings

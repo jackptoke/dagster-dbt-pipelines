@@ -6,7 +6,8 @@ class Listing(object):
                  listing_id: int,
                  title: str,
                  property_type: Literal[
-                     "house", "apartment", "unit", "townhouse", "mansion", "complex", "building", "land"],
+                     "house", "apartment", "unit", "townhouse", "mansion", "complex", "building", "land",
+                     "residential land", "unitblock"],
                  listing_type: Literal["rental", "buy", "sold"],
                  construction_status: Literal["new", "established", "under_construction"],
                  price: str,

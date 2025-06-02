@@ -1,13 +1,16 @@
 import dagster as dg
 
+from ..assets.dbt import dbt_analytics
 from ..assets.listings import downloaded_listing_data, process_downloaded_listing_data, cleansed_listings_data, \
     cleansed_rental_listings_data
+from ..assets.suburbs import raw_suburbs_file
 from ..partitions import suburb_channel_partitions
 
 
 download_listing_data_job = dg.define_asset_job(
     name="download_listing_data_job",
     selection=[downloaded_listing_data],
+    executor_def=dg.multiprocess_executor.configured({"max_concurrent": 1})
 )
 
 process_downloaded_listing_data_job = dg.define_asset_job(
@@ -23,6 +26,16 @@ raw_listing_data_job = dg.define_asset_job(
 raw_rental_listing_data_job = dg.define_asset_job(
     name="raw_rental_listing_data_job",
     selection=[cleansed_rental_listings_data]
+)
+
+rebuild_dbt_assets_job = dg.define_asset_job(
+    name="rebuild_dbt_assets_job",
+    selection=[dbt_analytics]
+)
+
+raw_suburbs_file_job = dg.define_asset_job(
+    name="raw_suburbs_file_job",
+    selection=[raw_suburbs_file]
 )
 
 # trips_by_week = dg.AssetSelection.assets("trips_by_week")

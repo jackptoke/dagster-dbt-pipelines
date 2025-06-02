@@ -12,21 +12,21 @@ weekly_partition = dg.WeeklyPartitionsDefinition(start_date=start_date, end_date
 daily_partition = dg.DailyPartitionsDefinition(start_date=start_date, end_date=end_date)
 
 SUBURBS = [
-    "Ararat",
+    # "Ararat",
+    # "Bacchus Marsh"
     # "Beaufort",
     # "Hoppers Crossing",
-    # "Horsham",
     # "Werribee",
-    # "Tarneit",
+    # "Wyndham Vale",
+    # "Horsham",
+    "Tarneit",
     # "Laverton North",
     # "Williams Landing",
-    # "Wyndham Vale",
     # "Point Cook",
     # "Werribee South",
     # "Cocoroc",
     # "Quandong",
     # "Mambourin",
-    # "Bacchus Marsh"
 ]
 
 suburbs_partitions_def = StaticPartitionsDefinition(SUBURBS)
