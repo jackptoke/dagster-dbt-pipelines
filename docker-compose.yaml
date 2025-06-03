@@ -1,0 +1,119 @@
+services:
+  docker_pgduckdb:
+    image: pgduckdb/pgduckdb:17-main
+    container_name: docker_pgduckdb
+    environment:
+      POSTGRES_USER: 'postgres_user'
+      POSTGRES_PASSWORD: 'postgres_password'
+      POSTGRES_DB: 'pgduckdb'
+    networks:
+      - dagster_network
+    volumes:
+      - ./data/pgduckdb:/opt/dagster/app/data/pgduckdb
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U postgres_user -d pgduckdb' ]
+      interval: 10s
+      timeout: 8s
+      retries: 5
+
+  minio:
+    image: minio/minio:RELEASE.2025-05-24T17-08-30Z
+    container_name: dagster-minio
+    hostname: minio
+    restart: always
+    volumes:
+      - ./data/minio:/data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - dagster_network
+
+  code_location:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: code_location
+    image: code_location_image
+    restart: always
+    volumes:
+      - ./dagster_university:/opt/dagster/app/dagster_university
+      - ./analytics:/opt/dagster/app/analytics
+      - ./data:/opt/dagster/app/data
+    env_file:
+      - .env
+    networks:
+      - dagster_network
+
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile_webserver
+    entrypoint:
+      - dagster-webserver
+      - -h
+      - '0.0.0.0'
+      - -p
+      - '3000'
+      - -w
+      - workspace.yaml
+    expose:
+      - '3000'
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes: # Make docker client accessible so we can launch containers using host docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/io_manager_storage:/tmp/io_manager_storage
+    networks:
+      - dagster_network
+    depends_on:
+      docker_pgduckdb:
+        condition: service_healthy
+      code_location:
+        condition: service_started
+      minio:
+        condition: service_healthy
+
+  daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile_daemon
+    entrypoint:
+      - dagster-daemon
+      - run
+    restart: on-failure
+    env_file:
+      - .env
+    volumes: # Make docker client accessible so we can launch containers using host docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/io_manager_storage:/tmp/io_manager_storage
+    networks:
+      - dagster_network
+    depends_on:
+      docker_pgduckdb:
+        condition: service_healthy
+      code_location:
+        condition: service_started
+      minio:
+        condition: service_healthy
+
+networks:
+  dagster_network:
+    driver: bridge
+    name: dagster_network
+
+volumes:
+  data:

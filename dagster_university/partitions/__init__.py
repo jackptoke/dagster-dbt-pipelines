@@ -14,12 +14,12 @@ daily_partition = dg.DailyPartitionsDefinition(start_date=start_date, end_date=e
 SUBURBS = [
     # "Ararat",
     # "Bacchus Marsh"
-    # "Beaufort",
+    "Beaufort",
     # "Hoppers Crossing",
     # "Werribee",
     # "Wyndham Vale",
     # "Horsham",
-    "Tarneit",
+    # "Tarneit",
     # "Laverton North",
     # "Williams Landing",
     # "Point Cook",
