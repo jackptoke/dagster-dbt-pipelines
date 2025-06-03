@@ -177,6 +177,11 @@ tmp*/
 *.parquet
 
 data/
+data/downloaded/
+data/minio/
+data/pgduckdb/
+data/raw/
+data/staging/
 
 *.user.yml
 
