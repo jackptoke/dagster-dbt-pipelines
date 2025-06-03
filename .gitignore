@@ -176,10 +176,7 @@ tmp*/
 *.csv
 *.parquet
 
-data/outputs/*
-data/raw/*
-data/requests/*.json
-data/staging/*
+data/
 
 *.user.yml
 
