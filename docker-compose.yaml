@@ -110,6 +110,35 @@ services:
       minio:
         condition: service_healthy
 
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile_streamlit
+    restart: always
+    volumes:
+      - ./dashboard:/app
+      - ./data:/app/data
+    entrypoint:
+      - streamlit
+      - run
+      - streamlit_app.py
+      - --server.port=8501
+      - --server.address=0.0.0.0
+    expose:
+      - "8501"
+    ports:
+      - "8501:8501"
+    networks:
+      - dagster_network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8501/_stcore/health" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    depends_on:
+      webserver:
+        condition: service_started
+
 networks:
   dagster_network:
     driver: bridge
