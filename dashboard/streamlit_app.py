@@ -33,32 +33,42 @@ years = get_properties(years_query)
 
 st.header("Available Suburbs")
 
-selected_suburb = st.selectbox(label='Select Suburb', options=suburbs["suburb"], key="sb_suburbs")
-selected_year = st.selectbox(label='Select Year', options=years["year"])
+form = st.form(key='realestate_form',
+               clear_on_enter=False,
+               enter_to_submit=True,
+               border=True)
 
-st.subheader(f"Selected Suburb: {selected_suburb}")
+selected_suburb = form.selectbox(label='Select Suburb', options=suburbs["suburb"], key="sb_suburbs")
+selected_year = form.selectbox(label='Select Year', options=years["year"])
 
-st.header("Scatter Plot of Properties")
+submit = form.form_submit_button(label='Submit')
+
 tab1, tab2 = st.tabs(["Tarneit Properties", "Baccus Marsh Properties"])
 
-query = """
-select listing_id, num_bedrooms, num_bathrooms, num_parking_spaces, land_size, L.price, A.suburb, D.year 
-from fct_sold_listing L join dim_date D on D.date_id = L.date_id join dim_address A on A.address_id = L.address_id 
-where A.suburb = '{suburb}' and D.year = {year} and L.price > 0;
-"""
+if submit:
+    st.subheader(f"Selected Suburb: {selected_suburb}")
 
-tarneit_properties_df = get_properties(query.format(suburb=selected_suburb, year=selected_year))
+    st.header("Scatter Plot of Properties")
 
-tarneit_fig = px.scatter(data_frame=tarneit_properties_df,
-                         x='land_size',
-                         y='price',
-                         color='num_bedrooms',
-                         size='num_bathrooms',
-                         hover_data=["year", "price", "num_bedrooms", "num_bathrooms", "land_size"],
-                         title=f'{selected_suburb} Properties',)
 
-with tab1:
-    st.plotly_chart(tarneit_fig, key="properties_tab", on_select="rerun", theme="streamlit", use_container_width=True)
+    query = """
+    select listing_id, num_bedrooms, num_bathrooms, num_parking_spaces, land_size, L.price, A.suburb, D.year 
+    from fct_sold_listing L join dim_date D on D.date_id = L.date_id join dim_address A on A.address_id = L.address_id 
+    where A.suburb = '{suburb}' and D.year = {year} and L.price > 0;
+    """
 
-with tab2:
-    st.text("Coming soon ...")
+    tarneit_properties_df = get_properties(query.format(suburb=selected_suburb, year=selected_year))
+
+    tarneit_fig = px.scatter(data_frame=tarneit_properties_df,
+                             x='land_size',
+                             y='price',
+                             color='num_bedrooms',
+                             size='num_bathrooms',
+                             hover_data=["year", "price", "num_bedrooms", "num_bathrooms", "land_size"],
+                             title=f'{selected_suburb} Properties',)
+
+    with tab1:
+        st.plotly_chart(tarneit_fig, key="properties_tab", on_select="rerun", theme="streamlit", use_container_width=True)
+else:
+    with tab2:
+        st.text("Please select a suburb and year ...")
