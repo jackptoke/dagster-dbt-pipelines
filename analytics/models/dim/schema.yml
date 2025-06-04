@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: Dates dimension table
+    config:
+      meta:
+        dagster:
+          group: DBT_DIM_DATA
+  - name: dim_address
+    description: Address dimension table
+    config:
+      meta:
+        dagster:
+          group: DBT_DIM_DATA
+  - name: dim_agency
+    description: Agency dimension table
+    config:
+      meta:
+        dagster:
+          group: DBT_DIM_DATA
+  - name: dim_agent
+    description: Agent dimension table
+    config:
+      meta:
+        dagster:
+          group: DBT_DIM_DATA
