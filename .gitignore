@@ -176,10 +176,12 @@ tmp*/
 *.csv
 *.parquet
 
-data/outputs/*
-data/raw/*
-data/requests/*.json
-data/staging/*
+data/
+data/downloaded/
+data/minio/
+data/pgduckdb/
+data/raw/
+data/staging/
 
 *.user.yml
 
@@ -187,3 +189,5 @@ data/staging/*
 
 dagster_university.egg-info
 .tmp_dagster_home_*
+
+.idea
