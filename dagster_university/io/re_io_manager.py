@@ -14,7 +14,7 @@ class ReIOPayload(object):
 
 class ReIOManager(IOManager):
     def handle_output(self, context: OutputContext, data_content: ReIOPayload) -> None:
-        context.log.info(f"ReIOManager partition def: {context.asset_partition_keys}")
+        # context.log.info(f"ReIOManager partition def: {context.asset_partition_keys}")
         load_data(data=data_content.data, filepath=data_content.filepath)
         # storage_path = f"/data/output/{context.asset_key.path[-1]}"
         # with open(storage_path, "w") as f:

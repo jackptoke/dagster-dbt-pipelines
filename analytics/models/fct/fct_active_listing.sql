@@ -19,5 +19,6 @@ SELECT
     ad_lower_price,
     ad_upper_price,
     land_size,
+    property_type,
     md5(address_id) AS address_id
 FROM sold_listings

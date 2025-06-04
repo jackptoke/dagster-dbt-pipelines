@@ -12,6 +12,7 @@ SELECT
     num_bedrooms,
     num_bathrooms,
     num_parking_spaces,
+    property_type,
     epoch_ms(date_available::DATE) AS date_id,
     A.agency_id,
     md5(R.address_id) AS address_id,

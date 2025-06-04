@@ -17,6 +17,7 @@ SELECT
     num_bathrooms,
     num_parking_spaces,
     land_size,
+    property_type,
     epoch_ms(list_sold_date::DATE) AS date_id,
     md5(address_id) AS address_id
 FROM sold_listings
