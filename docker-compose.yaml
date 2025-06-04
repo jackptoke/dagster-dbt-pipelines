@@ -3,17 +3,15 @@ services:
     image: pgduckdb/pgduckdb:17-main
     container_name: docker_pgduckdb
     environment:
-      POSTGRES_USER: 'postgres_user'
-      POSTGRES_PASSWORD: 'postgres_password'
-      POSTGRES_DB: 'pgduckdb'
+      POSTGRES_USER: 'dagster'
+      POSTGRES_PASSWORD: 'dagster'
+      POSTGRES_DB: 'dagster'
     networks:
       - dagster_network
-    volumes:
-      - ./data/pgduckdb:/opt/dagster/app/data/pgduckdb
     ports:
       - "5432:5432"
     healthcheck:
-      test: [ 'CMD-SHELL', 'pg_isready -U postgres_user -d pgduckdb' ]
+      test: [ 'CMD-SHELL', 'pg_isready -U dagster -d dagster' ]
       interval: 10s
       timeout: 8s
       retries: 5
