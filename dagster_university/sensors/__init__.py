@@ -3,7 +3,9 @@ import os
 import json
 import dagster as dg
 from dagster import SensorEvaluationContext, RunsFilter, DagsterRunStatus, SkipReason
+from pathlib import Path
 
+from ..assets.constants import get_path_for_env
 from ..jobs import process_downloaded_listing_data_job
 
 
@@ -12,14 +14,14 @@ from ..jobs import process_downloaded_listing_data_job
     default_status=dg.DefaultSensorStatus.RUNNING,
     minimum_interval_seconds=120)
 def downloaded_listing_data_sensor(context: SensorEvaluationContext):
-    PATH_TO_DOWNLOADED_FILES = os.path.join(os.path.dirname(__file__), "../../", "data/downloaded")
+    path_to_downloaded_files = Path(__file__).parent.parent.parent / get_path_for_env("data/downloaded")
 
     previous_state = json.loads(context.cursor) if context.cursor else {}
     current_state = {}
     # runs_to_request = []
 
-    for filename in os.listdir(PATH_TO_DOWNLOADED_FILES):
-        file_path = os.path.join(PATH_TO_DOWNLOADED_FILES, filename)
+    for filename in os.listdir(path_to_downloaded_files):
+        file_path = os.path.join(path_to_downloaded_files, filename)
         if filename.endswith(".json") and os.path.isfile(file_path):
             last_modified = os.path.getmtime(file_path)
 
