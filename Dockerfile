@@ -3,40 +3,25 @@ LABEL authors="jacktoke"
 
 ENV PYTHONUNBUFFERED=1
 
+ENV DAGSTER_HOME=/opt/dagster/dagster_home
+
+WORKDIR $DAGSTER_HOME
+
 RUN pip install --upgrade pip
 
-RUN pip install \
-    dagster \
-    dagster-cloud \
-    dagster-duckdb \
-    dagster-dbt \
-    dagster-postgres \
-    dagster-docker \
-    dbt-duckdb \
-    dagster-embedded-elt \
-    dagster-duckdb-pandas \
-    geopandas \
-    pandas[parquet] \
-    shapely \
-    matplotlib \
-    smart_open[s3] \
-    s3fs \
-    smart_open \
-    boto3 \
-    pyarrow \
-    aiohttp \
-    asyncio \
-    dagster-polars \
-    tenacity
+COPY requirements.txt .
 
-ENV DAGSTER_HOME=/opt/dagster/dagster_home/
+RUN pip install -r requirements.txt
 
-RUN mkdir -p $DAGSTER_HOME
+COPY dagster.yaml workspace.yaml .
+COPY dagster_university ./dagster_university
+COPY analytics ./analytics
+COPY data ./data
+COPY pyproject.toml .
+COPY setup.cfg .
+COPY setup.py .
+COPY .env .
 
-WORKDIR /opt/dagster/app
+EXPOSE 3000
 
-COPY . /opt/dagster/app
-
-EXPOSE 4000
-
-CMD ["dagster", "code-server", "start", "-h", "0.0.0.0", "-p", "4000", "-m", "dagster_university"]
+CMD ["dagster-webserver", "-w", "workspace.yaml", "-h", "0.0.0.0", "-p", "3000"]

@@ -1,15 +1,16 @@
 services:
-  docker_pgduckdb:
+  dagster-postgres:
     image: pgduckdb/pgduckdb:17-main
-    container_name: docker_pgduckdb
     environment:
-      POSTGRES_USER: 'dagster'
-      POSTGRES_PASSWORD: 'dagster'
-      POSTGRES_DB: 'dagster'
-    networks:
-      - dagster_network
+      - POSTGRES_USER=${DAGSTER_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${DAGSTER_POSTGRES_PASSWORD}
+      - POSTGRES_DB=${DAGSTER_POSTGRES_DB}
     ports:
       - "5432:5432"
+    volumes:
+      - dagster-postgres:/var/lib/postgresql/data
+    networks:
+      - dagster_network
     healthcheck:
       test: [ 'CMD-SHELL', 'pg_isready -U dagster -d dagster' ]
       interval: 10s
@@ -22,7 +23,7 @@ services:
     hostname: minio
     restart: always
     volumes:
-      - ./data/minio:/data
+      - minio:/data
     ports:
       - 9000:9000
       - 9001:9001
@@ -38,74 +39,35 @@ services:
     networks:
       - dagster_network
 
-  code_location:
+  dagster-dagit:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: code_location
-    image: code_location_image
-    restart: always
     volumes:
-      - ./dagster_university:/opt/dagster/app/dagster_university
-      - ./analytics:/opt/dagster/app/analytics
-      - ./data:/opt/dagster/app/data
-    env_file:
-      - .env
-    networks:
-      - dagster_network
-
-  webserver:
-    build:
-      context: .
-      dockerfile: Dockerfile_webserver
-    entrypoint:
-      - dagster-webserver
-      - -h
-      - '0.0.0.0'
-      - -p
-      - '3000'
-      - -w
-      - workspace.yaml
-    expose:
-      - '3000'
+      - ./dagster_university:/opt/dagster/dagster_home/dagster_university
+      - ./data:/opt/dagster/dagster_home/data
+      - ./analytics:/opt/dagster/dagster_home/analytics
     ports:
-      - "3000:3000"
-    env_file:
-      - .env
-    volumes: # Make docker client accessible so we can launch containers using host docker
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /tmp/io_manager_storage:/tmp/io_manager_storage
+      - 3000:3000
     networks:
       - dagster_network
     depends_on:
-      docker_pgduckdb:
-        condition: service_healthy
-      code_location:
-        condition: service_started
-      minio:
+      dagster-postgres:
         condition: service_healthy
 
-  daemon:
+  dagster-daemon:
     build:
       context: .
-      dockerfile: Dockerfile_daemon
-    entrypoint:
-      - dagster-daemon
-      - run
-    restart: on-failure
-    env_file:
-      - .env
-    volumes: # Make docker client accessible so we can launch containers using host docker
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /tmp/io_manager_storage:/tmp/io_manager_storage
+      dockerfile: Dockerfile
+    command: "dagster-daemon run"
+    environment:
+      - PGPASS=${DAGSTER_POSTGRES_PASSWORD}
     networks:
       - dagster_network
     depends_on:
-      docker_pgduckdb:
-        condition: service_healthy
-      code_location:
+      dagster-dagit:
         condition: service_started
-      minio:
+      dagster-postgres:
         condition: service_healthy
 
   streamlit:
@@ -134,7 +96,7 @@ services:
       timeout: 20s
       retries: 3
     depends_on:
-      webserver:
+      dagster-dagit:
         condition: service_started
 
 networks:
@@ -143,4 +105,9 @@ networks:
     name: dagster_network
 
 volumes:
-  data:
+  docker-pgduckdb:
+    driver: local
+  minio:
+    driver: local
+  dagster-postgres:
+    driver: local
