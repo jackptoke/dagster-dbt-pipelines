@@ -92,6 +92,10 @@ services:
     command: "dagster-daemon run"
     environment:
       - PGPASS=${DAGSTER_POSTGRES_PASSWORD}
+    volumes:
+      - ./dagster_university:/opt/dagster/dagster_home/dagster_university
+      - ./analytics:/opt/dagster/dagster_home/analytics
+      - ./data:/opt/dagster/dagster_home/data
     networks:
       - dagster_network
     env_file:

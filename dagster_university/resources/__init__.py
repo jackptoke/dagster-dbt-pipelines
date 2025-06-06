@@ -11,7 +11,7 @@ from dagster_university.project import dbt_project
 
 logger = logging.getLogger(__name__)
 
-db_conn = f"{dg.EnvVar("MOTHER_DUCK_URL").get_value()}?motherduck_token={dg.EnvVar("MOTHER_DUCK_TOKEN").get_value()}" if dg.EnvVar("DAGSTER_ENVIRONMENT").get_value() == "prod" else dg.EnvVar("DUCKDB_DATABASE").get_value()
+db_conn = f"{dg.EnvVar("MOTHER_DUCK_URL").get_value()}?motherduck_token={dg.EnvVar("MOTHER_DUCK_TOKEN").get_value()}" #if dg.EnvVar("DAGSTER_ENVIRONMENT").get_value() == "prod" else dg.EnvVar("DUCKDB_DATABASE").get_value()
 logger.info(f"DB Connection: Connecting to {db_conn}")
 database_resource = DuckDBResource(database=db_conn)
 

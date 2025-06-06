@@ -1,0 +1,7 @@
+altair
+pandas
+streamlit
+matplotlib==3.10.3
+duckdb
+plotly
+pydeck

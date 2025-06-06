@@ -13,7 +13,6 @@ from dagster_duckdb import DuckDBResource
 from dagster_university.assets import constants
 from dagster_university.assets.listings_support import find_address, find_agent, find_agency, get_ad_price, \
     get_surface_area
-from dagster_university.io.re_io_manager import ReIOPayload
 from dagster_university.models.address import Address
 from dagster_university.models.agency import Agency
 from dagster_university.models.agent import Agent
@@ -36,7 +35,7 @@ async def fetch(session, url, params, headers) -> dict | aiohttp.ClientResponse:
        group_name="downloaded",
        io_manager_key="re_io_manager",
        retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
-       backfill_policy=dg.BackfillPolicy.multi_run(max_partitions_per_run=10),
+       # backfill_policy=dg.BackfillPolicy.multi_run(max_partitions_per_run=10),
        compute_kind="Python",
        )
 async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:  #, config: ListingOpConfig
