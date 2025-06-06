@@ -14,7 +14,7 @@ from ..jobs import process_downloaded_listing_data_job
     default_status=dg.DefaultSensorStatus.RUNNING,
     minimum_interval_seconds=120)
 def downloaded_listing_data_sensor(context: SensorEvaluationContext):
-    path_to_downloaded_files = Path(__file__).parent.parent.parent / get_path_for_env("data/downloaded")
+    path_to_downloaded_files = Path(__file__).parent.parent.parent / "data/downloaded"
 
     previous_state = json.loads(context.cursor) if context.cursor else {}
     current_state = {}
@@ -98,6 +98,26 @@ def staging_rental_listings_sensor(context: SensorEvaluationContext):
         )
     )
 
+    if len(run_records) > 0:
+        yield SkipReason("Skipping this run because another run of the same job is already running")
+    else:
+        yield dg.RunRequest()
+
+
+@dg.asset_sensor(asset_key=dg.AssetKey("raw_suburbs"), job_name="rebuild_dbt_assets_job",
+                 default_status=dg.DefaultSensorStatus.RUNNING,
+                 minimum_interval_seconds=120)
+def raw_suburbs_sensor(context: SensorEvaluationContext):
+    run_records = context.instance.get_run_records(
+        RunsFilter(
+            statuses=[
+                DagsterRunStatus.QUEUED,
+                DagsterRunStatus.NOT_STARTED,
+                DagsterRunStatus.STARTING,
+                DagsterRunStatus.STARTED
+            ]
+        )
+    )
     if len(run_records) > 0:
         yield SkipReason("Skipping this run because another run of the same job is already running")
     else:

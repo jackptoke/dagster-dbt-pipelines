@@ -1,5 +1,5 @@
 WITH all_suburbs AS (
-    SELECT * FROM {{ source('new_raw', 'raw_suburbs') }}
+    SELECT DISTINCT * FROM {{ source('new_raw', 'raw_suburbs') }}
 )
 SELECT
     ssc_code AS suburb_id,

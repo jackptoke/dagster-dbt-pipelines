@@ -6,10 +6,10 @@
     )
 }}
 WITH all_listings AS (
-    SELECT * FROM {{ ref('fct_sold_listing') }}
+    SELECT DISTINCT *  FROM {{ ref('fct_sold_listing') }}
 ),
     all_listing_agents AS (
-        SELECT * FROM {{ source('cleansed_data', 'staging_listing_agents') }}
+        SELECT DISTINCT *  FROM {{ source('cleansed_data', 'staging_listing_agents') }}
     )
 SELECT
     L.listing_id,

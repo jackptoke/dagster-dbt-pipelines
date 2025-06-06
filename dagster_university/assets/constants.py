@@ -36,10 +36,11 @@ def get_path_for_env(path: str) -> str:
     Returns:
         result_path (str): The path to the file, based on the environment.
     """
-    if os.getenv("DAGSTER_ENVIRONMENT") == "prod":
-        return S3_BUCKET_PREFIX + path
-    else:
-        return path
+    return path
+    # if os.getenv("DAGSTER_ENVIRONMENT") == "prod":
+    #     return S3_BUCKET_PREFIX + path
+    # else:
+    #     return path
 
 
 TAXI_ZONES_FILE_PATH = get_path_for_env("data/raw/taxi_zones.csv")

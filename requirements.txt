@@ -10,7 +10,8 @@ dbt-duckdb
 dagster-embedded-elt
 dagster-duckdb-pandas
 geopandas
-pandas[parquet]
+pkgconf
+pandas==2.2.3
 shapely
 matplotlib
 smart_open[s3]
@@ -23,3 +24,4 @@ tenacity
 SQLAlchemy==2.0.41
 pyarrow
 boto3
+setuptools

@@ -1,11 +1,11 @@
-from typing import Mapping, Any
+from typing import Any, Optional
+from typing import Mapping
 
 import dagster as dg
 from dagster import AssetKey
 from dagster_dbt import dbt_assets, DbtCliResource, DagsterDbtTranslator
 
 from dagster_university.project import dbt_project
-from typing import Any, Optional
 
 
 # Customise how Dagster should translate DBT metadata
