@@ -6,11 +6,12 @@
     )
  }}
 WITH all_dates AS (
-    SELECT DISTINCT list_sold_date AS new_date FROM {{ source('cleansed_data', 'staging_listings') }} WHERE list_sold_date is not null AND list_sold_date != ''
+    SELECT DISTINCT list_sold_date AS new_date FROM {{ source('cleansed_data', 'staging_listings') }} WHERE LEN(list_sold_date::VARCHAR) > 0
     UNION
-    SELECT DISTINCT date_available AS new_date FROM {{ source('cleansed_data', 'staging_rental_listings') }} WHERE date_available is not null AND date_available != ''
+    SELECT DISTINCT date_available AS new_date FROM {{ source('cleansed_data', 'staging_rental_listings') }} WHERE LEN(date_available::VARCHAR) > 0
 )
 select
+    DISTINCT
     epoch_ms(new_date::DATE) AS date_id,
     new_date AS date_value,
     year(new_date::DATE) AS 'year',

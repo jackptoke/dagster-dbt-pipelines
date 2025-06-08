@@ -13,7 +13,6 @@ from dagster_duckdb import DuckDBResource
 from dagster_university.assets import constants
 from dagster_university.assets.listings_support import find_address, find_agent, find_agency, get_ad_price, \
     get_surface_area
-from dagster_university.io.re_io_manager import ReIOPayload
 from dagster_university.models.address import Address
 from dagster_university.models.agency import Agency
 from dagster_university.models.agent import Agent
@@ -36,15 +35,18 @@ async def fetch(session, url, params, headers) -> dict | aiohttp.ClientResponse:
        group_name="downloaded",
        io_manager_key="re_io_manager",
        retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
+       # backfill_policy=dg.BackfillPolicy.multi_run(max_partitions_per_run=10),
+       compute_kind="Python",
        )
-async def downloaded_listing_data(context: dg.AssetExecutionContext) -> ReIOPayload:  #, config: ListingOpConfig
+async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:  #, config: ListingOpConfig
     """
     The raw json files from the RapidApi containing listings data
     Returns:
         None
     """
     partition_keys: dg.MultiPartitionKey = context.partition_key.keys_by_dimension
-    context.log.info(f"Partition keys: {partition_keys}")
+
+    context.log.info(f"Partition partition_keys: {context.partition_key_range}")
     suburb = partition_keys["suburb"]
     listing_channel = partition_keys["channel"]
 
@@ -103,10 +105,10 @@ async def downloaded_listing_data(context: dg.AssetExecutionContext) -> ReIOPayl
 
             pages_count += 1
     filename = constants.DOWNLOADED_REALESTATE_DATA.format(suburb=suburb, channel=listing_channel)
-    return ReIOPayload(data=data, filepath=filename)
-    # constants.ensure_directory_exists(filename)
-    # with open(filename, "w+") as f:
-    #     json.dump(data, f, indent=4)
+    # return ReIOPayload(data=data, filepath=filename)
+    constants.ensure_directory_exists(filename)
+    with open(filename, "w+") as f:
+        json.dump(data, f, indent=4)
 
 
 class ProcessFileConfig(dg.Config):
@@ -126,6 +128,7 @@ class ProcessFileConfig(dg.Config):
              },
              group_name="new_raw",
              retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
+             compute_kind="duckdb",
              )
 def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: ProcessFileConfig):
     """
@@ -327,17 +330,17 @@ def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: P
         ),
     },
     description="Normalised listings data",
-    compute_kind="Python",
+    compute_kind="duckdb",
     retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
 )
-def cleansed_listings_data(database: DuckDBResource):
+def cleansed_listings_data(duckdb: DuckDBResource):
     import re
     query = f"SELECT * FROM {constants.RAW_LISTINGS_TABLE} WHERE price LIKE '$%'"
 
     listings = []
     property_features = []
     listing_agents = []
-    with database.get_connection() as conn:
+    with duckdb.get_connection() as conn:
         with conn.begin():
             try:
                 with conn.cursor() as cursor:
@@ -403,10 +406,10 @@ def cleansed_listings_data(database: DuckDBResource):
         ),
     },
     description="Normalised rental listings data",
-    compute_kind="Python",
+    compute_kind="duckdb",
     retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
 )
-def cleansed_rental_listings_data(database: DuckDBResource):
+def cleansed_rental_listings_data(duckdb: DuckDBResource):
     import re
     from datetime import datetime
 
@@ -415,7 +418,7 @@ def cleansed_rental_listings_data(database: DuckDBResource):
     rental_listings = []
     property_features = []
     listing_agents = []
-    with database.get_connection() as conn:
+    with duckdb.get_connection() as conn:
         with conn.begin():
             try:
                 with conn.cursor() as cursor:

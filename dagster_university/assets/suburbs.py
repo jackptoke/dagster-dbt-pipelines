@@ -29,7 +29,7 @@ def raw_suburbs_file() -> dg.MaterializeResult:
 @dg.asset(
     deps=["raw_suburbs_file"],
     group_name="raw_data",
-    compute_kind="Python",
+    compute_kind="duckdb",
     automation_condition=AutomationCondition.eager()
 )
 def raw_suburbs() -> pd.DataFrame:

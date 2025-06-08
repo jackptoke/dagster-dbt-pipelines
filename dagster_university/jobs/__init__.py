@@ -33,11 +33,6 @@ rebuild_dbt_assets_job = dg.define_asset_job(
     selection=[dbt_analytics]
 )
 
-raw_suburbs_file_job = dg.define_asset_job(
-    name="raw_suburbs_file_job",
-    selection=[raw_suburbs_file]
-)
-
 # trips_by_week = dg.AssetSelection.assets("trips_by_week")
 # adhoc_request = dg.AssetSelection.assets("adhoc_request")
 #

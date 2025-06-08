@@ -1,8 +1,7 @@
-import asyncio
-from dagster import build_schedule_from_partitioned_job, schedule, RunRequest, MultiPartitionKey, RunsFilter, \
-    DagsterRunStatus, SkipReason, ScheduleDefinition
+from dagster import schedule, RunRequest, MultiPartitionKey, RunsFilter, \
+    DagsterRunStatus, SkipReason
 
-from ..jobs import download_listing_data_job, raw_suburbs_file_job
+from ..jobs import download_listing_data_job
 from ..partitions import SUBURBS, CHANNELS
 
 
@@ -19,7 +18,7 @@ def incomplete_partition(partition):
 
 # Run every monday at 12:00
 @schedule(cron_schedule="0 0 * * *", job=download_listing_data_job)
-def suburb_channel_weekly_schedule(context):
+def download_listing_schedule(context):
     job_partitions = [{"suburb": suburb, "channel": channel} for suburb in SUBURBS for channel in
                       CHANNELS]
 
@@ -47,8 +46,8 @@ def suburb_channel_weekly_schedule(context):
             )
 
 
-raw_suburbs_file_schedule = ScheduleDefinition(job=raw_suburbs_file_job,
-                                               cron_schedule="0 0 1 * *",)
+# raw_suburbs_file_schedule = ScheduleDefinition(job=raw_suburbs_file_job,
+#                                                cron_schedule="0 0 1 * *",)
 
 
     # for suburb in SUBURBS:

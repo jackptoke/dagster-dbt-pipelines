@@ -25,3 +25,10 @@ models:
       meta:
         dagster:
           group: DBT_DIM_DATA
+  - name: dim_selected_suburb
+    description: Selected suburb dimension table
+    config:
+      meta:
+        dagster:
+          group: DBT_DIM_DATA
+          asset_key: ["dim_suburb_dbt"]

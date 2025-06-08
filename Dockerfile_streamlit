@@ -15,4 +15,6 @@ RUN mkdir -p /app/data/staging
 
 COPY ./data/staging/realestate.duckdb /app/data/staging/realestate.duckdb
 
+COPY ./streamlit_requirements.txt ./requirements.txt
+
 RUN pip install -r requirements.txt

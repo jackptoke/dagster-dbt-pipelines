@@ -49,8 +49,38 @@ services:
       - ./analytics:/opt/dagster/dagster_home/analytics
     ports:
       - 3000:3000
+    env_file:
+      - .env
     networks:
       - dagster_network
+    depends_on:
+      dagster-postgres:
+        condition: service_healthy
+
+  dagster-code-location:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint:
+      - dagster
+      - code-server
+      - start
+      - -h
+      - "0.0.0.0"
+      - -p
+      - "4000"
+      - -m
+      - dagster_university
+    ports:
+      - 4000:4000
+    volumes:
+      - ./dagster_university:/opt/dagster/dagster_home/dagster_university
+      - ./analytics:/opt/dagster/dagster_home/analytics
+      - ./data:/opt/dagster/dagster_home/data
+    networks:
+      - dagster_network
+    env_file:
+      - .env
     depends_on:
       dagster-postgres:
         condition: service_healthy
@@ -62,8 +92,14 @@ services:
     command: "dagster-daemon run"
     environment:
       - PGPASS=${DAGSTER_POSTGRES_PASSWORD}
+    volumes:
+      - ./dagster_university:/opt/dagster/dagster_home/dagster_university
+      - ./analytics:/opt/dagster/dagster_home/analytics
+      - ./data:/opt/dagster/dagster_home/data
     networks:
       - dagster_network
+    env_file:
+      - .env
     depends_on:
       dagster-dagit:
         condition: service_started
@@ -84,6 +120,8 @@ services:
       - streamlit_app.py
       - --server.port=8501
       - --server.address=0.0.0.0
+    env_file:
+      - .env
     expose:
       - "8501"
     ports:
