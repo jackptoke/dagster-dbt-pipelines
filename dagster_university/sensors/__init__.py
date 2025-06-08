@@ -8,11 +8,12 @@ from pathlib import Path
 from ..assets.constants import get_path_for_env
 from ..jobs import process_downloaded_listing_data_job
 
+INTERVAL_TIME = 86400
 
 @dg.sensor(
     job=process_downloaded_listing_data_job,
     default_status=dg.DefaultSensorStatus.RUNNING,
-    minimum_interval_seconds=120)
+    minimum_interval_seconds=INTERVAL_TIME)
 def downloaded_listing_data_sensor(context: SensorEvaluationContext):
     path_to_downloaded_files = Path(__file__).parent.parent.parent / "data/downloaded"
 
@@ -49,21 +50,21 @@ def downloaded_listing_data_sensor(context: SensorEvaluationContext):
 
 @dg.asset_sensor(asset_key=dg.AssetKey("raw_listings"), job_name="raw_listing_data_job",
                  default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=30)
+                 minimum_interval_seconds=INTERVAL_TIME)
 def raw_listings_sensor(context: SensorEvaluationContext):
     yield dg.RunRequest()
 
 
 @dg.asset_sensor(asset_key=dg.AssetKey("raw_rental_listings"), job_name="raw_rental_listing_data_job",
                  default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=30)
+                 minimum_interval_seconds=INTERVAL_TIME)
 def raw_rental_listings_sensor(context: SensorEvaluationContext):
     yield dg.RunRequest()
 
 
 @dg.asset_sensor(asset_key=dg.AssetKey("staging_listings"), job_name="rebuild_dbt_assets_job",
                  default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=30)
+                 minimum_interval_seconds=INTERVAL_TIME)
 def staging_listings_sensor(context: SensorEvaluationContext):
     run_records = context.instance.get_run_records(
         RunsFilter(
@@ -85,7 +86,7 @@ def staging_listings_sensor(context: SensorEvaluationContext):
 
 @dg.asset_sensor(asset_key=dg.AssetKey("staging_rental_listings"), job_name="rebuild_dbt_assets_job",
                  default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=30)
+                 minimum_interval_seconds=INTERVAL_TIME)
 def staging_rental_listings_sensor(context: SensorEvaluationContext):
     run_records = context.instance.get_run_records(
         RunsFilter(
@@ -106,7 +107,7 @@ def staging_rental_listings_sensor(context: SensorEvaluationContext):
 
 @dg.asset_sensor(asset_key=dg.AssetKey("raw_suburbs"), job_name="rebuild_dbt_assets_job",
                  default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=120)
+                 minimum_interval_seconds=INTERVAL_TIME)
 def raw_suburbs_sensor(context: SensorEvaluationContext):
     run_records = context.instance.get_run_records(
         RunsFilter(

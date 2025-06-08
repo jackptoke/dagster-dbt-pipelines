@@ -9,6 +9,7 @@ WITH all_addresses AS (
     SELECT * FROM {{ ref('stg_addresses') }}
 )
 SELECT
+    DISTINCT
     md5(address_id) AS address_id,
     street_address,
     suburb,

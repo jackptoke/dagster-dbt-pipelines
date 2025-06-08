@@ -8,6 +8,7 @@ dagster-postgres
 dagster-docker
 dbt-duckdb
 dagster-embedded-elt
+dagster-polars
 dagster-duckdb-pandas
 geopandas
 pkgconf

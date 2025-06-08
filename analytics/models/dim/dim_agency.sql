@@ -9,6 +9,7 @@ WITH all_agencies AS (
     SELECT * FROM {{  ref('stg_agencies') }}
 )
 SELECT
+    DISTINCT
     agency_id,
     agency_name,
     agency_email,

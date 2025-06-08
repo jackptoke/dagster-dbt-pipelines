@@ -5,6 +5,7 @@ agencies AS (
     SELECT * FROM {{ ref('dim_agency') }}
 )
 SELECT
+    DISTINCT
     listing_id,
     price,
     price_period,

@@ -12,6 +12,7 @@ WITH all_listings AS (
         SELECT DISTINCT *  FROM {{ source('cleansed_data', 'staging_listing_agents') }}
     )
 SELECT
+    DISTINCT
     L.listing_id,
     A.agent_id
 FROM all_listings L

@@ -12,6 +12,7 @@ all_agencies AS (
     SELECT * FROM {{  ref('stg_agencies') }} WHERE agency_email != ''
 )
 SELECT
+    DISTINCT
     md5(agent_id) agent_id,
     agent_name,
     agent_title,

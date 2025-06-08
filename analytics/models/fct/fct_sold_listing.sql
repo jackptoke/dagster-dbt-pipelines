@@ -11,6 +11,7 @@ WITH sold_listings AS (
     WHERE listing_type = 'sold' AND price > 0
 )
 SELECT
+    DISTINCT
     listing_id,
     price,
     num_bedrooms,

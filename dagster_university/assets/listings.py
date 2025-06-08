@@ -33,7 +33,7 @@ async def fetch(session, url, params, headers) -> dict | aiohttp.ClientResponse:
 @asset(partitions_def=suburb_channel_partitions,
        metadata={"partition_expr": {"channel": "channel", "suburb": "suburb"}},
        group_name="downloaded",
-       io_manager_key="re_io_manager",
+       # io_manager_key="re_io_manager",
        retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
        # backfill_policy=dg.BackfillPolicy.multi_run(max_partitions_per_run=10),
        compute_kind="Python",
@@ -118,9 +118,9 @@ class ProcessFileConfig(dg.Config):
 
 @multi_asset(deps=["downloaded_listing_data"],
              outs={
-                 "raw_addresses": AssetOut(metadata={"schema": "public", "table": "raw_addresses"}),
-                 "raw_agents": AssetOut(metadata={"schema": "public", "table": "raw_agents"}),
-                 "raw_agencies": AssetOut(metadata={"schema": "public", "table": "raw_agents"}),
+                 "raw_addresses": AssetOut(metadata={"schema": "public", "table": "raw_addresses"}, is_required=False),
+                 "raw_agents": AssetOut(metadata={"schema": "public", "table": "raw_agents"}, is_required=False),
+                 "raw_agencies": AssetOut(metadata={"schema": "public", "table": "raw_agents"}, is_required=False),
                  "raw_listings": AssetOut(metadata={"schema": "public", "table": "raw_listings"},
                                           is_required=False),
                  "raw_rental_listings": AssetOut(metadata={"schema": "public", "table": "raw_rental_listings"},
@@ -306,15 +306,39 @@ def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: P
     context.log.info(
         f"Number of addresses: {len(addresses_objs)}, Number of agents: {len(agents_objs)}, Number of agencies: {len(agencies_objs)}, Number of listings: {len(listings_objs)}")
 
-    yield Output(pd.DataFrame(addresses_objs), output_name="raw_addresses")
-    yield Output(pd.DataFrame(agents_objs), output_name="raw_agents")
-    yield Output(pd.DataFrame(agencies_objs), output_name="raw_agencies")
+    # Determine if data needs to be persisted in the database
+
+    if len(addresses_objs) > 0:
+        context.log.info("Number of addresses: {}".format(len(addresses_objs)))
+        yield Output(pd.DataFrame(addresses_objs), output_name="raw_addresses")
+    else:
+        context.log.info("No addresses")
+
+    if len(agents_objs) > 0:
+        context.log.info("Number of agents: %s", len(agents_objs))
+        yield Output(pd.DataFrame(agents_objs), output_name="raw_agents")
+    else:
+        context.log.info("No agents")
+
+    if len(agencies_objs) > 0:
+        yield Output(pd.DataFrame(agencies_objs), output_name="raw_agencies")
+    else:
+        context.log.info("No agencies")
+
     # if it's rent channel, we yield a raw_rental_listings
     if listing_channel == "rent":
-        yield Output(pd.DataFrame(rental_listings_objs), output_name="raw_rental_listings")
+        if len(rental_listings_objs) > 0:
+            context.log.info("Number of rental listings: {}".format(len(rental_listings_objs)))
+            yield Output(pd.DataFrame(rental_listings_objs), output_name="raw_rental_listings")
+        else:
+            context.log.info("No rental listings")
         # raw_rental_listings
     else:  # otherwise, raw_listings
-        yield Output(pd.DataFrame(listings_objs), output_name="raw_listings")
+        if len(listings_objs) > 0:
+            context.log.info("Number of listings: {}".format(len(listings_objs)))
+            yield Output(pd.DataFrame(listings_objs), output_name="raw_listings")
+        else:
+            context.log.info("No listings")
 
 
 @multi_asset(
