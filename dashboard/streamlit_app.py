@@ -10,7 +10,7 @@ import matplotlib.colors as mcolors
 st.set_page_config(layout="wide")
 
 """
-# Australia Real Estate
+# Australian Real Estate
 
 The source code of the whole pipeline can be found my [Github repo](https://github.com/jackptoke/dagster-dbt-pipelines).
 
