@@ -31,13 +31,15 @@ services:
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     command: server /data --console-address ":9001"
+    networks:
+      dagster_network:
+        ipv4_address: 172.16.1.11
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
       interval: 30s
       timeout: 20s
       retries: 3
-    networks:
-      - dagster_network
+
 
   dagster-dagit:
     build:
@@ -140,7 +142,11 @@ services:
 networks:
   dagster_network:
     driver: bridge
-    name: dagster_network
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.1.0/24
+          gateway: 172.16.1.1
 
 volumes:
   docker-pgduckdb:

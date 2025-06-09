@@ -1,6 +1,6 @@
 import os
 
-S3_BUCKET_PREFIX = os.getenv("S3_BUCKET_PREFIX", "s3://dagster-university/")
+S3_BUCKET_PREFIX = os.getenv("S3_BUCKET_PREFIX", "s3://realestate/")
 
 
 def ensure_directory_exists(file_path):
@@ -36,20 +36,20 @@ def get_path_for_env(path: str) -> str:
     Returns:
         result_path (str): The path to the file, based on the environment.
     """
-    return path
-    # if os.getenv("DAGSTER_ENVIRONMENT") == "prod":
-    #     return S3_BUCKET_PREFIX + path
-    # else:
-    #     return path
+    # return path
+    if os.getenv("DAGSTER_ENVIRONMENT") == "prod":
+        return S3_BUCKET_PREFIX + path
+    else:
+        return path
 
 
-TAXI_ZONES_FILE_PATH = get_path_for_env("data/raw/taxi_zones.csv")
-TAXI_TRIPS_TEMPLATE_FILE_PATH = get_path_for_env("data/raw/taxi_trips_{}.parquet")
-
-TAXI_ZONES_FILE_PATH = get_path_for_env(os.path.join("data", "raw", "taxi_zones.csv"))
-TAXI_TRIPS_TEMPLATE_FILE_PATH = get_path_for_env(
-    os.path.join("data", "raw", "taxi_trips_{}.parquet")
-)
+# TAXI_ZONES_FILE_PATH = get_path_for_env("data/raw/taxi_zones.csv")
+# TAXI_TRIPS_TEMPLATE_FILE_PATH = get_path_for_env("data/raw/taxi_trips_{}.parquet")
+#
+# TAXI_ZONES_FILE_PATH = get_path_for_env(os.path.join("data", "raw", "taxi_zones.csv"))
+# TAXI_TRIPS_TEMPLATE_FILE_PATH = get_path_for_env(
+#     os.path.join("data", "raw", "taxi_trips_{}.parquet")
+# )
 
 TRIPS_BY_AIRPORT_FILE_PATH = get_path_for_env(
     os.path.join("data", "outputs", "trips_by_airport.csv")
@@ -87,6 +87,8 @@ LISTINGS_CSV_FILE = get_path_for_env("data/staging/csv/listings.csv")
 NORMALISED_LISTINGS_FILE = get_path_for_env("data/normalised/listings.csv")
 NORMALISED_LISTING_AGENTS_FILE = get_path_for_env("data/normalised/listing_agents.csv")
 NORMALISED_LISTING_FEATURES_FILE = get_path_for_env("data/normalised/listing_features.csv")
+
+DOWNLOADED_LISTINGS_FILE = get_path_for_env("data/downloaded")
 
 RAW_LISTINGS_TABLE = "public.raw_listings"
 RAW_RENTAL_LISTINGS_TABLE = "public.raw_rental_listings"

@@ -1,4 +1,4 @@
-WITH all_addresses AS (
+  WITH all_addresses AS (
     SELECT * FROM {{ source('new_raw', 'raw_addresses') }}
 )
 SELECT

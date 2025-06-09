@@ -5,20 +5,22 @@ import os
 
 import aiohttp
 import dagster as dg
-import pandas as pd
+import polars as pl
 import tenacity
 from dagster import asset, AssetOut, multi_asset, Output, RetryPolicy, Backoff
 from dagster_duckdb import DuckDBResource
+from smart_open import open
 
 from dagster_university.assets import constants
-from dagster_university.assets.listings_support import find_address, find_agent, find_agency, get_ad_price, \
-    get_surface_area
+from dagster_university.assets.listings_support import find_address, find_agent, find_agency, \
+    get_ad_price, get_surface_area
 from dagster_university.models.address import Address
 from dagster_university.models.agency import Agency
 from dagster_university.models.agent import Agent
 from dagster_university.models.listing import Listing
 from dagster_university.models.rental_listing import RentalListing
 from dagster_university.partitions import suburb_channel_partitions
+from ..resources import smart_open_config
 
 
 @tenacity.retry(stop=tenacity.stop_after_attempt(5),
@@ -33,9 +35,7 @@ async def fetch(session, url, params, headers) -> dict | aiohttp.ClientResponse:
 @asset(partitions_def=suburb_channel_partitions,
        metadata={"partition_expr": {"channel": "channel", "suburb": "suburb"}},
        group_name="downloaded",
-       # io_manager_key="re_io_manager",
        retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
-       # backfill_policy=dg.BackfillPolicy.multi_run(max_partitions_per_run=10),
        compute_kind="Python",
        )
 async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:  #, config: ListingOpConfig
@@ -104,16 +104,28 @@ async def downloaded_listing_data(context: dg.AssetExecutionContext) -> None:  #
                 # state = listings_data["resolvedLocalities"][0]["state"]
 
             pages_count += 1
-    filename = constants.DOWNLOADED_REALESTATE_DATA.format(suburb=suburb, channel=listing_channel)
+    filename = constants.DOWNLOADED_REALESTATE_DATA.format(suburb=suburb, channel=listing_channel).replace(" ", "_")
+
     # return ReIOPayload(data=data, filepath=filename)
-    constants.ensure_directory_exists(filename)
-    with open(filename, "w+") as f:
-        json.dump(data, f, indent=4)
+    # constants.ensure_directory_exists(filename)
+    context.log.info(f"Filename: {filename}")
+    context.log.info(f"Config: {smart_open_config.keys()}")
+    with open(uri=filename, mode="wb", transport_params=smart_open_config) as f:
+        f.write(json.dumps(data).encode("utf-8"))
 
 
 class ProcessFileConfig(dg.Config):
     filename: str
     filepath: str
+    s3_path: str
+
+
+# @op(required_resource_keys={"s3"})
+# def download_s3_json(context, key: str):
+#     bucket_name = dg.EnvVar("S3_BUCKET_NAME").get_value()
+#     s3_client = context.resources.s3
+#     obj = s3_client.get_object(Bucket=bucket_name, Key=key)
+#     return json.loads(obj['Body'].read())
 
 
 @multi_asset(deps=["downloaded_listing_data"],
@@ -129,12 +141,13 @@ class ProcessFileConfig(dg.Config):
              group_name="new_raw",
              retry_policy=RetryPolicy(max_retries=5, delay=60, backoff=Backoff(Backoff.EXPONENTIAL)),
              compute_kind="duckdb",
+             required_resource_keys={"s3"},
              )
-def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: ProcessFileConfig):
+def process_downloaded_listing_data(context: dg.AssetExecutionContext,
+                                    config: ProcessFileConfig):
     """
     It processes downloaded listings data and extract addresses, agents, agencies, listings data
     """
-
     addresses: list[Address] = []
     agents: list[Agent] = []
     agencies: list[Agency] = []
@@ -148,197 +161,207 @@ def process_downloaded_listing_data(context: dg.AssetExecutionContext, config: P
     if len(filename_parts) > 2:
         listing_channel = filename_parts[1]
 
-    context.log.info(f"Attempting to process downloaded file: {config.filename} path: {config.filepath}")
-    with open(config.filepath, "r") as f:
-        data = json.load(f)
+    context.log.info(f"Attempting to process downloaded file: {config.filename} path: {config.filepath} S3: {config.s3_path}")
 
-    # for page in data:
-    #     for tier in page["tieredResults"]:
-    for listing_data in data:
-        if list(listing_data.keys()).__contains__("isProject"):
-            continue
-        # extract features
-        features_list = []
-        if listing_data.keys().__contains__("propertyFeatures"):
-            for feature_type in listing_data["propertyFeatures"]:
-                for feature in feature_type["features"]:
-                    features_list.append(feature)
-        listing_agent_ids = []
-        if listing_data.keys().__contains__("listers"):
-            for lister in listing_data["listers"]:
-                if len(list(lister.keys())) == 0:
-                    print(f"Missing listers: {listing_data["listingId"]}")
-                    continue
-                email = str(lister["email"]).strip().lower() if lister.keys().__contains__("email") else ""
-                agent = find_agent(agents, email)
-                if agent is None:
-                    agency_id = str(
-                        listing_data["agency"]["email"]).strip().lower() if "agency" in listing_data.keys() else None
-                    agent = Agent(
-                        agent_id=lister["id"] if lister.keys().__contains__("id") else "",
-                        full_name=lister["name"] if lister.keys().__contains__("name") else "",
-                        job_title=lister["jobTitle"] if lister.keys().__contains__("jobTitle") else "",
-                        email=email if lister.keys().__contains__("email") else "",
-                        website=lister["website"] if lister.keys().__contains__("website") else "",
-                        phone_number=lister["phoneNumber"] if lister.keys().__contains__(
-                            "phoneNumber") else "",
-                        mobile_number=lister["mobilePhoneNumber"] if lister.keys().__contains__(
-                            "mobilePhoneNumber") else "",
-                        agency_id=agency_id
-                    )
-                    agents.append(agent)
-                listing_agent_ids.append(agent.email)
+    # with open(uri=config.s3_path, mode="rb", transport_params=smart_open_config) as f:
+    #     data = json.loads(f.read())
+    bucket_name = dg.EnvVar("S3_BUCKET_NAME").get_value()
+    s3_client = context.resources.s3
+    context.log.info(f"S3 bucket name: {bucket_name} with key: {config.s3_path}")
+    obj = s3_client.get_object(Bucket=bucket_name, Key=config.s3_path)
+    data = json.loads(obj['Body'].read())
 
-        agency_address_id = f"{str(listing_data['agency']['address']['streetAddress']).strip()}-{str(listing_data['agency']['address']['suburb']).strip()}-{str(listing_data['agency']['address']['state']).strip()}-{str(listing_data['agency']['address']['postcode']).strip()}".replace(
-            " ", "-").lower() if list(listing_data.keys()).__contains__("agency") else ""
+    context.log.info(f"File: {config.s3_path} has been loaded")
+    if len(data) > 0:
+        # for page in data:
+        #     for tier in page["tieredResults"]:
+        for listing_data in data:
+            if list(listing_data.keys()).__contains__("isProject"):
+                continue
+            # extract features
+            features_list = []
+            if listing_data.keys().__contains__("propertyFeatures"):
+                for feature_type in listing_data["propertyFeatures"]:
+                    for feature in feature_type["features"]:
+                        features_list.append(feature)
+            listing_agent_ids = []
+            if listing_data.keys().__contains__("listers"):
+                for lister in listing_data["listers"]:
+                    if len(list(lister.keys())) == 0:
+                        print(f"Missing listers: {listing_data["listingId"]}")
+                        continue
+                    email = str(lister["email"]).strip().lower() if lister.keys().__contains__("email") else ""
+                    agent = find_agent(agents, email)
+                    if agent is None:
+                        agency_id = str(
+                            listing_data["agency"]["email"]).strip().lower() if "agency" in listing_data.keys() else None
+                        agent = Agent(
+                            agent_id=lister["id"] if lister.keys().__contains__("id") else "",
+                            full_name=lister["name"] if lister.keys().__contains__("name") else "",
+                            job_title=lister["jobTitle"] if lister.keys().__contains__("jobTitle") else "",
+                            email=email if lister.keys().__contains__("email") else "",
+                            website=lister["website"] if lister.keys().__contains__("website") else "",
+                            phone_number=lister["phoneNumber"] if lister.keys().__contains__(
+                                "phoneNumber") else "",
+                            mobile_number=lister["mobilePhoneNumber"] if lister.keys().__contains__(
+                                "mobilePhoneNumber") else "",
+                            agency_id=agency_id
+                        )
+                        agents.append(agent)
+                    listing_agent_ids.append(agent.email)
 
-        agency_address = find_address(addresses, agency_address_id)
-        if agency_address is None and agency_address_id != "":
-            agency_address = Address(
-                address_id=agency_address_id,
-                street_address=str(listing_data["agency"]["address"]["streetAddress"]).strip(),
-                suburb=str(listing_data["agency"]["address"]["suburb"]).strip(),
-                state=str(listing_data["agency"]["address"]["state"]).strip(),
-                postcode=str(listing_data["agency"]["address"]["postcode"]).strip(),
-                locality="",
-                subdivision_code="",
-                latitude=0.0,
-                longitude=0.0
-            )
-            addresses.append(agency_address)
-        agency = None
-        if listing_data.keys().__contains__("agency"):
-            agency = find_agency(agencies, listing_data["agency"]["agencyId"])
-            if agency is None:
-                agency = Agency(
-                    agency_id=listing_data["agency"]["agencyId"],
-                    name=str(listing_data["agency"]["name"]).strip(),
-                    email=str(listing_data["agency"]["email"]).strip(),
+            agency_address_id = f"{str(listing_data['agency']['address']['streetAddress']).strip()}-{str(listing_data['agency']['address']['suburb']).strip()}-{str(listing_data['agency']['address']['state']).strip()}-{str(listing_data['agency']['address']['postcode']).strip()}".replace(
+                " ", "-").lower() if list(listing_data.keys()).__contains__("agency") else ""
+
+            agency_address = find_address(addresses, agency_address_id)
+            if agency_address is None and agency_address_id != "":
+                agency_address = Address(
                     address_id=agency_address_id,
-                    website=listing_data["agency"]["website"] if list(
-                        listing_data["agency"].keys()).__contains__("website") else "",
-                    phone_number=listing_data["agency"]["phoneNumber"]
+                    street_address=str(listing_data["agency"]["address"]["streetAddress"]).strip(),
+                    suburb=str(listing_data["agency"]["address"]["suburb"]).strip(),
+                    state=str(listing_data["agency"]["address"]["state"]).strip(),
+                    postcode=str(listing_data["agency"]["address"]["postcode"]).strip(),
+                    locality="",
+                    subdivision_code="",
+                    latitude=0.0,
+                    longitude=0.0
                 )
-                agencies.append(agency)
+                addresses.append(agency_address)
+            agency = None
+            if listing_data.keys().__contains__("agency"):
+                agency = find_agency(agencies, listing_data["agency"]["agencyId"])
+                if agency is None:
+                    agency = Agency(
+                        agency_id=listing_data["agency"]["agencyId"],
+                        name=str(listing_data["agency"]["name"]).strip(),
+                        email=str(listing_data["agency"]["email"]).strip(),
+                        address_id=agency_address_id,
+                        website=listing_data["agency"]["website"] if list(
+                            listing_data["agency"].keys()).__contains__("website") else "",
+                        phone_number=listing_data["agency"]["phoneNumber"]
+                    )
+                    agencies.append(agency)
 
-        listing_address_id = f"{str(listing_data['address']['streetAddress']).strip()}-{str(listing_data['address']['suburb']).strip()}-{str(listing_data['address']['state']).strip()}-{str(listing_data['address']['postcode']).strip()}".replace(
-            " ", "-").lower()
+            listing_address_id = f"{str(listing_data['address']['streetAddress']).strip()}-{str(listing_data['address']['suburb']).strip()}-{str(listing_data['address']['state']).strip()}-{str(listing_data['address']['postcode']).strip()}".replace(
+                " ", "-").lower()
 
-        list_address = find_address(addresses, listing_address_id)
+            list_address = find_address(addresses, listing_address_id)
 
-        if list_address is None:
-            list_address = Address(
-                address_id=listing_address_id,
-                street_address=str(listing_data["address"]["streetAddress"]).strip(),
-                suburb=str(listing_data["address"]["suburb"]).strip(),
-                state=str(listing_data["address"]["state"]).strip(),
-                postcode=str(listing_data["address"]["postcode"]).strip(),
-                locality=str(listing_data["address"]["locality"]).strip(),
-                subdivision_code=str(listing_data["address"]["subdivisionCode"]).strip(),
-                latitude=listing_data["address"]["location"]["latitude"] if list(
-                    listing_data["address"].keys()).__contains__("location") else 0.0,
-                longitude=listing_data["address"]["location"]["longitude"] if list(
-                    listing_data["address"].keys()).__contains__("location") else 0.0
-            )
-            addresses.append(list_address)
+            if list_address is None:
+                list_address = Address(
+                    address_id=listing_address_id,
+                    street_address=str(listing_data["address"]["streetAddress"]).strip(),
+                    suburb=str(listing_data["address"]["suburb"]).strip(),
+                    state=str(listing_data["address"]["state"]).strip(),
+                    postcode=str(listing_data["address"]["postcode"]).strip(),
+                    locality=str(listing_data["address"]["locality"]).strip(),
+                    subdivision_code=str(listing_data["address"]["subdivisionCode"]).strip(),
+                    latitude=listing_data["address"]["location"]["latitude"] if list(
+                        listing_data["address"].keys()).__contains__("location") else 0.0,
+                    longitude=listing_data["address"]["location"]["longitude"] if list(
+                        listing_data["address"].keys()).__contains__("location") else 0.0
+                )
+                addresses.append(list_address)
 
-        advertised_price = ""
-        if list(listing_data.keys()).__contains__("advertising") and list(
-                listing_data["advertising"].keys()).__contains__("priceRange"):
-            advertised_price = listing_data["advertising"]["priceRange"]
+            advertised_price = ""
+            if list(listing_data.keys()).__contains__("advertising") and list(
+                    listing_data["advertising"].keys()).__contains__("priceRange"):
+                advertised_price = listing_data["advertising"]["priceRange"]
 
+            if listing_channel == "rent":
+                listing = RentalListing(
+                    listing_id=listing_data["listingId"],
+                    title=listing_data["title"],
+                    property_type=listing_data["propertyType"],
+                    listing_type=listing_data["channel"],
+                    price=listing_data["price"]["display"],
+                    price_period="weekly" if "p" in str(listing_data["price"]["display"]).lower() else "monthly",
+                    bond=listing_data["bond"]["value"] if "bond" in listing_data.keys() else 0,
+                    bedrooms=listing_data["features"]["general"]["bedrooms"],
+                    bathrooms=listing_data["features"]["general"]["bathrooms"],
+                    parking_spaces=listing_data["features"]["general"]["parkingSpaces"],
+                    description=listing_data["description"],
+                    features=features_list,
+                    status=listing_data["status"]["type"] if "status" in list(listing_data.keys()) else "",
+                    date_available=listing_data["dateAvailable"]["date"],
+                    classic_project=listing_data["classicProject"],
+                    apply_online=listing_data["applyOnline"],
+                    agency_id=agency.email if agency is not None else "",
+                    agent_id=listing_agent_ids,
+                    address_id=listing_address_id
+                )
+                rental_listings.append(listing)
+            else:
+                listing = Listing(
+                    listing_id=listing_data["listingId"],
+                    title=listing_data["title"],
+                    property_type=listing_data["propertyType"] if list(listing_data.keys()).__contains__(
+                        "propertyType") else "",
+                    listing_type=listing_data["channel"],
+                    construction_status=listing_data["constructionStatus"] if list(listing_data.keys()).__contains__(
+                        "constructionStatus") else "",
+                    price=listing_data["price"]["display"] if list(listing_data.keys()).__contains__("price") else "",
+                    advertised_price=advertised_price,
+                    bedrooms=listing_data["features"]["general"]["bedrooms"],
+                    bathrooms=listing_data["features"]["general"]["bathrooms"],
+                    parking_spaces=listing_data["features"]["general"]["parkingSpaces"],
+                    land_size=f"{listing_data["landSize"]["value"]} {listing_data["landSize"]["unit"]}" if list(
+                        listing_data.keys()).__contains__("landSize") else "",
+                    description=listing_data["description"],
+                    features=features_list,
+                    status=listing_data["status"]["type"] if list(listing_data.keys()).__contains__(
+                        "status") else "",
+                    date_sold=listing_data["dateSold"]["value"] if list(listing_data.keys()).__contains__(
+                        "dateSold") else "",
+                    classic_project=listing_data["classicProject"],
+                    agency_id=agency.email if agency is not None else "",
+                    agent_id=listing_agent_ids,
+                    address_id=listing_address_id
+                )
+                listings.append(listing)
+
+        addresses_objs = [obj.__dict__ for obj in addresses]
+        agents_objs = [obj.__dict__ for obj in agents]
+        agencies_objs = [obj.__dict__ for obj in agencies]
+        listings_objs = [obj.__dict__ for obj in listings]
+        rental_listings_objs = [obj.__dict__ for obj in rental_listings]
+
+        context.log.info(
+            f"Number of addresses: {len(addresses_objs)}, Number of agents: {len(agents_objs)}, Number of agencies: {len(agencies_objs)}, Number of listings: {len(listings_objs)}")
+
+        # Determine if data needs to be persisted in the database
+
+        if len(addresses_objs) > 0:
+            context.log.info("Number of addresses: {}".format(len(addresses_objs)))
+            yield Output(pl.DataFrame(addresses_objs), output_name="raw_addresses")
+        else:
+            context.log.info("No addresses")
+
+        if len(agents_objs) > 0:
+            context.log.info("Number of agents: %s", len(agents_objs))
+            yield Output(pl.DataFrame(agents_objs), output_name="raw_agents")
+        else:
+            context.log.info("No agents")
+
+        if len(agencies_objs) > 0:
+            yield Output(pl.DataFrame(agencies_objs), output_name="raw_agencies")
+        else:
+            context.log.info("No agencies")
+
+        # if it's rent channel, we yield a raw_rental_listings
         if listing_channel == "rent":
-            listing = RentalListing(
-                listing_id=listing_data["listingId"],
-                title=listing_data["title"],
-                property_type=listing_data["propertyType"],
-                listing_type=listing_data["channel"],
-                price=listing_data["price"]["display"],
-                price_period="weekly" if "p" in str(listing_data["price"]["display"]).lower() else "monthly",
-                bond=listing_data["bond"]["value"] if "bond" in listing_data.keys() else 0,
-                bedrooms=listing_data["features"]["general"]["bedrooms"],
-                bathrooms=listing_data["features"]["general"]["bathrooms"],
-                parking_spaces=listing_data["features"]["general"]["parkingSpaces"],
-                description=listing_data["description"],
-                features=features_list,
-                status=listing_data["status"]["type"] if "status" in list(listing_data.keys()) else "",
-                date_available=listing_data["dateAvailable"]["date"],
-                classic_project=listing_data["classicProject"],
-                apply_online=listing_data["applyOnline"],
-                agency_id=agency.email if agency is not None else "",
-                agent_id=listing_agent_ids,
-                address_id=listing_address_id
-            )
-            rental_listings.append(listing)
-        else:
-            listing = Listing(
-                listing_id=listing_data["listingId"],
-                title=listing_data["title"],
-                property_type=listing_data["propertyType"] if list(listing_data.keys()).__contains__("propertyType") else "",
-                listing_type=listing_data["channel"],
-                construction_status=listing_data["constructionStatus"] if list(listing_data.keys()).__contains__("constructionStatus") else "",
-                price=listing_data["price"]["display"] if list(listing_data.keys()).__contains__("price") else "",
-                advertised_price=advertised_price,
-                bedrooms=listing_data["features"]["general"]["bedrooms"],
-                bathrooms=listing_data["features"]["general"]["bathrooms"],
-                parking_spaces=listing_data["features"]["general"]["parkingSpaces"],
-                land_size=f"{listing_data["landSize"]["value"]} {listing_data["landSize"]["unit"]}" if list(
-                    listing_data.keys()).__contains__("landSize") else "",
-                description=listing_data["description"],
-                features=features_list,
-                status=listing_data["status"]["type"] if list(listing_data.keys()).__contains__(
-                    "status") else "",
-                date_sold=listing_data["dateSold"]["value"] if list(listing_data.keys()).__contains__(
-                    "dateSold") else "",
-                classic_project=listing_data["classicProject"],
-                agency_id=agency.email if agency is not None else "",
-                agent_id=listing_agent_ids,
-                address_id=listing_address_id
-            )
-            listings.append(listing)
-
-    addresses_objs = [obj.__dict__ for obj in addresses]
-    agents_objs = [obj.__dict__ for obj in agents]
-    agencies_objs = [obj.__dict__ for obj in agencies]
-    listings_objs = [obj.__dict__ for obj in listings]
-    rental_listings_objs = [obj.__dict__ for obj in rental_listings]
-
-    context.log.info(
-        f"Number of addresses: {len(addresses_objs)}, Number of agents: {len(agents_objs)}, Number of agencies: {len(agencies_objs)}, Number of listings: {len(listings_objs)}")
-
-    # Determine if data needs to be persisted in the database
-
-    if len(addresses_objs) > 0:
-        context.log.info("Number of addresses: {}".format(len(addresses_objs)))
-        yield Output(pd.DataFrame(addresses_objs), output_name="raw_addresses")
-    else:
-        context.log.info("No addresses")
-
-    if len(agents_objs) > 0:
-        context.log.info("Number of agents: %s", len(agents_objs))
-        yield Output(pd.DataFrame(agents_objs), output_name="raw_agents")
-    else:
-        context.log.info("No agents")
-
-    if len(agencies_objs) > 0:
-        yield Output(pd.DataFrame(agencies_objs), output_name="raw_agencies")
-    else:
-        context.log.info("No agencies")
-
-    # if it's rent channel, we yield a raw_rental_listings
-    if listing_channel == "rent":
-        if len(rental_listings_objs) > 0:
-            context.log.info("Number of rental listings: {}".format(len(rental_listings_objs)))
-            yield Output(pd.DataFrame(rental_listings_objs), output_name="raw_rental_listings")
-        else:
-            context.log.info("No rental listings")
-        # raw_rental_listings
-    else:  # otherwise, raw_listings
-        if len(listings_objs) > 0:
-            context.log.info("Number of listings: {}".format(len(listings_objs)))
-            yield Output(pd.DataFrame(listings_objs), output_name="raw_listings")
-        else:
-            context.log.info("No listings")
+            if len(rental_listings_objs) > 0:
+                context.log.info("Number of rental listings: {}".format(len(rental_listings_objs)))
+                yield Output(pl.DataFrame(rental_listings_objs), output_name="raw_rental_listings")
+            else:
+                context.log.info("No rental listings")
+            # raw_rental_listings
+        else:  # otherwise, raw_listings
+            if len(listings_objs) > 0:
+                context.log.info("Number of listings: {}".format(len(listings_objs)))
+                yield Output(pl.DataFrame(listings_objs), output_name="raw_listings")
+            else:
+                context.log.info("No listings")
 
 
 @multi_asset(
@@ -407,9 +430,9 @@ def cleansed_listings_data(duckdb: DuckDBResource):
                 conn.rollback()
                 raise e
 
-    yield Output(pd.DataFrame(listings), output_name="staging_listings")
-    yield Output(pd.DataFrame(listing_agents), output_name="staging_listing_agents")
-    yield Output(pd.DataFrame(property_features), output_name="staging_listing_features")
+    yield Output(pl.DataFrame(listings), output_name="staging_listings")
+    yield Output(pl.DataFrame(listing_agents), output_name="staging_listing_agents")
+    yield Output(pl.DataFrame(property_features), output_name="staging_listing_features")
 
 
 @multi_asset(
@@ -482,6 +505,6 @@ def cleansed_rental_listings_data(duckdb: DuckDBResource):
                 conn.rollback()
                 raise e
 
-    yield Output(pd.DataFrame(rental_listings), output_name="staging_rental_listings")
-    yield Output(pd.DataFrame(listing_agents), output_name="staging_rental_listing_agents")
-    yield Output(pd.DataFrame(property_features), output_name="staging_rental_listing_features")
+    yield Output(pl.DataFrame(rental_listings), output_name="staging_rental_listings")
+    yield Output(pl.DataFrame(listing_agents), output_name="staging_rental_listing_agents")
+    yield Output(pl.DataFrame(property_features), output_name="staging_rental_listing_features")

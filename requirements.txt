@@ -9,7 +9,8 @@ dagster-docker
 dbt-duckdb
 dagster-embedded-elt
 dagster-polars
-dagster-duckdb-pandas
+dagster_duckdb_polars
+dagster_aws
 geopandas
 pkgconf
 pandas==2.2.3
@@ -17,7 +18,6 @@ shapely
 matplotlib
 smart_open[s3]
 s3fs
-smart_open
 aiohttp
 asyncio
 dagster-polars

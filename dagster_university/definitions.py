@@ -5,7 +5,7 @@ from dagster_university.io.re_io_manager import ReIOManager
 from dagster_university.jobs import download_listing_data_job, process_downloaded_listing_data_job, \
     raw_listing_data_job, \
     raw_rental_listing_data_job, rebuild_dbt_assets_job
-from dagster_university.resources import dbt_resource, io_manager, database_resource
+from dagster_university.resources import dbt_resource, io_manager, database_resource, s3_resource
 from dagster_university.schedules import download_listing_schedule
 from dagster_university.sensors import downloaded_listing_data_sensor, raw_listings_sensor, raw_rental_listings_sensor, \
     staging_listings_sensor, staging_rental_listings_sensor, raw_suburbs_sensor
@@ -21,7 +21,8 @@ defs = dg.Definitions(
         "duckdb": database_resource,
         "dbt": dbt_resource,
         "io_manager": io_manager,
-        "re_io_manager": ReIOManager()
+        "re_io_manager": ReIOManager(),
+        "s3": s3_resource,
     },
     jobs=[download_listing_data_job, process_downloaded_listing_data_job, raw_listing_data_job,
           raw_rental_listing_data_job, rebuild_dbt_assets_job],
