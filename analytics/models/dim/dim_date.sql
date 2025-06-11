@@ -6,9 +6,7 @@
     )
  }}
 WITH all_dates AS (
-    SELECT DISTINCT list_sold_date AS new_date FROM {{ source('cleansed_data', 'staging_listings') }} WHERE LEN(list_sold_date::VARCHAR) > 0
-    UNION
-    SELECT DISTINCT date_available AS new_date FROM {{ source('cleansed_data', 'staging_rental_listings') }} WHERE LEN(date_available::VARCHAR) > 0
+    SELECT DISTINCT list_sold_date AS new_date FROM {{ ref('stg_listings') }} WHERE LEN(list_sold_date::VARCHAR) > 0
 )
 select
     DISTINCT

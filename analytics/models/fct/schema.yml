@@ -7,12 +7,6 @@ models:
       meta:
         dagster:
           group: DBT_FACT_DATA
-  - name: fct_rental_listing
-    description: Fact table for rental listings
-    config:
-      meta:
-        dagster:
-          group: DBT_FACT_DATA
   - name: fct_active_listing
     description: Fact table for active listings
     config:

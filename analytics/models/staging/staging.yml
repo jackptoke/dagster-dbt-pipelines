@@ -55,3 +55,23 @@ models:
       meta:
         dagster:
           group: DBT_STAGING_DATA
+  - name: stg_listing_agents
+    config:
+      meta:
+        dagster:
+          group: DBT_STAGING_DATA
+  - name: stg_listing_features
+    config:
+      meta:
+        dagster:
+          group: DBT_STAGING_DATA
+  - name: stg_listings
+    config:
+      meta:
+        dagster:
+          group: DBT_STAGING_DATA
+  - name: stg_rental_listings
+    config:
+      meta:
+        dagster:
+          group: DBT_STAGING_DATA
