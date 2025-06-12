@@ -9,10 +9,6 @@ sources:
       - name: raw_agents
       - name: raw_agencies
       - name: raw_listings
-  - name: cleansed_data
-    schema: public
-    tables:
-      - name: staging_listings
-      - name: staging_listing_agents
-      - name: staging_listing_features
-      - name: staging_rental_listings
+      - name: raw_rental_listings
+      - name: raw_listing_agents
+      - name: raw_listing_features

@@ -1,7 +1,7 @@
 {{
     config(
         materialized = 'incremental',
-        unique_key = ['agent_id', 'agent_id'],
+        unique_key = ['listing_id', 'agent_id'],
         on_schema_change = 'sync_all_columns'
     )
 }}
@@ -9,7 +9,7 @@ WITH all_listings AS (
     SELECT DISTINCT *  FROM {{ ref('fct_sold_listing') }}
 ),
     all_listing_agents AS (
-        SELECT DISTINCT *  FROM {{ source('cleansed_data', 'staging_listing_agents') }}
+        SELECT DISTINCT *  FROM {{ ref('stg_listing_agents') }}
     )
 SELECT
     DISTINCT

@@ -7,8 +7,8 @@
  }}
 WITH sold_listings AS (
     SELECT *
-    FROM {{ source('cleansed_data', 'staging_listings') }}
-    WHERE listing_type = 'sold' AND price > 0
+    FROM {{ ref('stg_listings') }}
+    WHERE listing_type = 'sold' AND price > 0 AND list_sold_date <> ''
 )
 SELECT
     DISTINCT

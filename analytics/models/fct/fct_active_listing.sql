@@ -7,7 +7,7 @@
  }}
 WITH sold_listings AS (
     SELECT *
-    FROM {{ source('cleansed_data', 'staging_listings') }}
+    FROM {{ ref('stg_listings') }}
     WHERE listing_type = 'buy'
 )
 SELECT
