@@ -1,0 +1,5 @@
+fastapi[standard]
+scalar_fastapi
+pydantic
+duckdb
+sqlmodel
