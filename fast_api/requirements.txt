@@ -1,5 +1,7 @@
-fastapi[standard]
+fastapi
 scalar_fastapi
 pydantic
 duckdb
 sqlmodel
+sqlalchemy
+uvicorn

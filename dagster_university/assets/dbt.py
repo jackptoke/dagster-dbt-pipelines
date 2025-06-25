@@ -32,18 +32,19 @@ class CustomizedDagsterDbtTranslator(DagsterDbtTranslator):
 # Automatically, build the DBT assets at every refresh
 @dbt_assets(
     manifest=dbt_project.manifest_path,
-    dagster_dbt_translator=CustomizedDagsterDbtTranslator()
+    dagster_dbt_translator=CustomizedDagsterDbtTranslator(),
 )
 def dbt_analytics(context: dg.AssetExecutionContext, dbt: DbtCliResource):
-    # yield from dbt.cli(["build"], context=context, raise_on_error=False).stream()
+    yield from dbt.cli(["run"], context=context).stream()
     # yield from dbt.cli(["test"], context=context).stream()
-    dbt_cli_invocation = dbt.cli(["build"], context=context)
-    for dbt_event in dbt_cli_invocation.stream_raw_events():
-        for dagster_event in dbt_event.to_default_asset_events(
-                manifest=dbt_cli_invocation.manifest,
-                dagster_dbt_translator=dbt_cli_invocation.dagster_dbt_translator,
-                context=dbt_cli_invocation.context,
-                target_path=dbt_cli_invocation.target_path,
-        ):
-            context.log.info(f"Dagster event: {dagster_event}")
-            yield dagster_event
+
+    # dbt_cli_invocation = dbt.cli(["build"], context=context)
+    # for dbt_event in dbt_cli_invocation.stream_raw_events():
+    #     for dagster_event in dbt_event.to_default_asset_events(
+    #             manifest=dbt_cli_invocation.manifest,
+    #             dagster_dbt_translator=dbt_cli_invocation.dagster_dbt_translator,
+    #             context=dbt_cli_invocation.context,
+    #             target_path=dbt_cli_invocation.target_path,
+    #     ):
+    #         context.log.info(f"Dagster event: {dagster_event.asset_key}")
+    #         yield dagster_event

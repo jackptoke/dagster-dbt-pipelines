@@ -19,7 +19,7 @@ LISTINGS_QUERY = """
     latitude,
     longitude
 FROM realestate_dev.main.fct_listing
-WHERE LOWER(channel) = LOWER('sold') AND LOWER(state) = LOWER(?) AND LOWER(suburb) = LOWER(?) AND date_part('year', sold_date::DATE) = ?
+WHERE LOWER(channel) = LOWER(:channel) AND LOWER(state) = LOWER(:state) AND LOWER(suburb) = LOWER(:suburb) AND date_part('year', sold_date::DATE) = :year
     """
 
 SUBURBS_QUERY = """
@@ -36,3 +36,6 @@ ORDER BY state
 """
 
 DUCKDB_FILE = f'{os.getenv("MOTHER_DUCK_URL")}?motherduck_token={os.getenv("MOTHER_DUCK_TOKEN")}'
+DUCKDB_CONN = f"duckdb:///{DUCKDB_FILE}"
+DUCKDB_CONFIG = {'motherduck_token': os.getenv("MOTHER_DUCK_TOKEN")}
+

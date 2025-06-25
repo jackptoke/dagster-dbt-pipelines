@@ -1,7 +1,9 @@
 from dagster import schedule, RunRequest, MultiPartitionKey
+from dagster_dbt import build_schedule_from_dbt_selection, dbt_assets
 
-from ..jobs import download_listing_data_job
+from ..jobs import download_listing_data_job, rebuild_dbt_assets_job
 from ..partitions import SUBURBS, CHANNELS
+from ..assets.dbt import dbt_analytics
 
 
 # suburb_channel_weekly_schedule = build_schedule_from_partitioned_job(
@@ -31,26 +33,10 @@ def download_listing_schedule(context):
         )
 
 
-# raw_suburbs_file_schedule = ScheduleDefinition(job=raw_suburbs_file_job,
-#                                                cron_schedule="0 0 1 * *",)
-
-
-    # for suburb in SUBURBS:
-    #     for channel in CHANNELS:
-    #         yield RunRequest(
-    #             run_key=f"{suburb}-{channel}",
-    #             tags={"suburb": suburb, "channel": channel},
-    #             partition_key=MultiPartitionKey({"suburb": suburb, "channel": channel}),
-    #             # run_config={
-    #             #     "ops": {
-    #             #         "downloaded_listing_data": {
-    #             #             "config": {"suburb": suburb, "channel": channel},
-    #             #         }
-    #             #     }
-    #             # }
-    #         )
-
-
-# download_listing_data_schedule = build_schedule_from_partitioned_job(
-#     download_listing_data_job,
-# )
+materialise_dbt_assets_schedule = build_schedule_from_dbt_selection(
+    [dbt_analytics],
+    job_name="materialise_dbt_model",
+    cron_schedule="0 2 * * *",
+    # dbt_select="fqn:*",
+    execution_timezone="Australia/Melbourne"
+)

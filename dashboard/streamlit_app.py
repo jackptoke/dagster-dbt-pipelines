@@ -1,11 +1,11 @@
 import math
 import os
+
 import duckdb
-import pandas as pd
-import plotly.express as px
-import streamlit as st
-import pydeck as pdk
 import matplotlib.colors as mcolors
+import pandas as pd
+import pydeck as pdk
+import streamlit as st
 
 st.set_page_config(layout="wide")
 

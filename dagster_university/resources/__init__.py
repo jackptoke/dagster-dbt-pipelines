@@ -3,6 +3,7 @@ import os
 
 import boto3
 import dagster as dg
+from dagster import resource
 from botocore.client import Config
 from dagster_aws.s3 import S3Resource
 from dagster_dbt import DbtCliResource
@@ -32,17 +33,14 @@ set s3_use_ssl='false';
 set s3_url_style='path';
 """
 
-if os.getenv("DAGSTER_ENVIRONMENT") == "prod":
-    session = boto3.session.Session()
-    smart_open_config = {"client": session.client(
-        service_name="s3",
-        endpoint_url="http://172.16.1.11:9000",
-        aws_access_key_id="minio",
-        aws_secret_access_key="minio123",
-        config=Config(signature_version="s3v4"),
-    )}
-else:
-    smart_open_config = {}
+session = boto3.session.Session()
+smart_open_config = {"client": session.client(
+    service_name="s3",
+    endpoint_url="http://172.16.1.11:9000",
+    aws_access_key_id="minio",
+    aws_secret_access_key="minio123",
+    config=Config(signature_version="s3v4"),
+)}
 
 s3_resource = S3Resource(
     endpoint_url=dg.EnvVar("MINIO_URL").get_value(),
