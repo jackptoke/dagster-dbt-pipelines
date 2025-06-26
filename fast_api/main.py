@@ -3,23 +3,25 @@ from typing import Literal
 
 from fastapi import FastAPI, status, HTTPException
 from fastapi.params import Depends
-from sqlalchemy.orm import Session
 from scalar_fastapi import get_scalar_api_reference
-from sqlalchemy import select, text
+from sqlalchemy.orm import Session
 
-from constants import SUBURBS_QUERY, STATES_QUERY, LISTINGS_QUERY
+from constants import SUBURBS_QUERY, STATES_QUERY
 from database import managed_db
 from database import model
 from database.session import db_engine, get_db
 from decorators import log
 from models.listing import Listing
 
-
 app = FastAPI() # lifespan_handler=lifespan_handler
 version = "v1"
 
 model.Base.metadata.create_all(bind=db_engine)
 
+
+@app.get(path="/")
+def default():
+    return {"message": "Welcome to the real estate API!"}
 
 @app.get(
     path=f"/api/{version}/listings",
@@ -31,7 +33,7 @@ model.Base.metadata.create_all(bind=db_engine)
 def get_sold_listing(db_session: Session = Depends(get_db),
                      channel: Literal["sold", "rent", "buy"] = "sold",
                      state: Literal["act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa"] = "vic",
-                     suburb: str = "Melbourne",
+                     suburb: str = "melbourne",
                      year: int = 2025,
                      ):
     log(f"get_sold_listing is requested")
@@ -59,27 +61,6 @@ def get_sold_listing(db_session: Session = Depends(get_db),
         )
 
     return listings
-    # properties = [Listing(
-    #     listing_id=listings[index]["listing_id"],
-    #     title=listings[index]["title"],
-    #     price=listings[index][index, "price"],
-    #     property_type=listings[index][index, "property_type"],
-    #     bedrooms=listings[index][index, "bedrooms"],
-    #     bathrooms=listings[index][index, "bathrooms"],
-    #     parking=listings[index][index, "parking"],
-    #     land=listings[index][index, "land"],
-    #     sold_date=listings[index][index, "sold_date"],
-    #     channel=listings[index][index, "channel"],
-    #     latitude=listings[index][index, "latitude"],
-    #     longitude=listings[index][index, "longitude"],
-    #     address=listings[index][index, "address"],
-    #     suburb=listings[index][index, "suburb"],
-    #     state=listings[index][index, "state"],
-    #     postcode=listings[index][index, "postcode"],
-    # ) for index in range(len(listings))]
-    #
-    # return properties
-
 
 @app.get(f"/api/{version}/suburbs",
          tags=["listings", "suburbs"],
