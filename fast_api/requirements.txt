@@ -4,4 +4,4 @@ pydantic
 duckdb
 sqlmodel
 sqlalchemy
-uvicorn
+uvicorn[standard]
