@@ -1,0 +1,16 @@
+FROM python:3.13-slim
+LABEL authors="jacktoke"
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY ./fast_api/ .
+COPY .env .
+COPY ./fast_api/requirements.txt ./requirements.txt
+
+RUN pip install -r requirements.txt

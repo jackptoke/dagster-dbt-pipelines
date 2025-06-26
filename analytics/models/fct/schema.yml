@@ -13,3 +13,9 @@ models:
       meta:
         dagster:
           group: DBT_FACT_DATA
+  - name: fct_listing
+    description: Fact table for active listings
+    config:
+      meta:
+        dagster:
+          group: DBT_FACT_DATA

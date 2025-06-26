@@ -1,13 +1,14 @@
 import json
 import re
+from datetime import datetime
 
 import dagster as dg
-from dagster import SensorEvaluationContext, RunsFilter, DagsterRunStatus, SkipReason, op
+from dagster import SensorEvaluationContext, op, RunsFilter, DagsterRunStatus, SkipReason, AssetKey, AssetSelection
 from dagster_aws.s3 import S3Resource
 
-from ..jobs import process_downloaded_listing_data_job
+from ..jobs import normalised_listing_data_job
 
-INTERVAL_TIME = 10
+INTERVAL_TIME = 30
 
 
 # Check if a file is a json file
@@ -17,15 +18,15 @@ def is_json_file(filename):
 
 
 @dg.sensor(
-    job=process_downloaded_listing_data_job,
+    job=normalised_listing_data_job,
     default_status=dg.DefaultSensorStatus.RUNNING,
-    minimum_interval_seconds=180,
+    minimum_interval_seconds=120,
     tags={"dagster/priority": "5"},
 )
-def downloaded_listing_data_sensor(context: SensorEvaluationContext, s3: S3Resource):
+def normalised_listing_data_sensor(context: SensorEvaluationContext, s3: S3Resource):
     run_records = context.instance.get_run_records(
         dg.RunsFilter(
-            job_name="process_download_listing_data_job",
+            job_name="normalised_listing_data_job",
             statuses=[
                 dg.DagsterRunStatus.QUEUED,
                 dg.DagsterRunStatus.NOT_STARTED,
@@ -38,18 +39,16 @@ def downloaded_listing_data_sensor(context: SensorEvaluationContext, s3: S3Resou
     if len(run_records) > 0:
         return dg.SkipReason("Skipping because there is already another run of the same job is already running")
 
-    bucket_name = "realestate"
-    folder = "data/downloaded/"
-
     previous_state = json.loads(context.cursor) if context.cursor else {}
     current_state = {}
-    # runs_to_request = []
 
+    bucket_name = dg.EnvVar("S3_BUCKET_NAME").get_value()
+    folder_prefix = "data/downloaded/"
+    # context.log.info(f"Bucket: {bucket_name}")
     s3_client = s3.get_client()
+    response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=folder_prefix)
 
-    file_list = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=folder)
-
-    for file in file_list['Contents']:
+    for file in response['Contents']:
         context.log.info(f"S3 file key: {file['Key']}")
         s3_file_path = file['Key']
 
@@ -58,126 +57,63 @@ def downloaded_listing_data_sensor(context: SensorEvaluationContext, s3: S3Resou
             current_state[s3_file_path] = file["LastModified"]
 
             if s3_file_path not in previous_state or previous_state[s3_file_path] != file["LastModified"]:
-                filename = s3_file_path.split('/')[-1]
-                file_path = s3_file_path.split('/')[:-1]
+                file_parts = s3_file_path.split('/')
+                filename = file_parts[-1]
+                partitions = filename.split("_")
+                channel = partitions[-2]
+                suburb = " ".join(partitions[:-2])
+
                 config = {
                     "ops": {
-                        "process_downloaded_listing_data": {
-                            "config": {"filename": filename, "filepath": f"{file_path}",
+                        "normalised_listing_data": {
+                            "config": {"channel": channel, "suburb": suburb,
                                        "s3_path": f"{s3_file_path}"}
                         }
                     }
                 }
-                context.log.info(f"S3 file path: {s3_file_path} Config: {json.dumps(config)}")
+                # context.log.info(f"S3 file path: {s3_file_path} Config: {json.dumps(config)}")
                 yield dg.RunRequest(
-                    run_key=f"downloaded_listing_data_{filename}_{file["LastModified"]}",
+                    run_key=f"normalised_listing_data_{suburb}_{channel}",
                     run_config=config,
                 )
             else:
                 yield dg.SkipReason(f"{s3_file_path} file has already been processed")
         else:
             yield dg.SkipReason(f"{s3_file_path} is not a JSON file")
-    # for filename in os.listdir(path_to_downloaded_files):
-    #     file_path = os.path.join(path_to_downloaded_files, filename)
-    #     if filename.endswith(".json") and os.path.isfile(file_path):
-    #         last_modified = os.path.getmtime(file_path)
-    #
-    #         current_state[filename] = last_modified
-    #
-    #         # if the file is new or has been modified since the last run, add it to the request queue
-    #         if filename not in previous_state or previous_state[filename] != last_modified:
-    #             # with open(file_path) as f:
-    #             #     request_config = json.load(f)
-    #             yield dg.RunRequest(
-    #                 run_key=f"downloaded_listing_data_{filename}_{last_modified}",
-    #                 run_config={
-    #                     "ops": {
-    #                         "process_downloaded_listing_data": {
-    #                             "config": {"filename": filename, "filepath": file_path, "s3_path": s3_file_path}
-    #                         }
-    #                     }
-    #                 },
-    #             )
-    #         else:
-    #             yield dg.SkipReason("No new files found")
-
-    # return dg.SensorResult(run_requests=runs_to_request, cursor=json.dumps(current_state))
 
 
-@dg.asset_sensor(asset_key=dg.AssetKey("raw_listings"), job_name="raw_listing_data_job",
-                 default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=INTERVAL_TIME)
-def raw_listings_sensor(context: SensorEvaluationContext):
-    yield dg.RunRequest()
-
-
-@dg.asset_sensor(asset_key=dg.AssetKey("raw_rental_listings"), job_name="raw_rental_listing_data_job",
-                 default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=INTERVAL_TIME)
-def raw_rental_listings_sensor(context: SensorEvaluationContext):
-    yield dg.RunRequest()
-
-
-@dg.asset_sensor(asset_key=dg.AssetKey("staging_listings"), job_name="rebuild_dbt_assets_job",
-                 default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=INTERVAL_TIME)
-def staging_listings_sensor(context: SensorEvaluationContext):
-    run_records = context.instance.get_run_records(
-        RunsFilter(
-            job_name="rebuild_dbt_assets_job",
-            statuses=[
-                DagsterRunStatus.QUEUED,
-                DagsterRunStatus.NOT_STARTED,
-                DagsterRunStatus.STARTING,
-                DagsterRunStatus.STARTED
-            ]
-        )
-    )
-
-    if len(run_records) > 0:
-        yield SkipReason("Skipping this run because another run of the same job is already running")
-    else:
-        yield dg.RunRequest()
-
-
-@dg.asset_sensor(asset_key=dg.AssetKey("staging_rental_listings"), job_name="rebuild_dbt_assets_job",
-                 default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=INTERVAL_TIME)
-def staging_rental_listings_sensor(context: SensorEvaluationContext):
-    run_records = context.instance.get_run_records(
-        RunsFilter(
-            job_name="rebuild_dbt_assets_job",
-            statuses=[
-                DagsterRunStatus.QUEUED,
-                DagsterRunStatus.NOT_STARTED,
-                DagsterRunStatus.STARTING,
-                DagsterRunStatus.STARTED
-            ]
-        )
-    )
-
-    if len(run_records) > 0:
-        yield SkipReason("Skipping this run because another run of the same job is already running")
-    else:
-        yield dg.RunRequest()
-
-
-@dg.asset_sensor(asset_key=dg.AssetKey("raw_suburbs"), job_name="rebuild_dbt_assets_job",
-                 default_status=dg.DefaultSensorStatus.RUNNING,
-                 minimum_interval_seconds=INTERVAL_TIME)
-def raw_suburbs_sensor(context: SensorEvaluationContext):
-    run_records = context.instance.get_run_records(
-        RunsFilter(
-            job_name="rebuild_dbt_assets_job",
-            statuses=[
-                DagsterRunStatus.QUEUED,
-                DagsterRunStatus.NOT_STARTED,
-                DagsterRunStatus.STARTING,
-                DagsterRunStatus.STARTED
-            ]
-        )
-    )
-    if len(run_records) > 0:
-        yield SkipReason("Skipping this run because another run of the same job is already running")
-    else:
-        yield dg.RunRequest()
+#
+# @dg.multi_asset_sensor(
+#     monitored_assets=[AssetKey("raw_listings"), AssetKey("raw_rental_listings"), AssetKey("raw_addresses"),
+#                       AssetKey("raw_agencies"), AssetKey("raw_agents"), AssetKey("raw_listing_agents"),
+#                       AssetKey("raw_listing_features"), AssetKey("raw_suburbs")],
+#     request_assets=AssetSelection.groups("DBT_STAGING_DATA") | AssetSelection.groups("DBT_DIM_DATA") | AssetSelection.groups("DBT_FACT_DATA"),
+#     default_status=dg.DefaultSensorStatus.RUNNING,
+#     minimum_interval_seconds=INTERVAL_TIME)
+# def materialise_dbt_assets(context: SensorEvaluationContext):
+#     run_records = context.instance.get_run_records(
+#         RunsFilter(
+#             job_name="rebuild_dbt_assets_job",
+#             statuses=[
+#                 DagsterRunStatus.QUEUED,
+#                 DagsterRunStatus.NOT_STARTED,
+#                 DagsterRunStatus.STARTING,
+#                 DagsterRunStatus.STARTED
+#             ]
+#         )
+#     )
+#     previous_state = json.loads(context.cursor) if context.cursor else {}
+#     current_state = {}
+#
+#     if len(run_records) > 0:
+#         yield SkipReason("Skipping this run because another run of the same job is already running")
+#     else:
+#         now = datetime.now()
+#         date_str = now.strftime("%Y-%m-%d-%H")
+#         state_key = f"materialise_dbt_assets-{date_str}-{(now.minute / 5)}"
+#         current_state[state_key] = now.strftime("%Y-%m-%d-%H-%M")
+#         if state_key not in previous_state or previous_state[state_key] != current_state[state_key]:
+#             yield dg.RunRequest()
+#         else:
+#             yield SkipReason(f"{state_key} has already been processed")
+#
